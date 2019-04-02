@@ -1,0 +1,157 @@
+% demo 2 shows you how to include customized CV
+
+\documentclass [PhD,nolistoftables,scheader] {uclathes}
+% You can remove "list of tables" page by "nolistoftables" option
+% You can remove "list of figures" page by "nolistoffigures" option
+
+% \input {mymacros}                         % personal LaTeX macros
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{hyperref}
+\hypersetup{
+			pdfstartview = {XYZ},
+			colorlinks,
+			allcolors = linkcolor,
+			bookmarksopen,
+			bookmarksnumbered
+			}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{float}
+\usepackage{footmisc}
+\usepackage{mhchem}
+\definecolor{linkcolor}{RGB}{0,0,240}
+\usepackage[sort,compress]{cleveref}
+%\usepackage{bookmark}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Usually things live in separate flies.
+%
+% \input {prelim}                           % preliminary page info
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                          PRELIMINARY PAGES                           %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title          {Towards Quantum State Resolved Ion-Molecule Chemistry}
+\author         {Gary Chen}
+% Note: department is really your area of research.  I.e. leave out 'Department of'.
+\department     {Physics}
+\degreeyear     {2019}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\member         {Eric Hudson}
+\member         {Paul Hamilton}
+\member         {James Larkin}
+\chair          {Wes Campbell}
+%\chair          {Chair's name 2}
+%\chair          {Chair's name 3}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\dedication     {\textsl{Noodle and Nugget}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\renewcommand   {\acksname}{Preface}
+% You can change the title of "Acknowledgments" page here
+
+\acknowledgments{\input{chapters/acknowledgements}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\renewcommand   {\vitaname}{Curriculum Vitae}
+% You can change the title of "Vita" page here
+
+\input          {chapters/CV} % check the 'demo2_vita.tex' file
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\abstract {\input{chapters/abstract}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                            MAIN DOCUMENT                             %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin {document}
+\makeintropages
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Introduction}
+	\input{chapters/thesis_intro}
+	
+	\section{Thesis Outline}
+	\input{chapters/thesis_outline}
+
+\chapter{The Cryogenic Buffer Gas Beam (CBGB)}
+\input{chapters/CBGB_intro}
+	\section{Design Considerations}
+	\input{chapters/CBGB_design}
+	
+	\section{Beam Density and Extraction}
+	\input{chapters/CBGB_beam_density_extraction}
+	
+	\section{Beam Velocity}
+	\input{chapters/CBGB_beam_velocity}
+
+\chapter{Linear Quadrupole Trap (LQT)}
+\input{chapters/ion_trap_intro}
+
+	\section{Ion Trapping}
+	\input{chapters/ion_trapping}
+
+	\section{Dual Species Loading}
+	\input{chapters/dual_loading}
+
+	\section{Time of Flight Mass Spectrometer (TOF-MS)}
+	\input{chapters/TOF_intro}
+%
+%\chapter{\ce{Be+(^2S1/2 / ^2P3/2) + H2O}}
+%	\section{Optical Control of Reactions between Water and Laser-Cooled \ce{Be+} Ions}
+%	\input{chapters/Be_H2O_paper}
+%
+%\chapter{\ce{Be+ + H2O/HOD/D2O}}
+%	\section{Isotope-selective chemistry in the \ce{Be+(^2S1/2) + HOD} \ce{-> BeOD+ / BeOH+ + H/D reaction}}
+%	\input{chapters/Be_HOD}
+%
+%\chapter{\ce{Be+ + O2}}
+%	\input{chapters/Be_O2}
+%
+%\chapter{\ce{C+ + H2O}}
+%	\section{Formyl Isomer Branching Ratio}
+%	\input{chapters/formyl_isomers}
+%
+%	\section{\ce{CO2} Titration}
+%	\input{chapters/CO2_titration}
+%
+%	\section{\ce{^{15}N2} Titration}
+%	\input{chapters/N2_titration}
+%
+%\chapter{Conclusion and Future Outlook}
+%	\input{chapters/conclusion}
+%
+%\appendix
+%	\chapter{Average Dipole Orientation Theory (ADO)}
+%	\input{chapters/ADO}
+%
+%	\chapter{Statistical State Counting}
+%	\input{chapters/state_counting}
+
+
+%\renewcommand{\refname}{Bibliography} % You can change the name of References here
+
+\bibliographystyle{plain}
+\bibliography{bibliography}    % bibliography references
+
+\end {document}

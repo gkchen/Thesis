@@ -1,0 +1,109 @@
+% !TEX root = ../thesis.tex
+To reach reaction temperatures in the regime of 10K from a beam of molecules with trapped ions, a cryogenic buffer gas beam (CBGB) of neon with entrained water is employed. Numerous methods of creating cold beams of molecules exist, from Zeeman decelerators \cite{Narevicius2008}, Stark decelerators, to cryogenic buffer gas beams (CBGB). CBGB's in particular have the benefit of being species agnostic, where the resultant beam properties are not dependent on the target species at hand, rather, the buffer gas species. \todo{Add citations for decelerators}
+
+By holding a cell filled with a buffer gas of neon of helium above its vapor pressure, a volume of gas can be held at cryogenic temperatures. Other species of molecules are atoms may be introduced into the buffer gas cell via ablation, fill line, etc. The target species particles are then sympathetically cooled via collisions with the cold buffer gas. An aperture at one end of the cell allows for the extraction of the buffer gas and entrained target species into a beam. Regulating the buffer gas cell temperature to above 17K for neon, and 4K for helium, in high vacuum allows us to accumulate an appreciable stagnation number density.
+\todo{Add graphic to show what a buffer gas beam is}
+
+The Reynolds number is typically used to characterize the flow regime of the buffer gas beam. At the aperture of the buffer gas cell, the Reynolds number can be written as:
+
+\begin{align}
+	Re & \approx \frac{2 d_{aperture}}{\lambda} \nonumber \\
+	& \approx \frac{8\sqrt[]{2} \dot{N} \sigma}{d_{aperture} \bar{v}} \label{eq: reynolds}
+\end{align}
+
+Where $d_{aperture}$ is the diameter of the aperture and $\lambda$ is the mean free path of the buffer gas particles \cite{Hutzler2012}.
+
+\subsection{Beam Velocity}
+
+At thermal equilibrium, the velocities inside the buffer gas cell follows a Maxwell Boltzmann distribution:
+
+\begin{equation}
+	f(v) = \left(\frac{m}{2 \pi k T}\right)^{3/2}4 \pi v^2 e^{-\frac{m v^2}{2 k T}} \label{eq: mb_distribution}
+\end{equation}
+
+Where the mean velocity is:
+
+\begin{equation}
+	\bar{v} = \sqrt{\frac{8 k_B T}{\pi m}} \label{eq: mb_mean}
+\end{equation}
+
+We may rewrite the distribution as a function of the mean velocity $\bar{v}$ into a simpler form .
+
+\begin{equation}
+	f(v) = \frac{32}{\pi^2} \frac{v^2}{\bar{v}^3} e^{-4v^2/\pi \bar{v}^2} \label{eq: mb_simplified}
+\end{equation}
+
+To get the velocity distribution in the beam, we can calculate the distribution of particles incident on an aperture in the cell.
+
+\begin{align*}
+	f_{beam}(v) & = \frac{v}{\bar{v}}f(v)  \\
+	& = \frac{32}{\pi^2} \frac{v^3}{\bar{v}^4} e^{-4v^2/\pi \bar{v}^2}
+\end{align*}
+
+For low Reynold's numbers (Re<1) the flow at the aperture is purely molecular, which means that there are few to no collisions. This allows us to continue to use the Maxwell-Boltzmann distribution to describe the forward velocity \cite{Hutzler2011c}.
+
+\begin{equation}
+	\bar{v}_\parallel = \int_0^\infty v f(v) dv \approx 1.2 \bar{v}
+\end{equation}
+
+The spread of the forward velocity of an effusive beam is the full width half max (FWHM) of the Maxwell-Boltzmann distribution: $\Delta\bar{v} \approx 1.5 \bar{v}$.
+
+As one increases the Reynolds number, one can reach the supersonic regime (Re>100) where the velocity reaches $1.4\bar{v}$ \cite{Hutzler2011c}.
+
+But as the flow regime nears the supersonic regime, forward collisions around the aperture cause boosting of the average velocity as well as a decrease in the velocity spread. Changing the flow regime may also change the ratio of species in the beam as well.
+
+A helium buffer gas held at 4K will be slower than a neon gas held at 17K. Despite this, it is preferable to use neon as a buffer gas due to its ideal cryopumping properties. Helium requires large amounts of activated charcoal, also held at low temperatures, to effectively cryopump. These volumes of charcoal can then become saturated and require purging, limiting one's operating time. Neon on the other hand, only requires a metal surface lower than 17K to create neon ice. The neon ice surface will then act as a cryopump for more neon gas as well, allowing for hours of continuous operation with no appreciable build up of background gas. Our experiment uses neon as a buffer gas for its technical simplicity, the lower achievable temperature with the helium does not yield dramatic gains in the final reaction temperature.
+
+\subsection{Density and Extraction}
+
+The stagnation density inside the buffer gas cell is a function of the physical dimensions of the cell and the number flow rate into the cell. High stagnation densities allows for high densities of reactants at the ion trap center, but can push the beam into an unwanted flow regime where the beam properties are not what one wants. Experimentally, it's preferable to use volumetric flow rates when operating the apparatus, but for calculations, that needs to translate to number flow rate using the ideal gas law:
+
+\begin{equation*}
+	\dot{N} = \frac{P f}{k_B T}
+\end{equation*}
+
+where $P$ is pressure and $f$ is the volumetric flow rate, this translates to about $4\times10^{17} \text{ particles} \cdot \text{s}^{-1}$ for 1 SCCM of gas flow. By solving for the number density in the flow out of an aperture with molecular flow, we find that the stagnation density within the cell can be shown as:
+
+\begin{equation*}
+	n_{b}=\frac{4 \dot{N}}{A_{aperture} \bar{v}}
+\end{equation*}
+
+In general, buffer gas beams operate with stagnation densities around $10^{15}-10^{17} cm^{-3}$. Outside of the cell, we can describe the density of the beam as a function of distance. \cite{Pauly}
+
+\begin{equation*}
+	n(z)=\frac{n_o}{2}\left(1-\frac{z}{\sqrt{z^2+a^2}}\right)
+\end{equation*}
+
+Where $z$ is the distance from the aperture into the vacuum side, $n_o$ is the initial number density, $a$ is the radius of the aperture. In the far field, this goes to
+
+\begin{equation*}
+	n(z)=\frac{n_o a^2}{4 z^2}
+\end{equation*}
+
+But there is something that we must consider, that is that we aren't seeing the full aperture while we are at all locations, we are actually seeing an appended area due to the inclusion of apertures and skimmers in the way. So in the calculation for $n(z)$, only $n_o$ has a dependence on the aperture size of the cell, $n(z)$ itself will have a set value defined by the smallest aperture in the beam path.
+
+Sympathetic cooling occurs through collisions between the hot target species being introduced and the cryogenic buffer gas particles. The thermalization of the target species with the buffer gas particles is derived via momentum conservation of hard sphere collisions, where $\approx 10$ and $\approx 100$ collisions are needed to relax translational and rotational states to within a factor of 2 of the buffer gas temperature. Vibrational degrees of freedom may take upwards of $10^4$ collisions to fully thermalize is the elastic collision energy is much lower than the internal vibrational level. By finding the mean free path, we can consider the characteristic length the particles travel to be thermalized with the buffer gas, this is then compared to the characteristic length of the cell to determine the effectiveness of the cooling.
+
+\begin{equation*}
+	\lambda = \frac{A_{aperture} \bar{v}}{4 f \sigma \sqrt{m_s/m_b}}
+\end{equation*}
+
+If a species is introduced into the buffer gas cell that has a lower vapor pressure than that is allowed at the current temperature, it will be lost when it comes in contact with the cell walls. The rate of this loss can be described as the  characteristic time of diffusion of a particle in the buffer gas to the physical dimensions of the cell set the diffusion time constant:
+
+\begin{equation}
+	\tau_{diff} = \frac{16}{9 \pi} \frac{A_{cell} n_{0,b} \sigma}{\bar{v}} \label{eq: tau_diff}
+\end{equation}
+
+where $\sigma$ represents the collisional cross section for the buffer gas with the target species. On the other hand, we have the characteristic pump out time given by the conductance of a cell aperture:
+
+\begin{equation}
+	\tau_{pump}=\frac{4V_{cell}}{\bar{v}A_{aperture}} \label{eq: tau_pump}
+\end{equation}
+
+By combining equations \cref{eq: tau_diff,eq: tau_pump}, we can get a dimensionless ratio, $\gamma$ that characterizes the extraction fraction out of the cell.
+
+\begin{equation}
+	\gamma = \frac{\tau_{diff}}{\tau_{pump}} = \frac{\sigma f}{L_{cell} \bar{v}} \label{eq: gamma}
+\end{equation}
+
+Notice that the $\gamma$ factor does not depend on aperture size, this is generally true, but increasing the aperture size will lower your number density within the cell, which then influences the characteristic length scale of thermalization. Larger apertures thus run the risk of not allowing your particles to fully thermalize in rotational/vibrational states. But decreasing the aperture size can make alignment as well as controlling the number density more difficult, as finer control over the flow rate is necessary for equivalent flow regimes.
