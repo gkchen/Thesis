@@ -11,6 +11,12 @@ Conversely, the water molecules will react readily with both beryllium and carbo
 	\ce{[HCO]+ + H2O & -> H3O+ + CO} \label{r: [HCO]+H2O->H3O}
 \end{align}
 
+\begin{align}
+	C(t) & = C_0 e^{-k_1 \rho t} \label{eq: C(t)+H2O} \\
+	[HCO](t) & = \frac{e^{-(k_1 + k_2) \rho t}}{k_1 - k_2} \left(e^{k_1 \rho t}((C_0 + [HCO]_0)k_1 - [HCO]_0 k_2) - C_0 e^{-(k_1 + k_2) \rho t}\right) \label{eq: C+H2O->[HCO](t)} \\
+	H_3O(t) & = \frac{\left([HCO]_0 e^{-k_2 \rho t} - (H_3O_0 + [HCO]_0) \right)(k_2 - k_1) + C_0\left( k_1 \left(1 - e^{-k_2 \rho t}\right) + k_2 \left(e^{-k_1 \rho t} - 1\right) \right)}{k_1 - k_2} \label{eq: [HCO]+H2O->H3O(t)}
+\end{align}
+
 We want to probe the branching ratio of the formyl isomers formed in reactions \ref{r: C+H2O->HCO} and \ref{r: C+H2O->COH} at low temperatures. At room temperatures, the branching ratio has been found to be approximately 84:16 (\ce{COH+}:\ce{HCO+})\cite{Freeman1987}, but unexplored at lower regimes.
 
 By definition, these formyl isomers of reactions \cref{r: C+H2O->HCO,r: C+H2O->COH} have identical mass and thus, cannot be readily read off by the TOF system. To be able to separate the isomer products, we need to be able to separate their masses. By introducing a gas into the system with a proton affinity in between the isomer products, we may selectively react only one the less stable \ce{COH+} isomer. This also yields a distinct $m/z$ peaks due to each isomer. By using an external gas, we are doing an indirect measurement, and as such, it may add unintended complications. Certain gasses are more reactive and may react with the excited \ce{Be+}, \ce{C+}, or any other ionized species in the trap. Another possibility is that the \ce{COH+} may isomerize due to interactions with the gas(\ref{r: X+COH->XH}).\cite{Love1987}

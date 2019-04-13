@@ -38,7 +38,7 @@
 %                          PRELIMINARY PAGES                           %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\title          {Towards Quantum State Resolved Ion-Molecule Chemistry}
+\title          {Integrated Cryogenic Buffer Gas Beam, Linear Quadrupole Trap, and Time of Flight Mass Spectrometer for Low Temperature Ion-Molecule Chemistry}
 \author         {Gary Chen}
 % Note: department is really your area of research.  I.e. leave out 'Department of'.
 \department     {Physics}
@@ -96,8 +96,15 @@
 
 \chapter{The Cryogenic Buffer Gas Beam (CBGB)}
 \input{chapters/CBGB_intro}
-	\section{Design Considerations}
+
+	\section{Design}
 	\input{chapters/CBGB_design}
+	
+		\subsection{Heat Load and Thermal Conductivity}
+		\input{chapters/CBGB_heat_load}
+		
+		\subsection{Gas Fill Lines}
+		\input{chapters/water_fill_line}
 	
 	\section{Beam Density and Extraction}
 	\input{chapters/CBGB_beam_density_extraction}
@@ -105,48 +112,61 @@
 	\section{Beam Velocity}
 	\input{chapters/CBGB_beam_velocity}
 
-\chapter{Linear Quadrupole Trap (LQT)}
+\chapter{Trapping and Cooling Ions}
 \input{chapters/ion_trap_intro}
 
 	\section{Ion Trapping}
 	\input{chapters/ion_trapping}
-
-	\section{Dual Species Loading}
-	\input{chapters/dual_loading}
+	
+	\section{Vacuum Requirements}
+	\input{chapters/vacuum_requirements}
+	
+	\section{\ce{^9Be+} Laser Cooling}
+	\input{chapters/Be_cooling}
 
 	\section{Time of Flight Mass Spectrometer (TOF-MS)}
 	\input{chapters/TOF_intro}
-%
-%\chapter{\ce{Be+(^2S1/2 / ^2P3/2) + H2O}}
-%	\section{Optical Control of Reactions between Water and Laser-Cooled \ce{Be+} Ions}
-%	\input{chapters/Be_H2O_paper}
-%
-%\chapter{\ce{Be+ + H2O/HOD/D2O}}
-%	\section{Isotope-selective chemistry in the \ce{Be+(^2S1/2) + HOD} \ce{-> BeOD+ / BeOH+ + H/D reaction}}
-%	\input{chapters/Be_HOD}
-%
-%\chapter{\ce{Be+ + O2}}
-%	\input{chapters/Be_O2}
-%
-%\chapter{\ce{C+ + H2O}}
-%	\section{Formyl Isomer Branching Ratio}
-%	\input{chapters/formyl_isomers}
-%
-%	\section{\ce{CO2} Titration}
-%	\input{chapters/CO2_titration}
-%
-%	\section{\ce{^{15}N2} Titration}
-%	\input{chapters/N2_titration}
-%
-%\chapter{Conclusion and Future Outlook}
-%	\input{chapters/conclusion}
-%
-%\appendix
-%	\chapter{Average Dipole Orientation Theory (ADO)}
-%	\input{chapters/ADO}
-%
-%	\chapter{Statistical State Counting}
-%	\input{chapters/state_counting}
+	
+	\section{Dual Species Loading}
+	\input{chapters/dual_loading}
+	
+\chapter{Pseudo-First Order Reaction}
+\input{chapters/pseudo_first_order}
+
+\chapter{\ce{Be+(^2S1/2 / ^2P3/2) + H2O}}
+	\section{Optical Control of Reactions between Water and Laser-Cooled \ce{Be+} Ions}
+	\input{chapters/Be_H2O_paper}
+
+\chapter{\ce{Be+ + H2O/HOD/D2O}}
+	\section{Isotope-selective chemistry in the \ce{Be+(^2S1/2) + HOD} \ce{-> BeOD+ / BeOH+ + H/D reaction}}
+	\input{chapters/Be_HOD}
+
+\chapter{\ce{Be+ + O2}}
+	\input{chapters/Be_O2}
+
+\chapter{\ce{C+ + H2O}}
+	\section{Formyl Isomer Branching Ratio}
+	\input{chapters/formyl_isomers}
+
+	\section{\ce{CO2} Titration}
+	\input{chapters/CO2_titration}
+
+	\section{\ce{^{15}N2} Titration}
+	\input{chapters/N2_titration}
+	
+		\subsection{Estimate Isomerization}
+		\input{chapters/estimate_isomerization}
+
+\chapter{Conclusion and Future Outlook}
+	\input{chapters/conclusion}
+
+\appendix
+	
+	\chapter{Average Dipole Orientation Theory (ADO)}
+	\input{chapters/ADO}
+
+	\chapter{Statistical State Counting}
+	\input{chapters/state_counting}
 
 
 %\renewcommand{\refname}{Bibliography} % You can change the name of References here

@@ -138,7 +138,7 @@ From here, two situations arise:
 	    \bar{\theta}_2  = \frac{\int_0^\pi \frac{\theta \sin(\theta) d\theta}{\sqrt{E_2 + q \mu_D/r^2 \cos(\theta)}}}{\int_0^\pi \frac{\sin(\theta) d \theta}{\sqrt{E_2 + q \mu_D/r^2 \cos(\theta)}}}
 	\end{equation}
 
-	We no longer have bounds on the angles the dipole is allowed over, but the behaviour is still dependent on the strength of the internal energy and dipole force.
+	We no longer have bounds on the angles the dipole is allowed over, but the behavior is still dependent on the strength of the internal energy and dipole force.
 
 	\begin{figure}[H]
 		\label{fig: theta2}
@@ -168,14 +168,14 @@ For diatomics, we can use:
 We can then use equation $\ref{eq: k int}$ and get a cross section and rate constant. The form is similar to that of just a Langevin term, but now with a dipole interaction term added onto it. All of the terms aside from $C$ come from the integration over a Boltzmann distribution, where then averaging over the angles is wrapped up into the $C$ term.
 
 \begin{equation}
-    \boxed{k_{ADO} = \frac{2 \pi e}{\sqrt{\mu}}\left(\sqrt{\alpha}+C \mu_D\sqrt{\frac{2}{\pi k_B T}}\right)}
+    k_{ADO} = \frac{2 \pi e}{\sqrt{\mu}}\left(\sqrt{\alpha}+C \mu_D\sqrt{\frac{2}{\pi k_B T}}\right)
 \end{equation}
 
-The dipole locking constant ($C$) can be numerically solved by iteratively integrating over combinations of $\mu_D$ and $\alpha$, or by looking at figure \ref{fig: C}.\cite{Su1973}\cite{Troe1985}
+The dipole locking constant ($C$) can be numerically solved by iteratively integrating over combinations of $\mu_D$ and $\alpha$.\cite{Su1973}\cite{Troe1985}
 
-\begin{figure}[H]
-	\label{fig: C}
-	\centering
-	\includegraphics[width=0.8\textwidth]{images/ADO_C.pdf}
-	\caption{Dipole locking constant $C$ parameterized by the dipole moment $\mu_D$ and polarizability $\alpha$.\cite{Su1973}}
-\end{figure}
+%\begin{figure}[H]
+%	\label{fig: C}
+%	\centering
+%	\includegraphics[width=0.8\textwidth]{images/ADO_C.pdf}
+%	\caption{Dipole locking constant $C$ parameterized by the dipole moment $\mu_D$ and polarizability $\alpha$.\cite{Su1973}}
+%\end{figure}

@@ -36,6 +36,41 @@ direct readings from analog scans with deuterated samples were then adjusted to 
 	P_{\ce{D2O}} & = \frac{R_{20}}{\alpha}
 \end{align}
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{images/Be_HOD_p_state.png}
+	\caption{}
+	\label{}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{images/Be_HOD_TOF.png}
+	\caption{}
+	\label{}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{images/Be_HOD_RGA.png}
+	\caption{}
+	\label{}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{images/Be_HOD_shared_fit.png}
+	\caption{}
+	\label{}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{images/Be_HOD_H_frac.png}
+	\caption{}
+	\label{}
+\end{figure}
+
 \section{Results and Discussion}
 
 Because the \ce{HOD} sample also contains both \ce{H2O} and \ce{D2O}, the product \ce{BeOH+} ($m/z = 26$) has contributions of the reaction of the cation with \ce{H2O}, while \ce{BeOD+} ($m/z = 27$) has contributions from reactions with \ce{D2O}. The reactions of interest are:
@@ -124,10 +159,10 @@ Where we let $\alpha = 0.744$ and $\beta=0.256$ per the SRS RGA software. Where 
 Now that we can characterize the pressures in the chamber more accurately, we then consider the possible reactions between the \ce{Be+} and water isotopologues:
 
 \begin{align}
-	Be^+ + H_2O & \rightarrow BeOH^+ + H \\
-	Be^+ + HOD & \rightarrow BeOH^+ + H \label{eq: beoh} \\
-	 & \rightarrow BeOD^+ + H \label{eq: beod} \\
-	Be^+ + D_2O & \rightarrow BeOD^+ + D
+	\ce{Be+ + H2O & -> BeOH+ + H} \\
+	\ce{Be+ + HOD & -> BeOH+ + H} \label{eq: beoh} \\
+	\ce{& -> BeOD+ + H} \label{eq: beod} \\
+	\ce{Be^+ + D2O & -> BeOD+ + D}
 \end{align}
 
 Which can then be written as a system of differential equations.
