@@ -1,31 +1,46 @@
-To produce a beam of cold particles, various components need to be held within specific temperature ranges to ensure proper operation. Considering neon as the buffer gas species of choice, the experimental cell needs to be maintained at ~20K to prevent the neon from freezing to the walls and maintain a high stagnation density that allows for tuning of the flow regime. Conversely, we need the cryopumping shield surrounding the experimental cell to maintain a temperature $<17K$ so that the neon that escapes the cell is readily captured, as the turbo connected to the stem chamber cannot keep up with the gas load. A lack of proper cryopumping results in high densities in the chamber, which scatters the beam.
+To produce a beam of cold particles, various components need to be held within specific temperature ranges to ensure proper operation. Considering neon as the buffer gas species of choice, we maintain the experimental cell at ~20 K to prevent the neon from freezing to the walls and maintain a high stagnation density that allows for tuning of the flow regime. Conversely, we need the cryopumping shield surrounding the experimental cell to maintain a temperature $<17$ K so that the neon that escapes the cell is readily captured, as the turbo connected to the stem chamber cannot keep up with the gas load. A lack of proper cryopumping results in high densities in the chamber, which scatters the beam.
 
-The PTR 40K cooling stage has 40W of cooling power, while the lowest 4K stage has only 4W. The low cooling power of the lowest stage means that extra care is needed to minimize the heat transfer to the stage from the higher temperature regions including black body radiation and conducted heat from high temperature surfaces.
+The PTR 40 K cooling stage has 40 W of cooling power, while the lowest 4 K stage has only 4 W. The low cooling power of the lowest stage means that extra care is needed to minimize the heat transfer to the stage from the higher temperature regions including black body radiation and conducted heat from high temperature surfaces.
 
-Material choices used in the CBGB are dictated by their thermal conductivity down to the temperature ranges of interest. At room temperature, thermal conductivity ($k$) of a material is dominated by transfer of energy via phonons through the material. In this regime, different alloys and purities of a material do not greatly affect the conductivity. But once we enter cryogenic temperatures, the conductivity is dominated by electron motion through the material, meaning that purer samples have fewer imperfections to scatter off of, yielding higher conductivities. At these temperatures, it's convenient to characterize the conductivity of a material with the residual resistance ratio ($RRR=\frac{R(T=295K)}{R(T=4K)}$), which can be related to the thermal conductivity with the Wiedemann-Franz Law.\cite{White2009}
+Material choices used in the CBGB are dictated by their thermal conductivity down to the temperature ranges of interest. At room temperature, thermal conductivity ($k$) of a material is dominated by transfer of energy via phonons through the material. In this regime, different alloys and purities of a material do not greatly affect the conductivity. But once we enter cryogenic temperatures, the conductivity is dominated by electron motion through the material, meaning that purer samples have fewer imperfections to scatter off of, yielding higher conductivities.
 
-Al 6061 was chosen for the radiation shield for its thermal conductivity ($k_{Al6061}(T=40K) = 70$W/(m K)\cite{NIST}), ease of machining, as well as lightweight properties. The thermal mass of the aluminum shield coupled with its relatively lower thermal conductivity (compared to Cu 10100) means the cool down of this region limits the cool down process to ~6hr until at workable temperatures. The face of the aluminum shield coinciding with the outgoing buffer gas beam was fitted with a set of stacked chevron baffles as seen in figure \ref{fig: SW chamber}. The baffle design blocks stray light from entering the radiation shield, while enabling gas to pass from the enclosed shields into the stem region, preventing high density regions from forming and scattering the beam. Conversely, the baffles allow for gas within the stem region to reenter the cryogenic shields and facilitate cryopumping of stray particles.
+Al 6061 was chosen for the radiation shield for its thermal conductivity ($k_{Al6061}(T=40$ K)$ = 70$ W/(m K)\cite{NIST}), ease of machining, as well as lightweight properties. The thermal mass of the aluminum shield coupled with its relatively lower thermal conductivity (compared to Cu 10100) means the cool down of this region limits the cool down process to ~6 hr until at workable temperatures. The face of the aluminum shield coinciding with the outgoing buffer gas beam was fitted with a set of stacked chevron baffles as seen in figure \ref{fig: SW chamber}. The baffle design blocks stray light from entering the radiation shield, while enabling gas to pass from the enclosed shields into the stem region, preventing high density regions from forming and scattering the beam. Conversely, the baffles allow for gas within the stem region to reenter the cryogenic shields and facilitate cryopumping of stray particles.
 
-The copper region contains the experimental cell, encompassed by a copper enclosure that acts as a cryopumping surface at the appropriate temperatures. Cu 10100, or oxygen free copper, was chosen for these components for its high thermal conductivity through to 4K, $RRR=2000$, $k_{Cu10100}(4K) = 10^4$W/(m K)\cite{NIST}. Because it is heat sunk into the same cooling stage as the experimental cell, the copper enclosure does not act as a radiation shield for it does not redirect the heat load away from the experimental cell's cooling surfaces. To maintain a beam, while still cryopumping, the experimental cell is held at a temperature higher than that of the cryopumping shield, the cell is connected to the shield with a SS316 stand off, which has poor thermal conductivity, especially at lower temperatures. A resistive heater and temperature sensor diode (DT-670) are mounted to the cell and controlled with a Lakeshore controller (Model 325) to maintain a set point temperature.
+The copper region contains the experimental cell, enclosed by a copper shield that acts as a cryopumping surface at the appropriate temperatures. At cryogenic temperatures, it's convenient to characterize the conductivity of a copper with the residual resistance ratio ($RRR=\frac{R(T=295\text{ K})}{R(T=4\text{ K})}$), where $R(T)$ is the measured resistance at temperature $T$, which can be related to the thermal conductivity with the Wiedemann-Franz Law.\cite{White2009} Cu 10100, or oxygen free copper, was chosen for these components for its high thermal conductivity through to 4 K, $RRR=2000$, $k_{Cu10100}(4\text{ K}) = 10^4$ W/(m K) compared to \todo{not 10100 copper conductivity}\cite{NIST}.
 
-The main heat loads onto the system are those from the black body radiation, as well as the stainless steel rods supporting the shields from the top mounting plate. The heat load and transient solutions over the system may be determined by solving the heat/diffusion equation.
+Because it is heat sunk into the same cooling stage as the experimental cell, the copper shield does not act as a radiation shield for it does not redirect the heat load away from the experimental cell's cooling surfaces. For the experimental cell to hold an appreciable vapor pressure, while the thermally linked shield acts as a cryopumping surfaces, the two components will need to held at different temperatures. The experimental cell is held at a higher temperature than that of the cryopumping shield with a resistive heater, which is monitored and controlled with a temperature sensor diode (DT-670) and a Lakeshore controller (Model 325). A SS316 ($k_{SS316}(T=40\text{ K}) \approx 7\text{ W/(m K)}$) stand off is used to create a poor thermal bridge between the two regions, allowing for a constant thermal gradient.
+
+The main heat loads onto the system are those from the black body radiation, as well as the stainless steel rods supporting the shields from the top mounting plate. The temperature over the system may be determined by solving the heat/diffusion equation given proper boundary conditions.
 
 \begin{equation}
 	\frac{\partial u(x, t)}{\partial t} = D \nabla^2 u(x, t)
 \end{equation}
 
+To first order, we use Fourier's Law to approximate the conductive heat loads through individual pieces.
+
 \begin{equation}
-	\dot{Q} = \frac{A}{l}\int_{T_1}^{T_2} \lambda(T) dT
+	\dot{Q} = \frac{A}{l}\int_{T_1}^{T_2} k(T) dT
+	\label{eq: fourier law}
 \end{equation}
+
+Where $\dot{Q}$ is the rate of heat transfer, $A$ is the cross sectional area of the component in question, $l$ is the length of the component, and $k(T)$ is the thermal conductivity as a function of temperature. For simplicity, we approximate the conductance at the expected steady state temperature.
 
 \begin{equation}
 	E = \sigma T^4
 \end{equation}
 
+This is the equation for the energy of BBR
+
 \begin{equation}
-	\lambda_{max}T \approx 2900\mu \text{m K}
+	\lambda_{max}T \approx 2900\mu \text{ m K}
 \end{equation}
+
+This is the approximate peak wavelength emitted by a body given the temperature.
 
 \begin{equation}
 	\dot{Q} = \sigma A (T_1^4 - T_2^4)\frac{\epsilon_1 \epsilon_2}{\epsilon_1 + \epsilon_2 - \epsilon_1 \epsilon_2}
 \end{equation}
+
+Considering two surfaces, we find this as the form of the power incident as a function of both surface emissivities.
+
+\todo{talk about numbers}

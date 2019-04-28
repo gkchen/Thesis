@@ -1,7 +1,13 @@
-% !TEX root = ../thesis.tex
 With our dual ablation system, we can reliably co-trap carbon and beryllium ions and introduce cold molecules from the CBGB. Introducing water entrained in a cold neon buffer gas beam, we can see the reaction products due to these collisions. The internal temperature of the buffer gas in the beam is verified to be, which is defined by the temperature of the inner cell.
 
 We do not expect any reactions to occur with the cold neon buffer gas. We have experimentally verified the absence of new mass peaks when introducing neon into the system with carbon and beryllium ions, only an overall loss rate attributed to elastic collisions within the trap. \todo{Add graphs of fluorescence decay}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{images/Be_noble_gasses.png}
+	\caption{Gasses}
+	\label{fig: Be noble gasses}
+\end{figure}
 
 Conversely, the water molecules will react readily with both beryllium and carbon ions, where the prevailing beryllium reactions are \cref{r: Be(S)+H2O->BeOH,r: Be(P)+H2O->BeOH,r: Be(P)+H2O->H2O}. Considering the known reaction products of \ce{C+ + H2O}:
 
@@ -12,9 +18,10 @@ Conversely, the water molecules will react readily with both beryllium and carbo
 \end{align}
 
 \begin{align}
-	C(t) & = C_0 e^{-k_1 \rho t} \label{eq: C(t)+H2O} \\
-	[HCO](t) & = \frac{e^{-(k_1 + k_2) \rho t}}{k_1 - k_2} \left(e^{k_1 \rho t}((C_0 + [HCO]_0)k_1 - [HCO]_0 k_2) - C_0 e^{-(k_1 + k_2) \rho t}\right) \label{eq: C+H2O->[HCO](t)} \\
-	H_3O(t) & = \frac{\left([HCO]_0 e^{-k_2 \rho t} - (H_3O_0 + [HCO]_0) \right)(k_2 - k_1) + C_0\left( k_1 \left(1 - e^{-k_2 \rho t}\right) + k_2 \left(e^{-k_1 \rho t} - 1\right) \right)}{k_1 - k_2} \label{eq: [HCO]+H2O->H3O(t)}
+	\ce{C}(t) & = \ce{C0} e^{-k_1 \rho t} \label{eq: C(t)+H2O} \\
+	\ce{[HCO]}(t) & = \frac{e^{-(k_1 + k_2) \rho t}}{k_1 - k_2} \left(e^{k_1 \rho t}((\ce{C0} + \ce{[HCO]0})k_1 - \ce{[HCO]0} k_2) - \ce{C0} e^{-(k_1 + k_2) \rho t}\right) \label{eq: C+H2O->[HCO](t)} \\
+%	H_3O(t) & = \frac{\left([HCO]_0 e^{-k_2 \rho t} - (H_3O_0 + [HCO]_0) \right)(k_2 - k_1) + C_0\left( k_1 \left(1 - e^{-k_2 \rho t}\right) + k_2 \left(e^{-k_1 \rho t} - 1\right) \right)}{k_1 - k_2} \label{eq: [HCO]+H2O->H3O(t)}
+	\ce{H3O}(t) & = \ce{H3O0} + \ce{[HCO]0} (1 - e^{-k_2 \rho t}) + \frac{\ce{C0}\left( k_1 \left(1 - e^{-k_2 \rho t}\right) + k_2 \left(e^{-k_1 \rho t} - 1\right) \right)}{k_1 - k_2} \label{eq: [HCO]+H2O->H3O(t)}
 \end{align}
 
 We want to probe the branching ratio of the formyl isomers formed in reactions \ref{r: C+H2O->HCO} and \ref{r: C+H2O->COH} at low temperatures. At room temperatures, the branching ratio has been found to be approximately 84:16 (\ce{COH+}:\ce{HCO+})\cite{Freeman1987}, but unexplored at lower regimes.

@@ -1,4 +1,4 @@
-We may rewrite the equation \ref{eq: mb_distribution} as a function of the mean velocity $\bar{v}$ into a simpler form .
+Over the various flow regimes; effusive, intermediate, and supersonic, the forward velocity and distributions change drastically from ~150 m/s up to 800 m/s. We first consider the edge cases of the effusive and supersonic regimes. In the effusive regime, we make the assumption that the particles in the cell are non-interacting. We may rewrite the equation \ref{eq: mb_distribution} as a function of the mean velocity $\bar{v}$ into a simpler form .
 
 \begin{equation}
 	f(v) = \frac{32}{\pi^2} \frac{v^2}{\bar{v}^3} e^{-4v^2/\pi \bar{v}^2} \label{eq: mb_simplified}
@@ -19,11 +19,29 @@ For low Reynold's numbers (Re<1) the flow at the aperture is purely molecular, w
 
 The spread of the forward velocity of an effusive beam is the full width half max (FWHM) of the Maxwell-Boltzmann distribution: $\Delta\bar{v} \approx 1.5 \bar{v}$. As the Reynolds number increases, one can reach the supersonic regime (Re>100) where the forward velocity reaches $1.4\bar{v}$ and the distribution drastically narrows.\cite{Hutzler2011c,Pauly}
 
-But as the flow regime nears the supersonic regime, forward collisions around the aperture cause boosting of the average velocity as well as a decrease in the velocity spread. Changing the flow regime may also change the ratio of species in the beam as well.
+But as the flow regime nears the supersonic regime, forward collisions around the aperture cause boosting of the average velocity as well as a decrease in the velocity spread. \todo{Supersonic regime forward velocity equation, the one with the sqrt(blah blah) in pauly}
 
-A helium buffer gas held at 4K will have a slower forward velocity than that of a neon gas held at 17K. Despite this, it is preferable to use neon as a buffer gas due to its ideal cryopumping properties. Helium requires large amounts of activated charcoal, also held at low temperatures, to effectively cryopump. These volumes of charcoal can then become saturated and require purging, limiting one's operating time (few hours). Neon on the other hand, only requires a metal surface lower than 17K to create neon ice. The neon ice surface will then act as a cryopump for more neon gas as well, allowing for many hours of continuous operation with no appreciable build up of background gas. Our experiment uses neon as a buffer gas for its technical simplicity, the lower achievable temperature with the helium does not yield dramatic gains in the final reaction temperature.
+Supersonic beam velocities can be shown to be:\cite{Pauly}
 
-To better understand the reaction temperatures we will be able to reach, we need a characterization of the beam's velocity, more specifically, the velocity of the target species entrained within the buffer gas. By ablating ytterbium into the neon buffer gas, we find that the ytterbium is entrained within the neon and sympathetically cooled to the cell's temperature. As long as the target species number density is a trace amount in comparison to the bulk buffer gas number density (0.1\%), the flow characteristics are dominated by the buffer gas species \cite{Hutzler2012}. The forward velocity of the beam is not only parameterized by the temperature of the buffer gas species, it is also dependent on the flow regime. As we increase the flow of neon into the cell, figure \ref{fig: rga} shows a linear increase in the \ce{H2O} signal from a downstream RGA. This coincides with the beam operating within the intermediate flow regime, where there are few collisions at the cell aperture, resulting in a slight forward boosting and increased extraction efficiency of the target species. At higher flow regimes, entering the supersonic regime, we would see a "freeze out" where the forward velocity reaches $1.4\bar{v}$ and we would not see appreciable gains in species extraction \cite{Hutzler2012}. We chose to operate at a nominal neon flow rate of 30SCCM based upon the reaction rate of the ions downstream.
+\begin{equation*}
+	v_\infty = \sqrt{\frac{2 k_b T_0}{m}\frac{\gamma}{\gamma - 1}}
+\end{equation*}
+
+Where $\gamma$ is the heat capacity ratio $C_p/C_v$, and $T_0$ is the original temperature of the source.
+
+The intermediate regime in between the effusive and supersonic regimes is particularly difficult to model, for there are some collisions at the aperture, causing some boosting and narrowing, but not enough to treat the behavior as fully fluid-like. The section \ref{sec: beam density} results show that we can produce a beam in this intermediate regime by demonstrating clear hydrodynamic entrainment.
+
+To better understand the reaction temperatures we will be able to reach, we need a characterization of the beam's velocity, more specifically, the velocity of the target species entrained within the buffer gas. The ideal target species is one with a reliable loading method and can be directly detected in small amounts. Ytterbium metal is known to have good ablation properties and the produced neutrals have well known spectra. By ablating ytterbium foil inside of the experimental cell while the neon gas is being introduced, the ytterbium is cooled by the buffer gas and carried out of the cell. As long as the target species number density is a trace amount in comparison to the bulk buffer gas number density (0.1\%), the flow characteristics are dominated by the buffer gas species \cite{Hutzler2012}. Based upon the results of our direct RGA measurements of the beam density, we know that the cell parameters used in the previous measurement land us in the intermediate flow regime due to the clear evidence of hydrodynamic entrainment.
+
+To determine the velocity of the beam, we ablate an ytterbium target mounted inside the experimental cell where both neon and water are being introduced. The resulting beam is then hit with a 399 nm laser to excited the Yb isotope transitions. The laser is scanned over 3.5 GHz, encompassing all possible Yb isotope peaks. Two scans were taken, one with the 399 nm light perpendicular to the beam path, and the other where the laser is coming in with an angle of $57.3^\circ$. The resulting spectra are then fitted with summed Gaussian functions with predetermined isotopic shifts, giving us the center (\ce{^174Yb}) frequency, as well as the widths of the lines. The fitted shared widths give us a beam temperature of 20 K, which is exactly what the experimental cell was held to. Comparing the shift of the \ce{^174Yb} frequency between the transverse beam scan and the angled one, we can determine the forward velocity.
+
+\begin{equation}
+	\Delta f = \frac{\Delta v}{v} f \cos(\theta)
+\end{equation}
+
+\begin{figure}[H]
+	\missingfigure{Diagram of Yb beams}
+\end{figure}
 
 \begin{figure}[H]
 	\centering
@@ -31,7 +49,6 @@ To better understand the reaction temperatures we will be able to reach, we need
 	\caption{}
 	\label{fig: yb_spectrum_scan}
 \end{figure}
-\todo{find appropriate plot}
 
 \begin{figure}[H]
 	\centering
@@ -39,3 +56,5 @@ To better understand the reaction temperatures we will be able to reach, we need
 	\caption{}
 	\label{fig: yb_spectrum}
 \end{figure}
+
+We find that the Yb is entrained within the neon and sympathetically cooled to the cell's temperature. The water that is also introduced in the beam will also be at a similar temperature and forward velocity as long as the neon density is much larger than that of the water when the beam dynamics is dominated by the properties of the buffer gas species.s

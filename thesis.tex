@@ -26,6 +26,8 @@
 \usepackage{mhchem}
 \definecolor{linkcolor}{RGB}{0,0,240}
 \usepackage[sort,compress]{cleveref}
+\usepackage{rotating}
+\usepackage[final]{pdfpages}
 %\usepackage{bookmark}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -55,7 +57,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\dedication     {\textsl{Noodle and Nugget}}
+\dedication     {\textsl{?}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -93,6 +95,15 @@
 	
 	\section{Thesis Outline}
 	\input{chapters/thesis_outline}
+	
+\chapter{Chemical Rate Constants}
+	\input{chapters/pseudo_first_order}
+	
+	\section{Average Dipole Orientation Theory (ADO)}
+	\input{chapters/ADO}
+
+	\section{Statistical State Counting}
+	\input{chapters/state_counting}
 
 \chapter{The Cryogenic Buffer Gas Beam (CBGB)}
 \input{chapters/CBGB_intro}
@@ -106,11 +117,14 @@
 		\subsection{Gas Fill Lines}
 		\input{chapters/water_fill_line}
 	
-	\section{Beam Density and Extraction}
+	\section{Beam Density and Extraction} \label{sec: beam density}
 	\input{chapters/CBGB_beam_density_extraction}
 	
 	\section{Beam Velocity}
 	\input{chapters/CBGB_beam_velocity}
+	
+	\section{Beam Shuttering}
+	\input{chapters/CBGB_shuttering}
 
 \chapter{Trapping and Cooling Ions}
 \input{chapters/ion_trap_intro}
@@ -129,9 +143,6 @@
 	
 	\section{Dual Species Loading}
 	\input{chapters/dual_loading}
-	
-\chapter{Pseudo-First Order Reaction}
-\input{chapters/pseudo_first_order}
 
 \chapter{\ce{Be+(^2S1/2 / ^2P3/2) + H2O}}
 	\section{Optical Control of Reactions between Water and Laser-Cooled \ce{Be+} Ions}
@@ -162,11 +173,8 @@
 
 \appendix
 	
-	\chapter{Average Dipole Orientation Theory (ADO)}
-	\input{chapters/ADO}
-
-	\chapter{Statistical State Counting}
-	\input{chapters/state_counting}
+	\chapter{CBGB Drawings}
+	\input{chapters/drawings}
 
 
 %\renewcommand{\refname}{Bibliography} % You can change the name of References here
