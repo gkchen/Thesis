@@ -1,0 +1,11 @@
+# Be + H2 + H2O
+
+\text{nBe}(t)\to \text{Be0} e^{t (-(\text{k1} \text{p1}+\text{k2} \text{p2}))}
+\text{nBeH}(t)\to \frac{e^{-\text{k3} \text{p2} t} \left(\text{Be0} \text{k1} \text{p1} \left(e^{t (-(\text{k1} \text{p1}+\text{k2} \text{p2}-\text{k3} \text{p2}))}-1\right)-\text{BeH0} (\text{k1} \text{p1}+\text{p2} (\text{k2}-\text{k3}))\right)}{\text{p2} (\text{k3}-\text{k2})-\text{k1} \text{p1}}
+\text{nBeOH}(t)\to \frac{e^{-\text{k3} \text{p2} t} \left(\text{Be0} e^{t (-(\text{k1} \text{p1}+\text{p2} (\text{k2}-\text{k3})))} \left(\text{k1} \text{p1} e^{t (\text{k1} \text{p1}+\text{k2} \text{p2}-\text{k3} \text{p2})}-(\text{k1} \text{p1}+\text{k2} \text{p2}-\text{k3} \text{p2}) e^{\text{k1} \text{p1} t+\text{k2} \text{p2} t}+\text{p2} (\text{k2}-\text{k3})\right)+\left((\text{BeH0}+\text{BeOH0}) e^{\text{k3} \text{p2} t}-\text{BeH0}\right) (\text{p2} (\text{k3}-\text{k2})-\text{k1} \text{p1})\right)}{\text{p2} (\text{k3}-\text{k2})-\text{k1} \text{p1}}
+
+# Be + H2O/HOD/D2O
+
+\text{nBe}(t)\to \text{Be0} e^{t (-(\text{k1} \text{p1}+\text{k2} \text{p2}+\text{k3} \text{p3}))}
+\text{nBeOD}(t)\to \frac{\text{Be0} (\text{eta} \text{k2} \text{p2}+\text{k3} \text{p3}) \left(1-e^{t (-(\text{k1} \text{p1}+\text{k2} \text{p2}+\text{k3} \text{p3}))}\right)+\text{BeOD0} (\text{k1} \text{p1}+\text{k2} \text{p2}+\text{k3} \text{p3})}{\text{k1} \text{p1}+\text{k2} \text{p2}+\text{k3} \text{p3}}
+\text{nBeOH}(t)\to \frac{\text{Be0} (\text{k1} \text{p1}-(\text{eta}-1) \text{k2} \text{p2}) e^{t (-(\text{k1} \text{p1}+\text{k2} \text{p2}+\text{k3} \text{p3}))} \left(e^{t (\text{k1} \text{p1}+\text{k2} \text{p2}+\text{k3} \text{p3})}-1\right)+\text{BeOH0} (\text{k1} \text{p1}+\text{k2} \text{p2}+\text{k3} \text{p3})}{\text{k1} \text{p1}+\text{k2} \text{p2}+\text{k3} \text{p3}}
