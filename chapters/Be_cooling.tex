@@ -1,50 +1,34 @@
-Laser cooling for the \ce{^9Be+} ion is done with a Toptica TA-FHG Pro tuned to 313 nm with a peak power of 400 mW. The laser is detuned by 400 MHz from the \ce{^2S1/2} to \ce{^2P3/2} transition. We let the light
+Laser cooling for the \ce{^9Be+} ion is done with a Toptica TA-FHG Pro tuned to 313 nm with a peak power of 400 mW. The fundamental laser light is blue-detuned by 400 MHz from the \ce{^2S1/2} to \ce{^2P3/2} transition. The fundamental is then passed through a 400 MHz AOM to be on resonance with the transition. The unperturbed light is then double passed through another 400 MHz AOM to repump the population that has fallen into the \ce{2S1/2} state.
 
 \begin{figure}[H]
 	\centering
 	\missingfigure{Be electronic structure}
-	\caption{Electronic structure of \ce{^9Be+}. Laser cooling is done with 313 nm light tuned from the \ce{^2S1/2} to \ce{^2P3/2} state.}
-\end{figure}
-
-The scatter rate of two level system is defined as:
-
-\begin{equation}
-	\rho_{pp} = \frac{a}{2} \frac{s}{a+s+4(\delta/\Gamma)^2}
-\end{equation}
-
-\begin{equation}
-	f_L = \frac{a \Gamma}{\Delta^2 + \Gamma^2/4}
-\end{equation}
-
-\begin{equation}
-	I_s = \frac{\pi h c}{3 \lambda^3 \tau}
-\end{equation}
-
-\begin{equation}
-	s_0 = \frac{I}{I_s}
-\end{equation}
-
-Where $\rho_{pp}$ is the fraction of the population in the excited P-state, $s$ is the saturation parameter, $\Gamma$ is the transition linewidth, $\delta$ is the detuning from resonance, and $a$ is an overall scaling parameter encompassing all of the efficiencies associated with the optical collection and detection.
-
-
-Ideally, having a single ion in the trap while sweeping the frequency or power would allow us to determine the saturation parameter, and thus the fraction of \ce{Be+} in the excited \ce{^2P3/2} state. Due to the size and depth of our ion trap, we cannot reliably load only one ion. On top of that, the most common residual gasses in a vacuum chamber, \ce{H2O} and \ce{H2} both readily react with \ce{Be+} in the excited state. The pressures we reach, indicate that we may expect reaction rates of order once per 10 seconds.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.8\textwidth]{images/ion_images.png}
-	\caption{Set of ion images taken at various 313 nm powers with an algorithm that identifies individual ions}
-	\label{fig: ion image set}
-\end{figure}
-
-\newpage
-\begin{figure}[H]
-	\centering
-	\includegraphics[height=0.7\paperheight]{images/isolated_ions.png}
-	\caption{Individual ions identified from images in figure \ref{fig: ion image set}. Integrated fluorescence counts shown for each image as well as averaged value in brackets.}
+	\caption{Electronic structure of \ce{^9Be+}, laser cooling is done with 313 nm light.}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{images/P_state_curve.png}
-	\caption{P-state fraction curve fitted to incident laser power at a fixed detuning of $\omega_l = \omega_0 - \Gamma/2$.}
+	\missingfigure{Laser and AOM's}
+	\caption{AOM's running at 400 MHz are used to tune the initially blue detuned primary beam on resonance with the \ce{^2S1/2} to \ce{^2P3/2} transition. A double passed AOM tunes the primary beam to the \ce{^2S3/2} to \ce{^2P3/2} transition to re-pump any \ce{^2P3/2 -> ^2S3/2} decays. A third AOM creates a first order beam 200 MHz red to aid the capture of hot ablated \ce{Be+} ions.}
 \end{figure}
+
+As we excite the cooling transition, force is being imparted onto the ion via absorption of the photons and spontaneous emission. We can define the force to be the product of the scattering rate of a two level system and the momentum of each photon.
+
+\begin{align}
+	F & = p \Gamma \rho_{pp} \nonumber \\
+	& = \hbar k \Gamma \frac{1}{2} \frac{s}{1+s+4\left(\frac{\delta-\vec{k}\cdot \vec{v}}{\Gamma}\right)^2} \label{eq: laser force}
+\end{align}
+
+Where $k$ is the photon's wavenumber, $\Gamma$ is the linewidth of the excited transition, and $\rho_{pp}$ is the probability of finding the ion in the excited \ce{^2P3/2} state characterized by the saturation parameter $s = I/I_s=I/(\frac{\pi h c}{3 \lambda^3 \tau})$ and laser detuning $\delta=\omega_0-\omega_l$. We can see that the force the ion feels is dependent on the laser detuning from resonance, which in turn is dependent on the doppler shift of the ion with respect to the laser $\vec{k} \cdot \vec{v}$. In general, the laser frequency ($\omega_l$) is red detuned from the cooling transition ($\omega_l < \omega_0$). In this instance, if the ion is moving towards the laser such that the velocity ($v$) and $k$ vector are anti-aligned, we see a positive doppler shift in the frequency ($+kv$), decreasing the effective detuning, increasing the scattering rate. When the ion is moving away from the laser while $\omega_l < \omega_0$ is true, we see that the detuning increases, lowering the scattering rate. Each time the ion absorbs a photon, it gains a momentum kick in the photon's direction, meaning the ion preferentially absorbs light that causes it to lose momentum. After absorption, the ion emits a photon after $\tau=\Gamma^{-1}$ time, isotropically, which averages to zero. We can Taylor expand equation \ref{eq: laser force} for small values of $v$ to find this velocity dependence.
+
+\begin{equation*}
+	F(v) = F(v=0) + \beta v
+\end{equation*}
+
+Where we define the damping coefficient:
+
+\begin{equation*}
+	\beta= 4 \hbar k^2 \frac{s \frac{\delta}{\Gamma}}{1+s+4\left(\frac{\delta}{\Gamma}\right)^2}
+\end{equation*}
+
+Since the ion trap is not a perfect harmonic potential, which would require hyperbolic trap electrodes, the ion's trajectory is mixed along each axis, allowing for the 3 dimensional laser cooling with just one beam angled from both radial and axial axes of the trap.

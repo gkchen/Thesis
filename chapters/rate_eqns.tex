@@ -1,0 +1,28 @@
+Rate equations used in the shared fitting programs.
+
+\section{\ce{Be+ + H2O + H2}}
+
+Differential forms for background reactions
+
+
+\section{\ce{Be+ + H2O/HOD/D2O}}
+
+
+\section{\ce{C+ + H2O}}
+
+Differential forms for \ref{r: C+H2O->HCO}, \ref{r: C+H2O->HOC}, and \ref{r: [HCO]+H2O->H3O}.
+
+\begin{align}
+	\dot{\ce{C}}(t) & = -k_1 \rho \ce{C}(t) \\
+	\dot{\ce{[HCO]}}(t) & = \rho(k_1 \ce{C}(t) + k_2 \ce{[HCO]}(t)) \\
+	\dot{\ce{H3O}}(t) & = k_2 \rho \ce{[HCO]}(t)
+\end{align}
+
+For which, the solutions are:
+
+\begin{align*}
+	\ce{C}(t) & = \ce{C0} e^{-k_1 \rho t} \\
+	\ce{[HCO]}(t) & = \frac{e^{-(k_1 + k_2) \rho t}}{k_1 - k_2} \left(e^{k_1 \rho t}((\ce{C0} + \ce{[HCO]0})k_1 - \ce{[HCO]0} k_2) - \ce{C0} e^{-(k_1 + k_2) \rho t}\right) \\
+	%	H_3O(t) & = \frac{\left([HCO]_0 e^{-k_2 \rho t} - (H_3O_0 + [HCO]_0) \right)(k_2 - k_1) + C_0\left( k_1 \left(1 - e^{-k_2 \rho t}\right) + k_2 \left(e^{-k_1 \rho t} - 1\right) \right)}{k_1 - k_2} \label{eq: [HCO]+H2O->H3O(t)}
+	\ce{H3O}(t) & = \ce{H3O0} + \ce{[HCO]0} (1 - e^{-k_2 \rho t}) + \frac{\ce{C0}\left( k_1 \left(1 - e^{-k_2 \rho t}\right) + k_2 \left(e^{-k_1 \rho t} - 1\right) \right)}{k_1 - k_2}
+\end{align*}

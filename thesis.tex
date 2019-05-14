@@ -102,8 +102,8 @@
 	\section{Average Dipole Orientation Theory (ADO)}
 	\input{chapters/ADO}
 
-	\section{Statistical State Counting}
-	\input{chapters/state_counting}
+%	\section{Statistical State Counting}
+%	\input{chapters/state_counting}
 
 \chapter{The Cryogenic Buffer Gas Beam (CBGB)}
 \input{chapters/CBGB_intro}
@@ -119,6 +119,12 @@
 	
 	\section{Beam Density and Extraction} \label{sec: beam density}
 	\input{chapters/CBGB_beam_density_extraction}
+		
+		\subsection{Direct Beam Measurement and Parameterization}
+		\input{chapters/beam_detection}
+	
+		\subsection{Beam Density at Ion Trap}
+		\input{chapters/trap_beam_density}
 	
 	\section{Beam Velocity}
 	\input{chapters/CBGB_beam_velocity}
@@ -137,6 +143,12 @@
 	
 	\section{\ce{^9Be+} Laser Cooling}
 	\input{chapters/Be_cooling}
+	
+	\section{Imaging System}
+	\input{chapters/imaging}
+	
+	\section{Determining Excited state}
+	\input{chapters/fluorescence_detection}
 
 	\section{Time of Flight Mass Spectrometer (TOF-MS)}
 	\input{chapters/TOF_intro}
@@ -149,32 +161,42 @@
 	\input{chapters/Be_H2O_paper}
 
 \chapter{\ce{Be+ + H2O/HOD/D2O}}
-	\section{Isotope-selective chemistry in the \ce{Be+(^2S1/2) + HOD} \ce{-> BeOD+ / BeOH+ + H/D reaction}}
+	\section{Isotope-selective chemistry in the Be$^+$($^2$S$_{1/2}$) + HOD $\rightarrow$ BeOD$^+$/BeOH$^+$ + H/D reaction}
 	\input{chapters/Be_HOD}
 
-\chapter{\ce{Be+ + O2}}
+\chapter{\ce{O2} Titration}
+	\section{\ce{Be+ + O2}}
 	\input{chapters/Be_O2}
+	
+	\section{\ce{C+ + O2}}
+	\input{chapters/C_O2}
 
-\chapter{\ce{C+ + H2O}}
-	\section{Formyl Isomer Branching Ratio}
+\chapter{Low Temperature \ce{C+ + H2O}}
+	\section{Formyl Isomer Production}
 	\input{chapters/formyl_isomers}
 
-	\section{\ce{CO2} Titration}
-	\input{chapters/CO2_titration}
+%	\section{\ce{CO2} Titration}
+%	\input{chapters/CO2_titration}
 
 	\section{\ce{^{15}N2} Titration}
 	\input{chapters/N2_titration}
 	
-		\subsection{Estimate Isomerization}
-		\input{chapters/estimate_isomerization}
+		\subsection{Branching Ratio Determination}
+		\input{chapters/n2_ratio}
+	
+%		\subsection{Estimate Isomerization}
+%		\input{chapters/estimate_isomerization}
 
 \chapter{Conclusion and Future Outlook}
 	\input{chapters/conclusion}
 
 \appendix
-	
-	\chapter{CBGB Drawings}
-	\input{chapters/drawings}
+
+\chapter{Chemical Rate Equations}
+\input{chapters/rate_eqns}
+
+\chapter{CBGB Drawings}
+\input{chapters/drawings}
 
 
 %\renewcommand{\refname}{Bibliography} % You can change the name of References here

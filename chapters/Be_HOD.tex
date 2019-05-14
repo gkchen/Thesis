@@ -101,80 +101,80 @@ To shed more light onto the preference of the \ce{H + BeOD+} channel in the \ce{
 
 To summarize, chemical reactions between \ce{Be+(^2S1/2)} and \ce{HOD} have been investigated using an integrated ion trap and highresolution TOF-MS and ZPE corrected QCT calculations on an accurate global PES. Two product channels have been observed and the branching to \ce{BeOD+ + H} is accurately determined to be $0.58 \pm 0.14$. The experimental result is in good agreement with ZPE corrected QCT calculation result ($0.61 \pm 0.02$) as well as close to the statistical PST model (~0.67), which reveals that the branching to the two product channels is largely due to the availability of different open states in each channel. Since their rate coefficients deviate from the capture limit as reported in our earlier work, it is clear that the \ce{Be+(2S1/2) + H2O/D2O/HOD} reactions have a non-negligible non-statistical component. Interestingly, however, the good prediction of the branching ratio by the statistical model discussed above suggests that the formation of the products is largely statistical. This conclusion is further supported by the forward–backward symmetry of the calculated DCSs.
 
-\section{Notes}
-
-We mix "equal" amounts of \ce{H2O} and \ce{D2O} and leave it overnight to produce roughly 1:2:1 ratio of \ce{H2O}:\ce{HOD}:\ce{D2O} as roughly verified by the RGA. If we consider being a singular oxygen atom looking at a sea of \ce{H2O} and \ce{D2O}, it has a 1/4 probability of grabbing H or D twice. It then has a 1/2 chance of grabbing an H and D in either order, which gives us the 1:2:1 ratio.
-
-To generalize this, we can write the fraction of \ce{H2O} in the sample to be $\gamma$ and the \ce{D2O} to be $1-\gamma$. The probabilities of yielding any combination is then found quickly:
-
-\begin{align}
-	\ce{H2O}& = \gamma^2 \\
-	\ce{HOD}& = 2\gamma(1-\gamma) \\
-	\ce{D2O}& = (1-\gamma)^2
-\end{align}
-
-For the sake of readability, let (\ce{H2O}, \ce{HOD}, \ce{D2O}) be represented as (1, 2, 3) respectively.
-
-\begin{figure}[H]
-	\label{fig: mixture}
-	\centering
-	\includegraphics[width=0.8\textwidth]{images/Be_HOD_isotopologues.png}
-	\caption{}
-\end{figure}
-
-Reading water with an RGA causes some known fractionation, where the \ce{H2O} is broken into its constituents, including \ce{OH+} and \ce{O+}. We expect then to see a lower mass 18 peak than normal, to truly know what the ratios are, we have to calibrate the RGA ourselves.
-
-Possible fractionation pathways:
-
-\begin{align}
-	P'_{18} = & \alpha P_{\ce{H2O}} + \beta (\frac{P_{\ce{HOD}}}{2}+P_{\ce{D2O}}) \\
-	P'_{19} = & \alpha P_{\ce{HOD}} \\
-	P'_{20} = & \alpha P_{\ce{D2O}} \\
-	P'_{17} = & \beta (\frac{P_{\ce{HOD}}}{2} + P_{\ce{H2O}}) \\
-	P'_{16} = & \gamma (P_{\ce{H2O}} + P_{\ce{HOD}} + P_{\ce{D2O}}) \\
-	1 = & \alpha + \beta + \gamma
-\end{align}
-
-By solving this system of equations, we get 76.8\% of the real value as cited by the RGA program itself; this is also true for \ce{HOD} and \ce{D2O}. Of that lost 23.2\%, 18.4\% goes to \ce{OH+}, but for the isotopogues of \ce{HOD} and \ce{D2O}, we would need to consider which mass signal it will add to. No other mode of fractionation will contribute to the other water isotopologue peaks
-
-\begin{align}
-	P'_1 & = \alpha P_1 + \beta P_3 + \frac{\beta}{2} P_2 \\
-	P'_2 & = \alpha P_2 \\
-	P'_3 & = \alpha P_3
-\end{align}
-
-Where we let $\alpha = 0.744$ and $\beta=0.256$ per the SRS RGA software. Where P is the real pressure accounting for fractionation, and P' is the raw observed pressure value. Solving for the real pressure, we find:
-
-\begin{align}
-	P_1 & = \frac{1}{\alpha}\left(P'_1 - \frac{\beta}{\alpha}P'_3 - \frac{\beta}{2\alpha} P'_2\right) \\
-	P_2 & = \frac{P'_2}{\alpha} \\
-	P_3 & = \frac{P'_3}{\alpha}
-\end{align}
-
-\section{\ce{Be+ + HOD} branching ratio}
-
-Now that we can characterize the pressures in the chamber more accurately, we then consider the possible reactions between the \ce{Be+} and water isotopologues:
-
-\begin{align}
-	\ce{Be+ + H2O & -> BeOH+ + H} \\
-	\ce{Be+ + HOD & -> BeOH+ + H} \label{eq: beoh} \\
-	\ce{& -> BeOD+ + H} \label{eq: beod} \\
-	\ce{Be^+ + D2O & -> BeOD+ + D}
-\end{align}
-
-Which can then be written as a system of differential equations.
-
-\begin{align}
-	\dot{Be}(t) & = -(k_1\rho_1+k_2\rho_2+k_3\rho_3)Be(t) \\
-	\dot{BeOH}(t) & = (k_1\rho_1+(1-\eta)k_2\rho_2)Be(t) \\
-	\dot{BeOD}(t) & = (k_3\rho_3+\eta k_2\rho_2)Be(t)
-\end{align}
-
-We are interested in reactions \ref{eq: beoh} and \ref{eq: beod} and the ratio between the two ($\eta$), which is not directly found from the ratio of the production rates of the two ions. Since this is a ratio, we don't need to concern ourselves with calculating the density ($\rho$), the RGA pressure is fine.
-
-\begin{align}
-	\beta \equiv \frac{\dot{BeOD}}{\dot{BeOH}} & = \frac{k_3P_3 + \eta k_2P_2}{k_1P_1 + (1-\eta)k_2P_2} \\
-	\eta & = \frac{\beta(k_1P_1 + k_2P_2)-k_3P_3}{k_2P_2(1+\beta)}
-\end{align}
-
-The theorists found that the statistical value of the reaction is around 3, but with dynamics, tends towards $\frac{\eta}{1-\eta} = 1.7$ or $\eta=0.63$ for Be$^+$(S).
+%\section{Notes}
+%
+%We mix "equal" amounts of \ce{H2O} and \ce{D2O} and leave it overnight to produce roughly 1:2:1 ratio of \ce{H2O}:\ce{HOD}:\ce{D2O} as roughly verified by the RGA. If we consider being a singular oxygen atom looking at a sea of \ce{H2O} and \ce{D2O}, it has a 1/4 probability of grabbing H or D twice. It then has a 1/2 chance of grabbing an H and D in either order, which gives us the 1:2:1 ratio.
+%
+%To generalize this, we can write the fraction of \ce{H2O} in the sample to be $\gamma$ and the \ce{D2O} to be $1-\gamma$. The probabilities of yielding any combination is then found quickly:
+%
+%\begin{align}
+%	\ce{H2O}& = \gamma^2 \\
+%	\ce{HOD}& = 2\gamma(1-\gamma) \\
+%	\ce{D2O}& = (1-\gamma)^2
+%\end{align}
+%
+%For the sake of readability, let (\ce{H2O}, \ce{HOD}, \ce{D2O}) be represented as (1, 2, 3) respectively.
+%
+%\begin{figure}[H]
+%	\label{fig: mixture}
+%	\centering
+%	\includegraphics[width=0.8\textwidth]{images/Be_HOD_isotopologues.png}
+%	\caption{}
+%\end{figure}
+%
+%Reading water with an RGA causes some known fractionation, where the \ce{H2O} is broken into its constituents, including \ce{OH+} and \ce{O+}. We expect then to see a lower mass 18 peak than normal, to truly know what the ratios are, we have to calibrate the RGA ourselves.
+%
+%Possible fractionation pathways:
+%
+%\begin{align}
+%	P'_{18} = & \alpha P_{\ce{H2O}} + \beta (\frac{P_{\ce{HOD}}}{2}+P_{\ce{D2O}}) \\
+%	P'_{19} = & \alpha P_{\ce{HOD}} \\
+%	P'_{20} = & \alpha P_{\ce{D2O}} \\
+%	P'_{17} = & \beta (\frac{P_{\ce{HOD}}}{2} + P_{\ce{H2O}}) \\
+%	P'_{16} = & \gamma (P_{\ce{H2O}} + P_{\ce{HOD}} + P_{\ce{D2O}}) \\
+%	1 = & \alpha + \beta + \gamma
+%\end{align}
+%
+%By solving this system of equations, we get 76.8\% of the real value as cited by the RGA program itself; this is also true for \ce{HOD} and \ce{D2O}. Of that lost 23.2\%, 18.4\% goes to \ce{OH+}, but for the isotopogues of \ce{HOD} and \ce{D2O}, we would need to consider which mass signal it will add to. No other mode of fractionation will contribute to the other water isotopologue peaks
+%
+%\begin{align}
+%	P'_1 & = \alpha P_1 + \beta P_3 + \frac{\beta}{2} P_2 \\
+%	P'_2 & = \alpha P_2 \\
+%	P'_3 & = \alpha P_3
+%\end{align}
+%
+%Where we let $\alpha = 0.744$ and $\beta=0.256$ per the SRS RGA software. Where P is the real pressure accounting for fractionation, and P' is the raw observed pressure value. Solving for the real pressure, we find:
+%
+%\begin{align}
+%	P_1 & = \frac{1}{\alpha}\left(P'_1 - \frac{\beta}{\alpha}P'_3 - \frac{\beta}{2\alpha} P'_2\right) \\
+%	P_2 & = \frac{P'_2}{\alpha} \\
+%	P_3 & = \frac{P'_3}{\alpha}
+%\end{align}
+%
+%\section{\ce{Be+ + HOD} branching ratio}
+%
+%Now that we can characterize the pressures in the chamber more accurately, we then consider the possible reactions between the \ce{Be+} and water isotopologues:
+%
+%\begin{align}
+%	\ce{Be+ + H2O & -> BeOH+ + H} \\
+%	\ce{Be+ + HOD & -> BeOH+ + H} \label{eq: beoh} \\
+%	\ce{& -> BeOD+ + H} \label{eq: beod} \\
+%	\ce{Be^+ + D2O & -> BeOD+ + D}
+%\end{align}
+%
+%Which can then be written as a system of differential equations.
+%
+%\begin{align}
+%	\dot{Be}(t) & = -(k_1\rho_1+k_2\rho_2+k_3\rho_3)Be(t) \\
+%	\dot{BeOH}(t) & = (k_1\rho_1+(1-\eta)k_2\rho_2)Be(t) \\
+%	\dot{BeOD}(t) & = (k_3\rho_3+\eta k_2\rho_2)Be(t)
+%\end{align}
+%
+%We are interested in reactions \ref{eq: beoh} and \ref{eq: beod} and the ratio between the two ($\eta$), which is not directly found from the ratio of the production rates of the two ions. Since this is a ratio, we don't need to concern ourselves with calculating the density ($\rho$), the RGA pressure is fine.
+%
+%\begin{align}
+%	\beta \equiv \frac{\dot{BeOD}}{\dot{BeOH}} & = \frac{k_3P_3 + \eta k_2P_2}{k_1P_1 + (1-\eta)k_2P_2} \\
+%	\eta & = \frac{\beta(k_1P_1 + k_2P_2)-k_3P_3}{k_2P_2(1+\beta)}
+%\end{align}
+%
+%The theorists found that the statistical value of the reaction is around 3, but with dynamics, tends towards $\frac{\eta}{1-\eta} = 1.7$ or $\eta=0.63$ for Be$^+$(S).
