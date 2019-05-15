@@ -2,11 +2,44 @@ Rate equations used in the shared fitting programs.
 
 \section{\ce{Be+ + H2O + H2}}
 
-Differential forms for background reactions
+Differential forms for background reactions:
 
+\begin{align}
+	\dot{\ce{Be}}(t) & = (-k_1 \rho_1 + k_2 \rho_2) \ce{Be}(t) \\
+	\dot{\ce{BeH}}(t) & = k_1 \rho_1 \ce{Be}(t) - k_3 \rho_2 \ce{BeH}(t) \\
+	\dot{\ce{BeOH}}(t) & = k_2 \rho_2 \ce{Be}(t) + k_3 \rho_3 \ce{BeH}(t)
+\end{align}
+
+Where $\rho_1$ is the density of \ce{H2} and $\rho_2$ is the density of \ce{H2O}. The solutions are as follows:
+
+\begin{align}
+	\ce{Be}(t) = & \ce{Be0} e^{t (-(k_1 \rho_1+k_2 \rho_2))} \\
+	\ce{BeH}(t) = & \frac{1}{\rho_2 (k_3-k_2)-k_1 \rho_1} \big[e^{-k_3 \rho_2 t} (\ce{Be0} k_1 \rho_1 \left(e^{-(k_1 \rho_1+k_2 \rho_2-k_3 \rho_2)t}-1\right) \\
+	& -\ce{BeH0} (k_1 \rho_1+\rho_2 (k_2-k_3)))\big] \\
+	\ce{BeOH}(t) = & \frac{e^{-k_3 \rho_2 t}}{\rho_2 (k_3-k_2)-k_1 \rho_1} \big[\ce{Be0} (k_1 \rho_1 - (k_1 \rho_1+k_2 \rho_2-k_3 \rho_2) e^{k_3 \rho_2 t} \\
+	& +\rho_2 (k_2-k_3) e^{-(k_1 \rho_1+\rho_2 (k_2-k_3))t}) \\
+	& +\left((\ce{BeH0}+\ce{BeOH0}) e^{k_3 \rho_2 t}-\ce{BeH0}\right) (\rho_2 (k_3-k_2)-k_1 \rho_1)\big]
+\end{align}
 
 \section{\ce{Be+ + H2O/HOD/D2O}}
 
+Differential forms for:
+
+\begin{align}
+	\dot{\ce{Be}}(t) & = -(k_1\rho_1+k_2\rho_2+k_3\rho_3)\ce{Be}(t)\\
+	\dot{\ce{BeOH}}(t) & = (k_1\rho_1+(1-\eta)k_2\rho_2)\ce{Be}(t)\\
+	\dot{\ce{BeOD}}(t) & = (k_3\rho_3+\eta k_2\rho_2)\ce{Be}(t)
+\end{align}
+
+Where $\rho_1$ is the density of \ce{H2O}, $\rho_2$ is the density of \ce{HOD}, and $\rho_3$ is the density of \ce{D2O}. The solutions are as follows:
+
+\begin{align}
+	\ce{Be}(t) = &  \ce{Be0} e^{-(k_1 \rho_1+k_2 \rho_2+k_3 \rho_3)t} \\
+	\ce{BeOD}(t) = & \frac{1}{k_1 \rho_1+k_2 \rho_2+k_3 \rho_3} \big[\ce{Be0} (\eta k_2 \rho_2+k_3 \rho_3) \left(1-e^{-(k_1 \rho_1+k_2 \rho_2+k_3 \rho_3)t}\right) \\
+	& +\ce{BeOD0} (k_1 \rho_1+k_2 \rho_2+k_3 \rho_3)\big] \\
+	\ce{BeOH}(t) = & \frac{1}{k_1 \rho_1+k_2 \rho_2+k_3 \rho_3}\big[\ce{Be0} (k_1 \rho_1-(\eta-1) k_2 \rho_2) \left(1 - e^{-(k_1 \rho_1+k_2 \rho_2+k_3 \rho_3)t}\right) \\
+	& + \ce{BeOH0} (k_1 \rho_1+k_2 \rho_2+k_3 \rho_3)\big]
+\end{align}
 
 \section{\ce{C+ + H2O}}
 
@@ -18,11 +51,11 @@ Differential forms for \ref{r: C+H2O->HCO}, \ref{r: C+H2O->HOC}, and \ref{r: [HC
 	\dot{\ce{H3O}}(t) & = k_2 \rho \ce{[HCO]}(t)
 \end{align}
 
-For which, the solutions are:
+Where $\rho$ is the density of \ce{H2O}. The solutions are as follows:
 
-\begin{align*}
+\begin{align}
 	\ce{C}(t) & = \ce{C0} e^{-k_1 \rho t} \\
 	\ce{[HCO]}(t) & = \frac{e^{-(k_1 + k_2) \rho t}}{k_1 - k_2} \left(e^{k_1 \rho t}((\ce{C0} + \ce{[HCO]0})k_1 - \ce{[HCO]0} k_2) - \ce{C0} e^{-(k_1 + k_2) \rho t}\right) \\
 	%	H_3O(t) & = \frac{\left([HCO]_0 e^{-k_2 \rho t} - (H_3O_0 + [HCO]_0) \right)(k_2 - k_1) + C_0\left( k_1 \left(1 - e^{-k_2 \rho t}\right) + k_2 \left(e^{-k_1 \rho t} - 1\right) \right)}{k_1 - k_2} \label{eq: [HCO]+H2O->H3O(t)}
 	\ce{H3O}(t) & = \ce{H3O0} + \ce{[HCO]0} (1 - e^{-k_2 \rho t}) + \frac{\ce{C0}\left( k_1 \left(1 - e^{-k_2 \rho t}\right) + k_2 \left(e^{-k_1 \rho t} - 1\right) \right)}{k_1 - k_2}
-\end{align*}
+\end{align}
