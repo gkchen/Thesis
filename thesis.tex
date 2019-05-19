@@ -40,7 +40,7 @@
 %                          PRELIMINARY PAGES                           %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\title          {Integrated Cryogenic Buffer Gas Beam, Linear Quadrupole Trap, and Time of Flight Mass Spectrometer for Low Temperature Ion-Molecule Chemistry}
+\title          {A New Tool for Cold Ion-Molecule Chemistry}
 \author         {Gary Chen}
 % Note: department is really your area of research.  I.e. leave out 'Department of'.
 \department     {Physics}
@@ -57,7 +57,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\dedication     {\textsl{?}}
+\dedication     {\textsl{Omitted for brevity}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -93,8 +93,8 @@
 \chapter{Introduction}
 	\input{chapters/thesis_intro}
 	
-	\section{Thesis Outline}
-	\input{chapters/thesis_outline}
+%	\section{Thesis Outline}
+%	\input{chapters/thesis_outline}
 	
 \chapter{Chemical Rate Constants}
 	\input{chapters/pseudo_first_order}
@@ -147,29 +147,30 @@
 	\section{Imaging System}
 	\input{chapters/imaging}
 	
-	\section{Determining Excited state}
+	\section{Determining Excited State Population}
 	\input{chapters/fluorescence_detection}
 
 	\section{Time of Flight Mass Spectrometer (TOF-MS)}
-	\input{chapters/TOF_intro}
+	\input{chapters/TOF}
 	
 	\section{Dual Species Loading}
 	\input{chapters/dual_loading}
 
 \chapter{\ce{Be+(^2S1/2 / ^2P3/2) + H2O}}
 	\section{Optical Control of Reactions between Water and Laser-Cooled \ce{Be+} Ions}\label{sec: Be+H2O}
-	\input{chapters/Be_H2O_paper}
+%	\input{chapters/Be_H2O_paper}
+	\input{chapters/Be_H2O}
 
 \chapter{\ce{Be+ + H2O/HOD/D2O}}
 	\section{Isotope-selective chemistry in the Be$^+$($^2$S$_{1/2}$) + HOD $\rightarrow$ BeOD$^+$/BeOH$^+$ + H/D reaction}
 	\input{chapters/Be_HOD}
 
-\chapter{\ce{O2} Titration}
-	\section{\ce{Be+ + O2}}
-	\input{chapters/Be_O2}
-	
-	\section{\ce{C+ + O2}}
-	\input{chapters/C_O2}
+%\chapter{\ce{O2} Titration}
+%	\section{\ce{Be+ + O2}}
+%	\input{chapters/Be_O2}
+%	
+%	\section{\ce{C+ + O2}}
+%	\input{chapters/C_O2}
 
 \chapter{Low Temperature \ce{C+ + H2O}}
 	\section{Formyl Isomer Production} \label{sec: [HCO]}
@@ -177,6 +178,9 @@
 
 %	\section{\ce{CO2} Titration}
 %	\input{chapters/CO2_titration}
+
+	\section{\ce{O2} Titration}
+	\input{chapters/C_O2}
 
 	\section{\ce{^{15}N2} Titration}
 	\input{chapters/N2_titration}
@@ -188,9 +192,12 @@
 %		\input{chapters/estimate_isomerization}
 
 \chapter{Conclusion and Future Outlook}
-	\input{chapters/conclusion}
+\input{chapters/conclusion}
 
 \appendix
+
+\chapter{Pressure Calibration} \label{sec: calibration}
+\input{chapters/calibration}
 
 \chapter{Chemical Rate Equations}
 \input{chapters/rate_eqns}

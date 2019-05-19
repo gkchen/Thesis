@@ -1,8 +1,8 @@
 Rate equations used in the shared fitting programs.
 
-\section{\ce{Be+ + H2O + H2}}
+\section{\ce{Be+ + H2O + H2}} \label{sec: Be+H2O+H2 eqs}
 
-Differential forms for background reactions:
+Differential forms for reactions \ref{r: Be(P)+H2->BeH}, \ref{r: BeH+H2O->BeOH}, \ref{r: Be(S)+H2O->BeOH}, and \ref{r: Be(P)+H2O->BeOH} occurring concurrently:
 
 \begin{align}
 	\dot{\ce{Be}}(t) & = (-k_1 \rho_1 + k_2 \rho_2) \ce{Be}(t) \\
@@ -21,9 +21,9 @@ Where $\rho_1$ is the density of \ce{H2} and $\rho_2$ is the density of \ce{H2O}
 	& +\left((\ce{BeH0}+\ce{BeOH0}) e^{k_3 \rho_2 t}-\ce{BeH0}\right) (\rho_2 (k_3-k_2)-k_1 \rho_1)\big]
 \end{align}
 
-\section{\ce{Be+ + H2O/HOD/D2O}}
+\section{\ce{Be+ + H2O/HOD/D2O}} \label{sec: Be+HOD eqs}
 
-Differential forms for:
+Differential forms for reactions \ref{r: Be(S)+H2O->BeOH}, \ref{r: Be(S)+HOD->BeOD}, \ref{r: Be(S)+HOD->BeOH}, and \ref{r: Be(S)+D2O->BeOD} occurring concurrently:
 
 \begin{align}
 	\dot{\ce{Be}}(t) & = -(k_1\rho_1+k_2\rho_2+k_3\rho_3)\ce{Be}(t)\\
@@ -34,14 +34,14 @@ Differential forms for:
 Where $\rho_1$ is the density of \ce{H2O}, $\rho_2$ is the density of \ce{HOD}, and $\rho_3$ is the density of \ce{D2O}. The solutions are as follows:
 
 \begin{align}
-	\ce{Be}(t) = &  \ce{Be0} e^{-(k_1 \rho_1+k_2 \rho_2+k_3 \rho_3)t} \\
-	\ce{BeOD}(t) = & \frac{1}{k_1 \rho_1+k_2 \rho_2+k_3 \rho_3} \big[\ce{Be0} (\eta k_2 \rho_2+k_3 \rho_3) \left(1-e^{-(k_1 \rho_1+k_2 \rho_2+k_3 \rho_3)t}\right) \\
+	\ce{Be}(t) = &  \ce{Be0} e^{-(k_1 \rho_1+k_2 \rho_2+k_3 \rho_3)t} \label{eq: HOD Be(t)} \\
+	\ce{BeOD}(t) = & \frac{1}{k_1 \rho_1+k_2 \rho_2+k_3 \rho_3} \big[\ce{Be0} (\eta k_2 \rho_2+k_3 \rho_3) \left(1-e^{-(k_1 \rho_1+k_2 \rho_2+k_3 \rho_3)t}\right) \label{eq: HOD BeOD(t)} \\
 	& +\ce{BeOD0} (k_1 \rho_1+k_2 \rho_2+k_3 \rho_3)\big] \\
 	\ce{BeOH}(t) = & \frac{1}{k_1 \rho_1+k_2 \rho_2+k_3 \rho_3}\big[\ce{Be0} (k_1 \rho_1-(\eta-1) k_2 \rho_2) \left(1 - e^{-(k_1 \rho_1+k_2 \rho_2+k_3 \rho_3)t}\right) \\
-	& + \ce{BeOH0} (k_1 \rho_1+k_2 \rho_2+k_3 \rho_3)\big]
+	& + \ce{BeOH0} (k_1 \rho_1+k_2 \rho_2+k_3 \rho_3)\big] \label{eq: HOD BeOH(t)}
 \end{align}
 
-\section{\ce{C+ + H2O}}
+\section{\ce{C+ + H2O}} \label{sec: C+H2O eqs}
 
 Differential forms for \ref{r: C+H2O->HCO}, \ref{r: C+H2O->HOC}, and \ref{r: [HCO]+H2O->H3O}.
 
