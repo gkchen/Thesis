@@ -2,11 +2,10 @@ Although loading and cooling \ce{Be+} ions is fairly straight forward, it is not
 
 Instead of using two different methods to load the different ion species, ablating samples of both species simultaneously was found to be the best method. A sample of \ce{Be} metal was placed on top of a piece of graphite on the target holder so that both samples were in view of the ablation laser. The set up shown in figure \ref{fig: dual ablation} allowed us to separate the Minilite ablation laser into two beam with independent alignment and focal planes. The polarization of the laser light is rotated with a half-waveplate, which then enters a polarizing beam splitter (PBS), allowing for tuning of power into either path. The vertically polarized reflected light is reflected off a second PBS and is steered up to the objective lens and then focused into the chamber. The horizontally polarized light transmitted through the first PBS is aligned through an adjustable telescope system. This light is then realigned with the vertically polarized light on the second PBS, co-propagating into the chamber. This "delay stage" for the horizontal light allows for independent focusing and alignment onto a target.
 
-\todo{draw on figure}
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\textwidth]{images/dual_ablation.jpg}
-	\caption{Image of the single laser, dual ablation set up. The 1064 nm YAG pulse is split into two paths, and recombined such that they proceed through the same focusing element into the chamber to hit two different targets.}
+	\includegraphics[width=\textwidth]{images/ablation_optics.png}
+	\caption{Image of the single laser, dual ablation set up. The 1064 nm YAG pulse is split into two paths, and recombined such that they proceed through the same focusing element into the chamber to hit two different targets. Leg a) is used for the ablation of graphite to produce \ce{C+}, while leg b) is independently focused and positioned to ablate beryllium metal to produce \ce{Be+}.}
 	\label{fig: dual ablation}
 \end{figure}
 
@@ -18,3 +17,5 @@ Blocking one beam allowed for adjustments for the ablation of each species indep
 	\caption{TOF trace of simultaneous \ce{Be+} and \ce{C+} ablation loading averaged over 10 shots. A soft A-ramp is applied after loading, ejecting any unintentionally loaded \ce{Cn+} clusters. The \ce{C+} peak is narrowed from sympathetic cooling with the laser cooled \ce{Be+} ions.}
 	\label{fig: Be C TOF}
 \end{figure}
+
+An important consideration is that that the amount of ions loaded from shot-to-shot is not identical; the amounts may be similar, but can drift over time, especially for the \ce{C+} peak, as the ablation of graphite is less reliable as beryllium metal. As we run experiments, which can take upwards of 200 shots to complete, we cannot make assumptions on the total number or ratio of loaded ions. With \ce{Be+}, we may use the camera in conjunction with the TOF and normalize the total \ce{Be+} reaction network with the fluorescence. Because the \ce{Be+} fluorescence has no indication on the amount of \ce{C+} loaded into the trap, the \ce{C+} reaction network must then be normalized separately for total ion count in each division.

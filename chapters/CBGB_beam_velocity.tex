@@ -19,21 +19,11 @@ For low Reynold's numbers (Re<1) the flow at the aperture is purely molecular, w
 
 The spread of the forward velocity of an effusive beam is the full width half max (FWHM) of the Maxwell-Boltzmann distribution: $\Delta\bar{v} \approx 1.5 \bar{v}$. As the Reynolds number increases, one can reach the supersonic regime (Re>100) where the forward velocity reaches $1.4\bar{v}$ and the distribution drastically narrows.\cite{Hutzler2011c,Pauly}
 
-But as the flow regime nears the supersonic regime, forward collisions around the aperture cause boosting of the average velocity as well as a decrease in the velocity spread.
-
-Supersonic beam velocities can be shown to be:\cite{Pauly}
-
-\begin{equation*}
-	v_\infty = \sqrt{\frac{2 k_b T_0}{m}\frac{\gamma}{\gamma - 1}}
-\end{equation*}
-
-Where $\gamma$ is the heat capacity ratio $C_p/C_v$, and $T_0$ is the original temperature of the source.
-
 The intermediate regime in between the effusive and supersonic regimes is particularly difficult to model, for there are some collisions at the aperture unlike the effusive regime, causing some boosting and narrowing, but not enough to treat the behavior as fully fluid-like. The section \ref{sec: beam density} results show that we can produce a beam in this intermediate regime by demonstrating clear hydrodynamic entrainment.
 
-To better understand the reaction temperatures we will be able to reach, we need a characterization of the beam's velocity, more specifically, the velocity of the target species entrained within the buffer gas. The ideal target species is one with a reliable loading method and can be directly detected in small amounts. Ytterbium metal is known to have good ablation properties and the produced neutrals have well known spectra. By ablating ytterbium foil inside of the experimental cell while the neon gas is being introduced, the ytterbium is cooled by the buffer gas and carried out of the cell. As long as the target species number density is a trace amount in comparison to the bulk buffer gas number density (0.1\%), the flow characteristics are dominated by the buffer gas species \cite{Hutzler2012}. Based upon the results of our direct RGA measurements of the beam density, we know that the cell parameters used in the previous measurement land us in the intermediate flow regime due to the clear evidence of hydrodynamic entrainment.
+To better understand the reaction temperatures we will be able to reach, we need a characterization of the beam's velocity, more specifically, the velocity of the target species entrained within the buffer gas. The ideal target species is one with a reliable loading method and can be directly detected in small amounts. Ytterbium metal is known to have good ablation properties and the produced neutral isotopes have well known spectra. By ablating ytterbium foil inside of the experimental cell while the neon gas is being introduced, the ytterbium is cooled by the buffer gas and carried out of the cell. As long as the target species number density is a trace amount in comparison to the bulk buffer gas number density ($\leq$0.1\%), the flow characteristics are dominated by the buffer gas species \cite{Hutzler2012}. Based upon the results of our direct RGA measurements of the beam density, we know that the cell parameters used in the previous measurement land us in the intermediate flow regime due to the clear evidence of hydrodynamic entrainment.
 
-To determine the velocity of the beam, we ablate an ytterbium target mounted inside the experimental cell where both neon and water are being introduced. The resulting beam is then hit with a 399 nm laser to excited the Yb isotope transitions. The laser is scanned over 3.5 GHz, encompassing all possible Yb isotope peaks. Two scans were taken, one with the 399 nm light perpendicular to the beam path, and the other where the laser is coming in with an angle of $57.3^\circ$. The resulting spectra are then fitted with summed Gaussian functions with predetermined isotopic shifts, giving us the center (\ce{^174Yb}) frequency, as well as the widths of the lines. Between the transverse and angled scans, we find an offset in the spectrum caused by the doppler shift, seen in figure \ref{fig: yb spectrum}:
+To determine the velocity of the beam, we ablate an ytterbium target mounted inside the experimental cell where both neon and water are being introduced. The resulting beam is then illuminated with a 399 nm laser to excited the Yb. The laser is scanned over 3.5 GHz, encompassing all possible Yb isotope transitions. Two scans were taken, one with the 399 nm light perpendicular to the beam path (transverse), and the other where the laser is coming in with an angle of $57.3^\circ$ shown in Figure \ref{fig: Yb interrogation}. The resulting spectra are then fitted with summed Gaussian functions with predetermined isotopic shifts taken from literature, giving us the center (\ce{^174Yb}) frequency, as well as the thermally broadened width of the lines. Between the transverse and angled scans, we find an offset in the spectrum caused by the doppler shift, seen in figure \ref{fig: yb spectrum}:
 
 \begin{equation}
 	\Delta f = \frac{\Delta v}{v} f \cos(\theta)
@@ -43,7 +33,10 @@ To determine the velocity of the beam, we ablate an ytterbium target mounted ins
 Where $f$ is the fundamental center frequency, $\Delta f$ is the offset observed, $v$ is the forward velocity of the excited \ce{^174Yb}, and $\theta$ is the angle of the beam with respect to the beam. Using equation \ref{eq: doppler}, we find the forward velocity of the beam is around 150 m/s, within the expected range for a hydrodynamically entrained beam. The fitted shared widths give us a beam temperature of 20 K, which is exactly what the experimental cell was held to.
 
 \begin{figure}[H]
-	\missingfigure{Diagram of Yb beams}
+	\centering
+	\includegraphics[width=\textwidth]{images/Yb_interrogation.pdf}
+	\caption{Diagram of entrained neutral Yb interrogation where \ce{H2O} and Yb are entrained in a buffer gas of neon. The 399 nm laser is scanned over 3 GHz, recording the Yb isotope transitions both transverse, and at a 57.3$^\circ$ angle, to the beam.}
+	\label{fig: Yb interrogation}
 \end{figure}
 
 %\begin{figure}[H]
@@ -55,8 +48,8 @@ Where $f$ is the fundamental center frequency, $\Delta f$ is the offset observed
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=1\textwidth]{images/CBGB_Yb_spectrum_long.png}
-	\caption{Angled longitudinal scan of Yb fluorescence collected by PMT at $\approx 24$ cm from cell aperture. A fit of all isotopic peaks yields mggm}
+	\includegraphics[width=0.8\textwidth]{images/CBGB_Yb_spectrum_long_labeled.png}
+	\caption{Angled longitudinal scan of Yb fluorescence collected by PMT at $\approx 24$ cm from cell aperture offset relative to the measured \ce{^174Yb} frequency from a transverse scan. A fit of Gaussians on the observed Yb isotopic transitions is shown with fixed detunings, while shared widths and individual heights are kept free fitting parameters. Fits yield a forward velocity of $\approx 150$ m/s and broadened width of 20 K.}
 	\label{fig: yb spectrum}
 \end{figure}
 

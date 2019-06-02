@@ -28,6 +28,10 @@
 \usepackage[sort,compress]{cleveref}
 \usepackage{rotating}
 \usepackage[final]{pdfpages}
+\usepackage{cancel}
+\usepackage{epigraph}
+\usepackage{soul}
+%\usepackage{ulem}
 %\usepackage{bookmark}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -90,8 +94,8 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\chapter{Introduction}
-	\input{chapters/thesis_intro}
+%\chapter{Introduction}
+%	\input{chapters/thesis_intro}
 	
 %	\section{Thesis Outline}
 %	\input{chapters/thesis_outline}
@@ -99,11 +103,14 @@
 \chapter{Chemical Rate Constants}
 	\input{chapters/pseudo_first_order}
 	
-	\section{Average Dipole Orientation Theory (ADO)}
+	\section{Adiabatic Capture Theory}
 	\input{chapters/ADO}
 
 %	\section{Statistical State Counting}
 %	\input{chapters/state_counting}
+
+\chapter{Apparatus Overview}
+\input{chapters/apparatus_overview}
 
 \chapter{The Cryogenic Buffer Gas Beam (CBGB)}
 \input{chapters/CBGB_intro}
@@ -123,7 +130,7 @@
 		\subsection{Direct Beam Measurement and Parameterization}
 		\input{chapters/beam_detection}
 	
-		\subsection{Beam Density at Ion Trap}
+		\subsection{Beam Density at Ion Trap} \label{sec: trap beam density}
 		\input{chapters/trap_beam_density}
 	
 	\section{Beam Velocity}
@@ -150,19 +157,17 @@
 	\section{Determining Excited State Population}
 	\input{chapters/fluorescence_detection}
 
-	\section{Time of Flight Mass Spectrometer (TOF-MS)}
+	\section{Time of Flight Mass Spectrometer (TOF-MS)} \label{sec: TOF}
 	\input{chapters/TOF}
 	
-	\section{Dual Species Loading}
+	\section{Dual Species Loading} \label{sec: dual loading}
 	\input{chapters/dual_loading}
 
-\chapter{\ce{Be+(^2S1/2 / ^2P3/2) + H2O}}
-	\section{Optical Control of Reactions between Water and Laser-Cooled \ce{Be+} Ions}\label{sec: Be+H2O}
+\chapter{Optical Control of Reactions between Water and Laser-Cooled \ce{Be+} Ions} \label{sec: Be+H2O}
 %	\input{chapters/Be_H2O_paper}
 	\input{chapters/Be_H2O}
 
-\chapter{\ce{Be+ + H2O/HOD/D2O}}
-	\section{Isotope-selective chemistry in the Be$^+$($^2$S$_{1/2}$) + HOD $\rightarrow$ BeOD$^+$/BeOH$^+$ + H/D reaction}
+\chapter{Isotope-selective chemistry in the Be$^+$($^2$S$_{1/2}$) + HOD $\rightarrow$ BeOD$^+$/BeOH$^+$ + H/D reaction}
 	\input{chapters/Be_HOD}
 
 %\chapter{\ce{O2} Titration}
@@ -172,29 +177,41 @@
 %	\section{\ce{C+ + O2}}
 %	\input{chapters/C_O2}
 
-\chapter{Low Temperature \ce{C+ + H2O}}
-	\section{Formyl Isomer Production} \label{sec: [HCO]}
-	\input{chapters/formyl_isomers}
+\chapter{Low Temperature \ce{C+ + H2O}} \label{sec: [HCO]}
 
-%	\section{\ce{CO2} Titration}
-%	\input{chapters/CO2_titration}
-
-	\section{\ce{O2} Titration}
-	\input{chapters/C_O2}
-
-	\section{\ce{^{15}N2} Titration}
-	\input{chapters/N2_titration}
+	\section{Introduction}
+	\input{chapters/C_H2O_intro}
 	
-		\subsection{Branching Ratio Determination}
-		\input{chapters/n2_ratio}
+	\section{Experimental}
 	
-%		\subsection{Estimate Isomerization}
-%		\input{chapters/estimate_isomerization}
+		\subsection{Secondary Reactions}
+		\input{chapters/formyl_isomers}
+	
+		\subsection{Internal Relaxation}
+		\input{chapters/C_O2}
+		
+		%	\section{\ce{CO2} Titration}
+		%	\input{chapters/CO2_titration}
+		
+		\subsection{Determination of Branching Ratio}
+		\input{chapters/ratio_intro}
+		
+			\subsubsection{\ce{CO2} Titration}
+			\input{chapters/CO2_titration}
+	
+			\subsubsection{\ce{^{15}N2} Titration}
+			\input{chapters/N2_titration}
+			
+	\section{Conclusion}
+	\input{chapters/C_H2O_conclusion}
 
 \chapter{Conclusion and Future Outlook}
 \input{chapters/conclusion}
 
 \appendix
+
+\chapter{Parker Pulse Valve}
+\input{chapters/pulse_valve}
 
 \chapter{Pressure Calibration} \label{sec: calibration}
 \input{chapters/calibration}

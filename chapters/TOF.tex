@@ -1,11 +1,11 @@
 One of the key components of this experiment is the fact that charged reaction products stay within the ion trap, allowing us to accumulate all stages of a reaction network. Direct identification of the species via fluorescence is ideal, as the signal is unambiguous, and generally unique to a species. Leaning on direct fluorescence becomes increasingly difficult as more and more species are introduced. In our particular case, it becomes prohibitively difficult, as we may expect to trap 10's of species at once, where in some cases, the exact reaction products are not known. To identify what is in our trap, we use a species agnostic detection method in the form of a time of flight mass spectrometer (TOF-MS).
 
-The TOF works by switching the rod voltages from a trapping RF potential to one where the ions are ejected out of one side. When trapping, RF voltages are applied onto diagonal rods, while DC voltages on the others. During ejection, the trapping region turns into the acceleration region as adjacent pairs of rods ramp to constant voltages where the pair of "back" rods are at a higher potential than the pair of "front" rods seen in figure \ref{fig: rod traces}.
+The TOF works by switching the rod voltages from a trapping RF potential to one where the ions are ejected out of one side. When trapping, RF voltages are applied onto diagonal rods, while DC voltages on the others. During ejection, the trapping region turns into the acceleration region as adjacent pairs of rods ramp to constant voltages where the pair of "back" rods are at a higher potential than the pair of "front" rods seen in figure \ref{fig: rod traces}. TOF's operating with higher $m/z \approx>100 $ need to have well matched HVDC values for the rods, without much concern over the rising voltages. In our experiment, due to the low $m/z$ of \ce{Be+}, the ions have a tendency to be ejected out of the trap before the rods have reached their full HVDC values. Thus, we found the matching of the HVDC values was not as important, but matching the voltages during the rise had a much larger influence on the steering of the ions.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.8\textwidth]{images/rod_traces.png}
-	\caption{text}
+	\caption{Voltages of ion trap rods during ejection into the TOF taken from an oscilloscope. TOF facing front (1 and 3) and back (2 and 4) trap rod pairs shift from the trapping RF operation to HV values after a positive zero voltage crossing. The front pair reaches a nominal 1000 V, while the back pair reaches 1400 V, creating an accelerating potential, ejecting the trapped ions.}
 	\label{fig: rod traces}
 \end{figure}
 
@@ -13,13 +13,15 @@ Idealistically, during ejection the ions in the ion trap feel the same potential
 
 We made the assumption that the ions are accelerated by the same potential, but in reality, the ions occupy a finite spacial extent in which the potential felt by an ion is related to its location within the trapping region at the time of ejection. An ion in the center of the trap at the time of ejection will have a distance $d_0$ to travel in the acceleration region, while those towards the back/front pair of rods will have distances $d=d_0\pm \delta d$. As these ions fly down the drift tube, although the ions initially closer to the front have a shorter distance to travel, the ones originating further back have a higher velocity and will catch up and over take the slower ions. This mismatch will cause the ion arrival times of a single species to spread out as $D$ increases past the point where all the ions overlap.
 
-On top of considering the spacial extent of the ions in the trap, we must also consider the multiple acceleration regions. The rods that the trap consists of produce a fairly uniform electric field within the trap region $E_d$, but outside, there is still an accelerating electric field $E_s$, but primarily from the front rods. Accounting for all the possible components, we find that the drift tube length $D$ can be parameterized by the other values.\ref{Wiley1955}
+On top of considering the spacial extent of the ions in the trap, we must also consider the multiple acceleration regions. The rods that the trap consists of produce a fairly uniform electric field within the trap region $E_d$, but outside, there is still an accelerating electric field $E_s$, but primarily from the front rods. To minimize the ion defocusing at the MCP, we find that the drift tube length $D$ is uniquely defined by the trap geometry and voltages.\ref{Wiley1955}
 
 \begin{equation}
 	D = 2d_0 k_0^{3/2}\left(1-\frac{1}{k+\sqrt{k}}\right)
 \end{equation}
 
-Where $k = (E_s + E_d)/E_s$. Our TOF apparatus design and electronics were extensively developed by Steven Schowalter and Christian Schneider of the Hudson group.\cite{Schowalter2012,Schneider2014} The length $D=320$ mm long, and $d_0=4.8$ mm.
+Where $k = (E_s + E_d)/E_s$. The TOF tube in our apparatus has dimensions $D=320$ mm, and $d_0=4.8$ mm.
+
+Our TOF apparatus design and electronics were extensively developed by Steven Schowalter and Christian Schneider of the Hudson group.\cite{Schowalter2012,Schneider2014}
 
 \subsection{TOF Signal Integration}
 

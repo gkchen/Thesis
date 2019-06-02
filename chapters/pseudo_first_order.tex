@@ -1,27 +1,29 @@
-When describing the rates of chemical reactions, it is usually described by the order of reaction. Usually the order of reaction is dependent on the sum of the order the constituents contribute to the reaction. For example, if we have a reaction of:
+When describing chemical reaction rates, it's instructive to use the order of reaction defined by the sum of the order constituents contribute to the reaction. For example, if we have a bimolecular reaction of:
 
 \begin{equation*}
-	\ce{[A] + [B] -> [C][D]}
+	\ce{[A] + [B] -> [C] + [D]}
 \end{equation*}
 
-The appearance of products \ce{[C]} and \ce{[D]} is directly equivalent to the disappearance of \ce{[A]} and \ce{[B]}. The rate constant is then defined as:
+Where \ce{[X]} is the concentration of species \ce{X} with stoichiometric coefficient 1. The appearance of products \ce{[C]} and \ce{[D]} is directly equivalent to the disappearance of \ce{[A]} and \ce{[B]}. Similarly, the rates at which \ce{[A]} and \ce{[B]} disappear are coupled so that $\frac{d \ce{[A]}}{dt} = \frac{d \ce{[B]}}{dt}$. The differential form of reactant \ce{[A]} can be written as:
 
 \begin{equation*}
-	k = \frac{\Gamma}{\ce{[A]^m [B]^n}}
+	\frac{d \ce{[A]}}{dt} = -k \ce{[A]}\ce{[B]}
 \end{equation*}
 
-Where $k$ is the rate constant, and $\Gamma$ is the reaction rate in time. The order of the reaction is defined as the sum of the constituent power dependencies $m+n$. For gas phase reactions, the dependencies are usually of order unity, as it is unlikely to have multiple collisions during a single reaction lifetime. For bi-molecular reactions that we are exploring, we would expect the rate to be a second order rate, which gives a solution of:
+Where $k$ is the rate constant. The solution to the differential form is then:
 
 \begin{equation*}
 	\frac{\ce{[A]}}{\ce{[B]}} = \frac{\ce{[A]0}}{\ce{[B]0}}e^{(\ce{[A]0 - [B]0}])kt}
+	\label{eq: second order}
 \end{equation*}
 
-Where the rate constant $k=((\ce{[A]0 - [B]0})\tau)^{-1}$. In reality, we are only trapping a few ions in the trap while flooding the chamber with neutral reactants from either the beam or a leak valve. In either case, the concentration of one reactant is held effectively fixed, while the other is depleted. From here, we yield the pseudo-first-order reaction rate constant, which takes a second order reaction and simplifies it to a first order rate equation.
+Where the subscript $0$ denotes the initial concentration of a reactant. Finding the characteristic decay time when $(\ce{[A]0 - [B]0})k\tau = -1$, the rate constant is $k=\Gamma/(\ce{[A]0 - [B]0})$, where $\Gamma=1/\tau$. This is experimentally troublesome because both reactants need to be simultaneously measured to yield a rate constant.
 
-\begin{align}
-	\frac{d\ce{[A]}}{dt} & = - k \ce{[B]} \ce{[A]} \nonumber \\
-	\ce{[A]} & = \ce{[A]_0}e^{-k\ce{[B]}t}
-\end{align}
+In our experiment, we are only trapping a few ions (~1000 max) in the trap while flooding the chamber with neutral reactants (~$1 \times 10^11$) from either a cryogenic buffer gas beam or a leak valve. In either case, the concentration of one reactant is held effectively fixed, while the other is depleted. Letting \ce{[A]} and \ce{[B]} be the concentrations of the scarce and flooded reactants respectively: $\ce{[B]0} \gg \ce{[A]0}$, and $\ce{[B]0} \approx \ce{[B]}$. This simplifies equation \ref{eq: second order} to a pseudo-first-order rate equation.
 
-Where \ce{[A]} and \ce{[B]} are the concentrations of the scarce and flooded reactants respectively. We can readily identify the rate constant $k=(\ce{[B]}\tau)^{-1}$, with dimensions cm$^3$/s. The reactions discussed in this thesis are exclusively of the pseudo-first-order.
+\begin{equation*}
+	\ce{[A]} = \ce{[A]0}e^{-k\ce{[B]}t}
+\end{equation*}
+
+We can readily identify the rate constant $k=\Gamma/\ce{[B]}$, with dimensions cm$^3$/s. The reactions discussed in this thesis are exclusively of the pseudo-first-order.
 
