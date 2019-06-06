@@ -4,42 +4,33 @@ The PTR 40 K cooling stage has 40 W of cooling power, while the lowest 4 K stage
 
 Material choices used in the CBGB are dictated by their thermal conductivity down to the temperature ranges of interest. At room temperature, thermal conductivity ($k$) of a material is dominated by transfer of energy via phonons through the material. In this regime, different alloys and purities of a material do not greatly affect the conductivity. But once we enter cryogenic temperatures, the conductivity is dominated by electron motion through the material, meaning that purer samples have fewer imperfections to scatter off of, yielding higher conductivities.
 
-Al 6061 was chosen for the radiation shield for its thermal conductivity ($k_{Al6061}(T=40$ K)$ = 70$ W/(m K)\cite{NIST}), ease of machining, as well as lightweight properties. The thermal mass of the aluminum shield coupled with its relatively lower thermal conductivity (compared to Cu 10100) means the cool down of this region limits the cool down process to ~6 hr until at workable temperatures. The face of the aluminum shield on the outgoing beam side was fitted with a set of stacked chevron baffles as seen in figure \ref{fig: SW chamber}. The baffle design blocks stray light from entering the radiation shield, while enabling gas to pass from the enclosed shields into the stem region, preventing high density regions from forming and scattering the beam. Conversely, the baffles allow for gas within the stem region to reenter the cryogenic shields and facilitate cryopumping of stray particles.
+Al 6061 was chosen for the radiation shield for its thermal conductivity ($k_{Al6061}(T=40$ K)$ = 70$ W/(m K)\cite{Bradley}), ease of machining, as well as lightweight properties. The thermal mass of the aluminum shield coupled with its relatively lower thermal conductivity (compared to Cu 10100) means the cool down of this region limits the cool down process to ~6 hr until at workable temperatures. The face of the aluminum shield on the outgoing beam side was fitted with a set of stacked chevron baffles as seen in Figure \ref{fig: SW chamber}. The baffle design blocks stray light from entering the radiation shield, while enabling gas to pass from the enclosed shields into the stem region, preventing high density regions from forming and scattering the beam. Conversely, the baffles allow for gas within the stem region to reenter the cryogenic shields and facilitate cryopumping of stray particles.
 
 The copper region contains the experimental cell, enclosed by a copper shield that acts as a cryopumping surface at the appropriate temperatures. At cryogenic temperatures, it's convenient to characterize the conductivity of a copper with the residual resistance ratio ($RRR=\frac{R(T=295\text{ K})}{R(T=4\text{ K})}$), where $R(T)$ is the measured resistance at temperature $T$, which can be related to the thermal conductivity with the Wiedemann-Franz Law.\cite{White2009} Cu 10100, or oxygen free copper ($RRR=2000$), was chosen for these components for its high thermal conductivity from 300 K to 4 K, $k_{Cu10100}(4\text{ K}) = 10^4$ W/(m K) compared to Cu 11000 ($RRR=100$), $k_{Cu11000}(4\text{ K}) = 600$ W/(m K).\cite{Simon1991}.
 
 Because it is heat sunk into the same cooling stage as the experimental cell, the copper shield does not act as a radiation shield for it does not redirect the heat load away from the experimental cell's cooling surfaces. For the experimental cell to hold an appreciable vapor pressure while the thermally linked shield acts as a cryopumping surfaces, the two components will need to held at different temperatures. The experimental cell is held at a higher temperature than that of the cryopumping shield with a resistive heater, which is monitored and controlled with a temperature sensor diode (DT-670) and a Lakeshore controller (Model 325). A SS316 ($k_{SS316}(T=40\text{ K}) \approx 7\text{ W/(m K)}$) stand off is used to create a poor thermal bridge between the two regions, allowing for a constant thermal gradient.
 
 The main heat loads onto the system are those from the black body radiation, as well as the stainless steel rods supporting the shields from the top mounting plate. The temperature over the system may be determined by solving the heat/diffusion equation given proper boundary conditions. We use Fourier's Law to approximate the conductive heat loads through individual pieces
-
-%\begin{equation}
-%	\frac{\partial u(x, t)}{\partial t} = D \nabla^2 u(x, t)
-%\end{equation}
-
 \begin{equation}
 	\dot{Q} = \frac{A}{l}k\Delta T
 	\label{eq: fourier law}
 \end{equation}
-
 Where $\dot{Q}$ is the rate of heat transfer, $A$ is the cross sectional area of the component in question, $l$ is the length of the component, and $k$ is the thermal conductivity of the material. In general, we should be using the integral form where we have a temperature dependent thermal conductivity, $k(T)$, but approximate it to be constant. The main conductive heat loads come from the SS316 rods that mechanically anchor the shield components to the top chamber plate. On the 4 K cryopumping shield, there are 4 such rods, in total, contributing $\approx 60$ mW of power to the 4 K cooling stage.
 
 Aside from the conductive heat load, black body radiation is the main source of heat load onto the cold regions. We describe the power radiated from a source with the Stefan-Boltzmann law:
-
 \begin{equation}
 	\dot{Q} = A \epsilon \sigma T^4
 \end{equation}
-
 Where $A$ is the area of the emitting object, $\epsilon$ is the emissivity of the surface, and $\sigma$ is the Stefan-Boltzmann constant. To find the power incident between two surfaces (1, 2) though, we find the form to be:\todo{cite book}
-
 \begin{equation}
 	\dot{Q} = \sigma A (T_1^4 - T_2^4)\frac{\epsilon_1 \epsilon_2}{\epsilon_1 + \epsilon_2 - \epsilon_1 \epsilon_2}
 \end{equation}
-
 In order to characterize the beam inside the CBGB, fused silica windows were mounted onto every shield to allow for optical access. These may pose a problem, as this line of sight allows for radiation coming from room temperature sources to heat up the inner components. The peak wavelength of a black body source at a temperature $T$ is described by Wien's displacement law:
-
 \begin{equation}
 	\lambda_{max} \approx \frac{2900}{T}\text{ $\mu$m}
 	\label{eq: BBR peak lambda}
 \end{equation}
-
-One can see the peak wavelength from a room temperature source is around 93 $\mu$m, which is readily blocked by our fused silica windows. In total, the maximal approximate incident black body power onto the 4 K region, including a 20\% fudge factor, is on the order of 200 mK.
+One can see the peak wavelength from a room temperature source is around 93 $\mu$m, which is readily blocked by our fused silica windows. In total, the maximal approximate incident black body power onto the 4 K region, including a 20\% fudge factor, is on the order of 200 mW.
+%\begin{equation}
+%	\frac{\partial u(x, t)}{\partial t} = D \nabla^2 u(x, t)
+%\end{equation}

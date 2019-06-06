@@ -1,5 +1,37 @@
 Rate equations used in the shared fitting programs.
 
+\section{\ce{Be+ + H2O} All Thermochemically Allows Channels}
+
+Differential forms for reactions:
+
+\begin{align*}
+	\ce{Be}(t) = & \ce{Be0} e^{\rho t (-(k_1+k_3+k_5+k_7))} \\
+	\ce{BeH}(t) = & -\frac{e^{-k_6 \rho t} \bigg(\ce{Be0} k_5 \bigg(e^{\rho t (-(k_1+k_3+k_5-k_6+k_7))}-1\bigg)-\ce{BeH0} (k_1+k_3+k_5-k_6+k_7)\bigg)}{k_1+k_3+k_5-k_6+k_7} \\
+	\ce{BeO}(t) = & -\frac{e^{-k_8 \rho t} \bigg(\ce{Be0} k_7 \bigg(e^{\rho t (-(k_1+k_3+k_5+k_7-k_8))}-1\bigg)-\ce{BeO0} (k_1+k_3+k_5+k_7-k_8)\bigg)}{k_1+k_3+k_5+k_7-k_8} \\
+	\ce{BeOH}(t) = & \frac{1}{(k_1+k_3+k_5+k_7) (k_1+k_3+k_5-k_6+k_7) (k_1+k_3+k_5+k_7-k_8)} \bigg[e^{\rho t (-(k_6+k_8))} \\
+	& \bigg(e^{\rho t (-(k_1+k_3+k_5-k_6+k_7-k_8))} \bigg(\ce{Be0} \bigg(k_1^3 \bigg(e^{\rho t (k_1+k_3+k_5+k_7)}-1\bigg) \\
+	& -k_1^2 k_5\bigg(e^{\rho t (k_1+k_3+k_5-k_6+k_7)}-3 e^{\rho t (k_1+k_3+k_5+k_7)}+2\bigg)-k_1^2 k_6 e^{\rho t (k_1+k_3+k_5+k_7)} \\
+	& -k_1^2 k_8 e^{\rho t (k_1+k_3+k_5+k_7)}+2 k_1^2 k_3 \bigg(e^{\rho t (k_1+k_3+k_5+k_7)}-1\bigg)+3 k_1^2 k_7 e^{\rho t (k_1+k_3+k_5+k_7)} \\
+	& +k_1^2 k_6-2 k_1^2 k_7+k_1^2 k_8+k_1 k_3^2 \bigg(e^{\rho t (k_1+k_3+k_5+k_7)}-1\bigg) \\
+	& +k_1 k_5^2 \bigg(-2 e^{\rho t (k_1+k_3+k_5-k_6+k_7)}+3 e^{\rho t (k_1+k_3+k_5+k_7)}-1\bigg) \\
+	& +k_1 k_5 k_8 \bigg(e^{\rho t (k_1+k_3+k_5-k_6+k_7)}-2 e^{\rho t (k_1+k_3+k_5+k_7)}+1\bigg) \\
+	& +k_1 k_6 k_8 e^{\rho t (k_1+k_3+k_5+k_7)}-k_7 (k_1+k_3+k_5+k_7) (k_1+k_3+k_5-k_6+k_7) e^{\rho t (k_1+k_3+k_5+k_7-k_8)} \\
+	& -k_5 (k_3+k_5+k_7) (k_3+k_5+k_7-k_8) e^{\rho t (k_1+k_3+k_5-k_6+k_7)} \\
+	& +(k_5+k_7) (k_3+k_5-k_6+k_7) (k_3+k_5+k_7-k_8) e^{\rho t (k_1+k_3+k_5+k_7)} \\
+	& -2 k_1 k_3 k_5 \bigg(e^{\rho t (k_1+k_3+k_5-k_6+k_7)}-2 e^{\rho t (k_1+k_3+k_5+k_7)}+1\bigg)-k_1 k_3 k_6 e^{\rho t (k_1+k_3+k_5+k_7)}\\
+	& -2 k_1 k_5 k_6 \bigg(e^{\rho t (k_1+k_3+k_5+k_7)}-1\bigg)-2 k_1 k_5 k_7 e^{\rho t (k_1+k_3+k_5-k_6+k_7)}-2 k_1 k_6 k_7 e^{\rho t (k_1+k_3+k_5+k_7)}\\
+	& +3 k_1 k_7^2 e^{\rho t (k_1+k_3+k_5+k_7)}-k_1 k_3 k_8 e^{\rho t (k_1+k_3+k_5+k_7)}-2 k_1 k_7 k_8 e^{\rho t (k_1+k_3+k_5+k_7)}\\
+	& +4 k_1 k_3 k_7 e^{\rho t (k_1+k_3+k_5+k_7)}+6 k_1 k_5 k_7 e^{\rho t (k_1+k_3+k_5+k_7)}+k_1 k_3 k_6-2 k_1 k_3 k_7+k_1 k_3 k_8\\
+	& -2 k_1 k_5 k_7+k_1 k_6 k_7-k_1 k_6 k_8-k_1 k_7^2+2 k_1 k_7 k_8+k_3 k_5 k_6+k_3 k_7 k_8+k_5^2 k_6+k_5 k_6 k_7-k_5 k_6 k_8 \\
+	& +k_5 k_7 k_8-k_6 k_7 k_8+k_7^2 k_8\bigg)+(k_1+k_3+k_5+k_7) (k_1+k_3+k_5-k_6+k_7)\\
+	& (k_1+k_3+k_5+k_7-k_8) \bigg((\ce{BeH0}+\ce{BeOH0}) e^{\rho t (k_1+k_3+k_5+k_7)}-\ce{BeH0} e^{\rho t (k_1+k_3+k_5-k_6+k_7)}\bigg)\bigg)\\
+	& +\ce{BeO0} e^{k_6 \rho t} \bigg(e^{k_8 \rho t}-1\bigg) (k_1+k_3+k_5+k_7) (k_1+k_3+k_5-k_6+k_7) (k_1+k_3+k_5+k_7-k_8)\bigg)\bigg] \\
+	\ce{H2O}(t) = & -\frac{e^{-k_4 \rho t} \bigg(\ce{Be0} k_3 \bigg(e^{\rho t (-(k_1+k_3-k_4+k_5+k_7))}-1\bigg)-\ce{H2O0} (k_1+k_3-k_4+k_5+k_7)\bigg)}{k_1+k_3-k_4+k_5+k_7} \\
+	\ce{H3O}(t) & = \frac{1}{(k_1+k_3+k_5+k_7) (k_1+k_3-k_4+k_5+k_7)}e^{-k_4 \rho t} \bigg(e^{k_4 \rho t} (k_1+k_3-k_4+k_5+k_7)\\
+	& (\ce{Be0} k_3+\ce{H3O0} (k_1+k_3+k_5+k_7))+\ce{Be0} k_3 k_4 e^{\rho t (-(k_1+k_3-k_4+k_5+k_7))}\\
+	& -\ce{Be0} k_3 (k_1+k_3+k_5+k_7)+\ce{H2O0} \bigg(e^{k_4 \rho t}-1\bigg) (k_1+k_3+k_5+k_7) (k_1+k_3-k_4+k_5+k_7)\bigg)
+\end{align*}
+
 \section{\ce{Be+ + H2O + H2}} \label{sec: Be+H2O+H2 eqs}
 
 Differential forms for reactions \ref{r: Be(P)+H2->BeH}, \ref{r: BeH+H2O->BeOH}, \ref{r: Be(S)+H2O->BeOH}, and \ref{r: Be(P)+H2O->BeOH} occurring concurrently:

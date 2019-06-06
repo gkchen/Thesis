@@ -1,29 +1,30 @@
-When describing chemical reaction rates, it's instructive to use the order of reaction defined by the sum of the order constituents contribute to the reaction. For example, if we have a bimolecular reaction of:
-
-\begin{equation*}
-	\ce{[A] + [B] -> [C] + [D]}
-\end{equation*}
-
-Where \ce{[X]} is the concentration of species \ce{X} with stoichiometric coefficient 1. The appearance of products \ce{[C]} and \ce{[D]} is directly equivalent to the disappearance of \ce{[A]} and \ce{[B]}. Similarly, the rates at which \ce{[A]} and \ce{[B]} disappear are coupled so that $\frac{d \ce{[A]}}{dt} = \frac{d \ce{[B]}}{dt}$. The differential form of reactant \ce{[A]} can be written as:
-
-\begin{equation*}
-	\frac{d \ce{[A]}}{dt} = -k \ce{[A]}\ce{[B]}
-\end{equation*}
-
-Where $k$ is the rate constant. The solution to the differential form is then:
-
-\begin{equation*}
-	\frac{\ce{[A]}}{\ce{[B]}} = \frac{\ce{[A]0}}{\ce{[B]0}}e^{(\ce{[A]0 - [B]0}])kt}
-	\label{eq: second order}
-\end{equation*}
-
-Where the subscript $0$ denotes the initial concentration of a reactant. Finding the characteristic decay time when $(\ce{[A]0 - [B]0})k\tau = -1$, the rate constant is $k=\Gamma/(\ce{[A]0 - [B]0})$, where $\Gamma=1/\tau$. This is experimentally troublesome because both reactants need to be simultaneously measured to yield a rate constant.
-
-In our experiment, we are only trapping a few ions (~1000 max) in the trap while flooding the chamber with neutral reactants (~$1 \times 10^11$) from either a cryogenic buffer gas beam or a leak valve. In either case, the concentration of one reactant is held effectively fixed, while the other is depleted. Letting \ce{[A]} and \ce{[B]} be the concentrations of the scarce and flooded reactants respectively: $\ce{[B]0} \gg \ce{[A]0}$, and $\ce{[B]0} \approx \ce{[B]}$. This simplifies equation \ref{eq: second order} to a pseudo-first-order rate equation.
-
-\begin{equation*}
-	\ce{[A]} = \ce{[A]0}e^{-k\ce{[B]}t}
-\end{equation*}
-
-We can readily identify the rate constant $k=\Gamma/\ce{[B]}$, with dimensions cm$^3$/s. The reactions discussed in this thesis are exclusively of the pseudo-first-order.
+When describing chemical reaction rates, it's instructive to use the order of reaction defined by the sum of the order constituents contribute to the reaction. For example, a typical chemical reaction can be written as
+\begin{equation}
+	\ce{a[A] + b[B] -> products}
+	\label{eq: general reaction}
+\end{equation}
+Where \ce{[A]} and \ce{[B]} are the concentrations of the reactants and the lower case values are the respective stoichiometric coefficients. The rate $r$ for this chemical reaction occurring can be represented by the rates of each reactant's disappearance or product's appearance, scaled by their coefficient.
+\begin{equation}
+	r = -\frac{1}{a}\frac{d\ce{[A]}}{dt} = -\frac{1}{b}\frac{d\ce{[B]}}{dt}
+\end{equation}
+In general, a differential equation can be written as
+\begin{equation}
+	r = -k\ce{[A]}^a\ce{[B]}^b
+	\label{eq: diff rate form}
+\end{equation}
+where $k$ is called the rate constant and the "order" of the reaction is the summation of the stoichiometric coefficients $a+b$. If we look at the simplest example where $a=1$ and $b=0$, we have a first-order reaction with the differential form and solution:
+\begin{align}
+	\frac{d \ce{[A]}}{dt} & = -k\ce{[A]}^a \nonumber \\
+	\ce{[A]} & = \ce{[A]0}e^{-kt} \label{eq: first order sol}
+\end{align}
+where the subscript $0$ denotes the initial concentration of the reactant. We find that the rate constant $k$ has units s$^{-1}$. If we consider a bimolecular reaction of two different species where we let $a=b=1$, the differential form and solution is found to be:
+\begin{align}
+	\frac{d \ce{[A]}}{dt} & = -k \ce{[A]}\ce{[B]} \nonumber \\
+	\frac{\ce{[A]}}{\ce{[B]}} & = \frac{\ce{[A]0}}{\ce{[B]0}}e^{(\ce{[A]0 - [B]0}])kt} \label{eq: second order sol}
+\end{align}
+To experimentally measure $k$, both reactants need to be simultaneously measured, which can add errors and increase the complexity of the measurement. To circumvent this, flooding one reactant such that its total number can be considered constant throughout the reaction process while the scarcer one is depleted can simplify equation \ref{eq: second order sol}. Letting \ce{[A]} and \ce{[B]} be the concentrations of the scarce and flooded reactants respectively: $\ce{[B]0} \gg \ce{[A]0}$, and $\ce{[B]0} \approx \ce{[B]}$ leads to:
+\begin{equation}
+	\ce{[A]} = \ce{[A]0}e^{-k\ce{[B]0}t} \label{eq: pseudo first order sol}
+\end{equation}
+We can readily see that equation \ref{eq: pseudo first order sol} is nearly identical in form to the solution of a first order reaction in equation \ref{eq: first order sol}. The rate constant $k$ then has units of cm$^3$/s. A second-order form can then be represented in the form of a first-order form in what is called a pseudo-first-order reaction. The reactions discussed in this thesis are exclusively of the pseudo-first-order.
 

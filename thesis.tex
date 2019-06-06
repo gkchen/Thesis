@@ -31,6 +31,7 @@
 \usepackage{cancel}
 \usepackage{epigraph}
 \usepackage{soul}
+\allowdisplaybreaks
 %\usepackage{ulem}
 %\usepackage{bookmark}
 
@@ -61,7 +62,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\dedication     {\textsl{Omitted for brevity}}
+\dedication     {\textsl{---}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -89,13 +90,13 @@
 %                            MAIN DOCUMENT                             %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin {document}
+\begin{document}
 \makeintropages
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\chapter{Introduction}
-%	\input{chapters/thesis_intro}
+\chapter{Introduction}
+	\input{chapters/thesis_intro}
 	
 %	\section{Thesis Outline}
 %	\input{chapters/thesis_outline}
@@ -165,10 +166,10 @@
 
 \chapter{Optical Control of Reactions between Water and Laser-Cooled \ce{Be+} Ions} \label{sec: Be+H2O}
 %	\input{chapters/Be_H2O_paper}
-	\input{chapters/Be_H2O}
+\input{chapters/Be_H2O}
 
 \chapter{Isotope-selective chemistry in the Be$^+$($^2$S$_{1/2}$) + HOD $\rightarrow$ BeOD$^+$/BeOH$^+$ + H/D reaction}
-	\input{chapters/Be_HOD}
+\input{chapters/Be_HOD}
 
 %\chapter{\ce{O2} Titration}
 %	\section{\ce{Be+ + O2}}
@@ -178,32 +179,30 @@
 %	\input{chapters/C_O2}
 
 \chapter{Low Temperature \ce{C+ + H2O}} \label{sec: [HCO]}
-
-	\section{Introduction}
-	\input{chapters/C_H2O_intro}
+\input{chapters/C_H2O}
 	
-	\section{Experimental}
-	
-		\subsection{Secondary Reactions}
-		\input{chapters/formyl_isomers}
-	
-		\subsection{Internal Relaxation}
-		\input{chapters/C_O2}
-		
-		%	\section{\ce{CO2} Titration}
-		%	\input{chapters/CO2_titration}
-		
-		\subsection{Determination of Branching Ratio}
-		\input{chapters/ratio_intro}
-		
-			\subsubsection{\ce{CO2} Titration}
-			\input{chapters/CO2_titration}
-	
-			\subsubsection{\ce{^{15}N2} Titration}
-			\input{chapters/N2_titration}
-			
-	\section{Conclusion}
-	\input{chapters/C_H2O_conclusion}
+%	\section{Experimental}
+%	
+%		\subsection{Secondary Reactions}
+%		\input{chapters/formyl_isomers}
+%	
+%		\subsection{Internal Relaxation}
+%		\input{chapters/C_O2}
+%		
+%		%	\section{\ce{CO2} Titration}
+%		%	\input{chapters/CO2_titration}
+%		
+%		\subsection{Determination of Branching Ratio}
+%		\input{chapters/ratio_intro}
+%		
+%			\subsubsection{\ce{CO2} Titration}
+%			\input{chapters/CO2_titration}
+%	
+%			\subsubsection{\ce{^{15}N2} Titration}
+%			\input{chapters/N2_titration}
+%			
+%	\section{Conclusion}
+%	\input{chapters/C_H2O_conclusion}
 
 \chapter{Conclusion and Future Outlook}
 \input{chapters/conclusion}

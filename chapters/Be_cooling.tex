@@ -19,22 +19,16 @@ Addressing the \ce{^2S1/2 -> ^2P3/2} transition is done with a Toptica TA-FHG Pr
 \end{figure}
 
 As we excite the cooling transition, force is being imparted onto the ion via absorption of the photons and spontaneous emission. We can define the force to be the product of the scattering rate of a two level system and the momentum of each photon.
-
 \begin{align}
 	F & = p \Gamma \rho_{pp} \nonumber \\
 	& = \hbar k \Gamma \frac{1}{2} \frac{s}{1+s+4\left(\frac{\delta-\vec{k}\cdot \vec{v}}{\Gamma}\right)^2} \label{eq: laser force}
 \end{align}
-
 Where $k$ is the photon's wavenumber, $\Gamma$ is the linewidth of the excited transition, and $\rho_{pp}$ is the probability of finding the ion in the excited \ce{^2P3/2} state characterized by the saturation parameter $s = I/I_s=I/(\frac{\pi h c}{3 \lambda^3 \tau})$ and laser detuning $\delta=\omega_0-\omega_l$. We can see that the force the ion feels is dependent on the laser detuning from resonance, which in turn is dependent on the doppler shift of the ion with respect to the laser $\vec{k} \cdot \vec{v}$. In general, the laser frequency ($\omega_l$) is red detuned from the cooling transition ($\omega_l < \omega_0$). In this instance, if the ion is moving towards the laser such that the velocity ($v$) and $k$ vector are anti-aligned, we see a positive doppler shift in the frequency ($+kv$), decreasing the effective detuning, increasing the scattering rate. When the ion is moving away from the laser while $\omega_l < \omega_0$ is true, we see that the detuning increases, lowering the scattering rate. Each time the ion absorbs a photon, it gains a momentum kick in the photon's direction, meaning the ion preferentially absorbs light that causes it to lose momentum. After absorption, the ion emits a photon after $\tau=\Gamma^{-1}$ time, isotropically, which averages to zero. We can Taylor expand equation \ref{eq: laser force} for small values of $v$ to find this velocity dependence.
-
 \begin{equation*}
 	F(v) = F(v=0) + \beta v
 \end{equation*}
-
 Where we define the damping coefficient:
-
 \begin{equation*}
 	\beta= 4 \hbar k^2 \frac{s \frac{\delta}{\Gamma}}{1+s+4\left(\frac{\delta}{\Gamma}\right)^2}
 \end{equation*}
-
 Since the ion trap is not a perfect harmonic potential, which would require hyperbolic trap electrodes, the ion's trajectory is mixed along each axis, allowing for the 3 dimensional laser cooling with just one beam angled from both radial and axial axes of the trap.

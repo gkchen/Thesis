@@ -13,16 +13,13 @@ We build off the work done on the \ce{Be+ +H2O} reaction, which showed that dyna
 \section{Experimental}
 
 Similar to the \ce{Be+ + H2O} work, we load \ce{Be+} into the trap and laser cool it to create Coulomb crystals. A combination of \ce{H2O/HOD/D2O} is introduced into the chamber via leak valve, where the reaction products are detected via the TOF. To produce \ce{HOD}, we mix \ce{H2O} and \ce{D2O}.\cite{Pyper1967,Zhou2013} We mix "equal" amounts of \ce{H2O} and \ce{D2O} and leave it overnight to produce roughly 1:2:1 ratio of \ce{H2O}:\ce{HOD}:\ce{D2O} as roughly verified by the RGA. We measure these fractions of deuterations via the RGA. A typical scan reveals water fractionation products at $m/z =$ 18, 17, and 16, which coincide with \ce{H2O+}, \ce{OH+}, and \ce{O+}. The fractionation ratios of water are found by solving the system of equations:
-
 \begin{align}
 	P_{\ce{H2O}} & = R_{18} + R_{17} + R_{16} \\
 	R_{18} & = \alpha P_{\ce{H2O}} \\
 	R_{17} & = \beta P_{\ce{H2O}} \\
 	R_{16} & = \gamma P_{\ce{H2O}}
 \end{align}
-
 where $R_i$ is the pressure reading from the RGA and $P_{\ce{H2O}}$ is the true \ce{H2O} pressure. These fragmentation ratios were found to be $\alpha = 0.768 \pm 0.006$, $\beta = 0.184 \pm 0.006$ and $\gamma = 0.068 \pm 0.002$. The direct readings from analog scans with deuterated samples were then adjusted to account for the fractionation for each isotopologue.
-
 \begin{align}
 	P_{\ce{H2O}} & = \frac{1}{\alpha}\left(R_{18} - \frac{\beta}{\alpha}R_{20} - \frac{\beta}{2\alpha} R_{19}\right) \\
 	P_{\ce{HOD}} & = \frac{R_{19}}{\alpha} \\
@@ -46,20 +43,16 @@ where $R_i$ is the pressure reading from the RGA and $P_{\ce{H2O}}$ is the true 
 \section{Results and Discussion}
 
 Because the \ce{HOD} sample also contains both \ce{H2O} and \ce{D2O}, the product \ce{BeOH+} ($m/z = 26$) has contributions of the reaction of the cation with \ce{H2O}, while \ce{BeOD+} ($m/z = 27$) has contributions from reactions with \ce{D2O}. The reactions of interest are:
-
 \begin{align}
 	\ce{Be+(^2S1/2) + H2O & -> BeOH+ + H} \nonumber \\
 	\ce{Be+(^2S1/2) + HOD & -> BeOD+ + H} \label{r: Be(S)+HOD->BeOD} \\
 	\ce{& -> BeOH+ + D} \label{r: Be(S)+HOD->BeOH} \\
 	\ce{Be+(^2S1/2) + D2O & -> BeOD+ + D} \label{r: Be(S)+D2O->BeOD}
 \end{align}
-
 Thus, the differential forms and solutions of the reagents and products are solved and shown in \ref{sec: Be+HOD eqs}. The branching ratio $\eta \equiv k_{\ce{BeOD+}}/(k_{\ce{BeOD+}} + k_{\ce{BeOH+}})$ is the fraction of \ce{BeOD+} produced from reactions (\ref{r: Be(S)+HOD->BeOD}) where $k_j$ is the rate coefficient of species $j$. Solutions to the rate equations \ref{eq: HOD Be(t)}, \ref{eq: HOD BeOD(t)}, and \ref{eq: HOD BeOH(t)} are parameterized by the density measurements of the water isotopologues taken from a RGA, and a least-squares fit is taken over data sets of integrated TOF mass spectra with shared fitting parameters $k_1$, $k_2$, $k_3$, and $\eta$. In order to extract the pure \ce{Be+(^2S1/2)} and \ce{Be+(^2P3/2)}-state branching ratios, the process shown in Figure \ref{fig: Be+HOD procedure}(A)–(C) was repeated at different P-state fractions. The results are shown in Fig. 1(D) along with a least-squares linear-fit (blue line). The vertical intercept of this fit gives $\eta_S = 0.56 \pm 0.03$ for the ground \ce{Be+(^2S1/2)} state reaction, while no conclusive dependence on P-state fractions is found within the confidence intervals. To further verify that our measurement is independent of reagent ratios, we repeated the measurement for different mixtures of \ce{HOD}, \ce{H2O}, and \ce{D2O}, as shown in Fig. 3. The branching ratio of \ce{BeOD+ + H} in reaction \ce{Be+ + HOD} (with 2\% \ce{Be+(^2P3/2)} state population) is consistent over different hydrogen fractions in the gas. The fraction of hydrogen atoms in the chamber ($\xi$) from all water isotopologues is defined by:
-
 \begin{equation}
 	\xi = \frac{2 \rho_{\ce{H2O}} + \rho_{\ce{HOD}}}{\rho_{\ce{H2O}} + \rho_{\ce{HOD}} + \rho_{\ce{D2O}}}
 \end{equation}
-
 Weighted averaging of the fitted values over different mixtures then gives $\eta = 0.58 \pm 0.14$, $frac{k_2}{k_1} = 0.8 \pm 0.9$, $\frac{k_3}{k_1} = 0.8 \pm 0.9$. Despite the large error bars on the relative rate coefficients, due to the significant covariance of the rate coefficients, $\eta$ is reasonably well determined. To further check our measurement of $\eta$, the process was repeated for shared fits with identical rate coefficients ($k1 = k2 = k3$) yielding $\eta = 0.57 \pm 0.07$. The calculated overall rate coefficients of the \ce{Be+ + D2O} and \ce{Be+ + HOD} reactions are $(2.29 \pm 0.05) \times 10^{-9}$ cm$^3$ molecule$^{-1}$ s$^{-1}$ and $(2.29 \pm 0.05) \times 10^{-9}$ cm$^3$ molecule$^{-1}$ s$^{-1}$, respectively, which are slightly larger than that ($(2.02 \pm 0.04) \times 10^{-9}$ cm$^3$ molecule$^{-1}$ s$^{-1}$)25 of the \ce{Be+ + H2O} reaction. The calculated $k_2/k_1$ and $k_3/k_1$ ratios are $1.13 \pm 0.04$ and $1.13 \pm 0.04$, which are consistent with experimental values of $0.8 \pm 0.9$ and $0.8 \pm 0.9$, respectively. The identical $k_2/k_1$ and $k_3/k_1$ ratios suggests the negligible isotopic effect in the thermal reaction probabilities of the \ce{Be+ + D2O} and \ce{Be+ + HOD} reactions. The branching ratio was determined using the QCT method for the \ce{Be+ + HOD} reaction. Specifically, the calculated branching fraction of \ce{Be+ + HOD} $(\eta)$ is $0.61 \pm 0.02$, which is in good agreement with experimental value $0.58 \pm 0.14$. The branching ratio of the two products (\ce{BeOD+} and \ce{BeOH+}) can be understood in terms of the PST model, which assumes complete energy randomization in the deep intermediate (\ce{BeHOD+}) well. In Fig. 4, the branching fraction for the \ce{BeOD+ + H} channel is plotted as a function of the collision energy, which shows very weak temperature dependence. At the specific collisional temperature 100 K, the fraction obtained by integrating the energy dependent branching ratio with a Boltzmann weight is 0.67, which is in reasonable agreement with the QCT results provided by Hua Guo.\cite{Chen2018}
 
 \subsection{Conclusion}

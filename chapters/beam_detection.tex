@@ -9,27 +9,20 @@ To observe the extraction of the target species from the cell, a residual gas an
 	\label{fig: rga entrainment}
 \end{figure}
 
-We find that theoretical calculations and experimental results agree that the onset of hydrodynamic entrainment occurs at a buffer gas flow rate of $\approx$ 20 SCCM. We can combine the results here with equations \cref{eq: mb_mean,eq: n_b,eq: n(z)} to map out beam densities subject to all other possible parameters we may want to adjust, over our entire experimental apparatus. We start by scaling a combination of equations \cref{eq: n_b,eq: n(z)} by $\alpha$, a buffer gas to target species density scaling factor.
-
+We find that theoretical calculations and experimental results agree that the onset of hydrodynamic entrainment occurs at a buffer gas flow rate of $\approx$ 20 SCCM. We can combine the results here with equations \ref{eq: mb_mean}, \ref{eq: n_b}, and \ref{eq: n(z)} to map out beam densities subject to all other possible parameters we may want to adjust, over our entire experimental apparatus. We start by scaling a combination of equations \ref{eq: n_b} and \ref{eq: n(z)} by $\alpha$, a buffer gas to target species density scaling factor.
 \begin{equation*}
 	n(z) = \alpha\frac{f}{A_{aperture} \bar{v}}\left(1-\frac{z}{\sqrt{z^2+a^2}}\right)
 \end{equation*}
-
 But this only holds true for the region in which the number density is linearly dependent to the buffer gas flow rate, not over all possible ranges; we've seen that the target species only behaves linearly in the hydrodynamic regime. This means that we should be equating the function of $n(z)$ with the linear fit performed on the data for the parameters the data was taken at.
-
 \begin{equation*}
 	mf+b = \alpha\frac{f}{A_{aperture, 0} \bar{v_0}}\left(1-\frac{z_0}{\sqrt{z_0^2+a_0^2}}\right) 
 \end{equation*}
-
 Where $z_0=30$ cm, being the distance of the RGA from the cell aperture, and $z=0=2$ mm, for the smallest aperture seen during the experimental run. We also define the experimental scaling factors:
-
 \begin{align*}
 	\alpha & = \frac{m}{\beta}+\frac{b}{\beta f} \\
 	\beta & = \frac{1}{A_{aperture, 0} \bar{v_0}}\left(1-\frac{z_0}{\sqrt{z_0^2+a_0^2}}\right)
 \end{align*}
-
 Thus, we obtain a form that includes experimentally derived scaling factors that allows us to project the target species density over the length of the system.
-
 \begin{equation}
 	n(z) = \frac{mf+b}{A_{aperture} \bar{v} \beta}\left(1-\frac{z}{\sqrt{z^2+a^2}}\right)
 	\label{eq: experimental n(z)}
