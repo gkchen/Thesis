@@ -21,7 +21,7 @@ By definition, these formyl isomers of reactions \cref{r: C+H2O->HCO,r: C+H2O->H
 	\label{tab: affinities}
 	\begin{tabular}{|l|c|c|}
 		\hline
-		& Affinity (kcal/mol) & Affinities (eV)   \\
+		& Affinity (kJ/mol) & Affinities (eV)   \\
 		\hline
 		\ce{O2}  & 422 & 18.3 \\
 		\ce{H2}  & 424 & 18.4 \\
@@ -83,6 +83,14 @@ Where \ce{[HCO]+} is used to represent both isomers. With this understanding, we
 \subsection{Internal Relaxation}
 
 Through the \ce{C+ + H2O} reaction, 3.34 eV of energy is released in the production of \ce{HOC+}, while an even greater 5.05 eV for \ce{HCO+}. The released energy has two avenues, the kinetic energy of the reaction products of \ce{[HCO]+} and \ce{H}, and the internal states of the isomer produced. If the isomer is produced in a highly excited internal state, this could cause problems for our titration process if they are long lived and high enough energy to cause the more stable \ce{HCO+} to react with a titration gas \ce{X} when it would not have in its internal ground state. Mauclaire et al. found that the radiative lifetimes of these states can be as high as $\approx 300$ ms.\cite{Mauclaire1995}
+
+\todo{refine}
+\begin{align*}
+	\Gamma_{\mathrm{co}} & = 2 \Gamma_1 \Gamma_2 \tau \\
+	\intertext{$\Gamma_2 \rightarrow \Gamma_1$}
+	& = 2\Gamma_1^2 \tau
+\end{align*}
+where $\Gamma_1 \approx 7 \times 10^{-3}$ s$^{-1}$, $\tau=0.3$ s, we find that $\Gamma_{\mathrm{co}} \approx 3 \times 10^{-5}$. This means, at our operating pressures, we may have 0.4\% of our signal be affected by a highly excited internal state that may cause unwanted reactions.
 
 To see if these internal states may be an issue, we use \ce{O2} as a titration gas. Table \ref{tab: affinities} shows that \ce{O2} is only 0.2 eV away from being able to react with the less stable \ce{HOC+}. By introducing \ce{H2O} via the general valve, and \ce{O2} from a valve behind a leak valve, the two gasses can be introduced with a well defined time delay. If the literature is to be believed, a delay of 1 s between the introduction of the two gasses should be sufficient for more than 99\% of the internally excited states to have radiatively decayed; otherwise we may see a proton exchange and a new peak at \ce{O2H+}. The procedure is performed and resulting TOF trace is shown in Figure \ref{fig: O2 titration}.
 

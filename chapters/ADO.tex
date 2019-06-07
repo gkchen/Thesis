@@ -1,54 +1,3 @@
-Under the understanding that the reactions of interest for this work follow a pseudo-first-order model, a theoretical framework is needed to compare our findings. To figure out the characteristic rate constant $k$ of a reaction, we want to model the interaction between the reactants, whether it be neutral-neutral, to ion-dipole. To do this, we consider adiabatic capture theory, a study of the long range potentials between particles. A caveat is that the adiabatic capture theory is long ranged, only finding the rate at which a collision will occur, not necessarily when a reaction will happen. The probability of a reaction occurring requires modeling of short range interactions within the reaction complex, but understanding capture theory will yield the maximally allowed rate of reactions, if all collisions lead to a reaction.
-
-\subsection{Generalized Rate Constant Derivation} \label{sec: ACT}
-A general method of calculating the rate constant of two particles with a given potential, finding the collisional cross section, which is then averaged over a velocity distribution to find the rate constant.\cite{Zhang2017} The interaction potential of two reactants is generally defined as
-\begin{equation}
-    V(r) = \sum_n - \frac{C_n}{r^n}
-\end{equation}
-where $C_n$ is the interaction coefficient of order $n$. We may write the effective potential in the center of mass frame as
-\begin{equation}
-    V_{\mathrm{eff}} = \frac{l^2}{2 \mu_R r^2} + V(r)\label{eq: veff}
-\end{equation}
-where $\mu_R=m_1 m_2/(m_1 + m_2)$ is the reduced mass of the two particles. The competition between the repulsive and attractive terms creates a barrier as seen in Figure \ref{fig: veff}.
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.8\textwidth]{images/v_eff.png}
-	\caption{An arbitrary effective potential of an monopole-induced-dipole interaction. The maximum of the potential at $r_0$ creates a centrifugal barrier. Only particles with $E_{\mathrm{col}} > V_{\mathrm{eff}}$ surmount the barrier and collide.}
-	\label{fig: veff}
-\end{figure}
-To find the condition for a collision to occur, we first find the position $r_0$ corresponding to the maximum of the effective potential, which is the value of the centrifugal barrier.
-\begin{align*}
-    \frac{\partial V_{\mathrm{eff}}}{\partial r}\bigg|_{r_0} & = 0 \\
-    \therefore r_0 & = \left(\frac{n \mu_R C_n}{l^2}\right)^{1/n-2}
-\end{align*}
-Substituting $r_0$ back into equation $\ref{eq: veff}$, we find the maximal value of the effective potential:
-\begin{equation}
-    V_{\mathrm{eff}}(r_0) = \left(\frac{l^2}{\mu_R}\right)^{\frac{n}{n-2}} \frac{n-2}{2n}(n C_n)^{-\frac{2}{n-2}}
-\end{equation}
-This then defines the energy necessary for a collision, for if $E_{\mathrm{col}}$ exceeds $V_{\mathrm{eff}}(r_0)$, the reactants will be able to surmount the centrifugal barrier and collide. For the condition where $V_{\mathrm{eff}}(r_0) = E_{\mathrm{col}} = \frac{1}{2}\mu_R v^2$, we define the maximum value for the angular momentum $l$ and the impact parameter $b$.
-\begin{align*}
-    l_{\max} & = (\mu_R n)^{1/2}(C_n)^{1/n} \left(\frac{2 E_{col}}{n-2}\right)^{\frac{n-2}{2n}} \\
-    b_{\max} & = \frac{l_{\max}}{\mu_R v}
-\end{align*}
-We can then define a collision cross section dependent on the collision energy:
-\begin{align*}
-    \sigma(E_{col}) & = \pi b^2_{\max} \\
-    & = \frac{\pi}{2} n \left(\frac{2}{n-2}\right)^{\frac{n-2}{2}} \left(\frac{C_n}{E_{col}}\right)^{\frac{2}{n}}
-\end{align*}
-Integrating the collision cross section with a Maxwell Boltzmann distribution yields a generalized rate constant as a function of temperature and $n$.
-\begin{align}
-    k(T) & = \int_0^{\infty} v f(v) \sigma(v) dv \label{eq: k int} \\
-    & = \sqrt{\frac{2 \pi}{\mu_R}}n\left(\frac{2}{n-2}\right)^{\frac{n-2}{2}}C_n^{2/n}(k_B T)^{\frac{n-4}{2n}}\Gamma\left(2-\frac{2}{n}\right) \label{eq: k(T)}
-\end{align}
-For instance, the monopole-induced-dipole potential of order $n=4$ has the form and rate constant
-\begin{align}
-	V_L & = -\frac{\alpha q^2}{2r^4} \label{eq: V_L} \\
-	k(T) & = 2\pi q \sqrt{\frac{\alpha}{\mu_R}} \label{eq: k langevin}
-\end{align}
-where $\alpha$ is the polarizability of the neutral reactant, and $q$ is the monopole charge. The corresponding $k(T)$ in equation \ref{eq: k langevin} is known as the Langevin rate constant, which is famously temperature independent.
-
-\subsection{Average Dipole Orientation (ADO)}
-
 Unlike the general derivation for adiabatic capture theory outlined in the previous section. We now want to calculate the rate constant for an interaction with more than just an $r$ dependence. The monopole-dipole interaction term is not radially symmetric because the dipole may be oriented at an angle $\theta$ with respect to the inter-nuclear axis as shown in Figure \ref{fig: dipole angle}. The potential can be written as
 \begin{equation}
 	V_D(r, \theta) = -\frac{q\mu_D}{r^2} \cos(\theta).
@@ -62,7 +11,7 @@ Unlike the general derivation for adiabatic capture theory outlined in the previ
 	\label{fig: dipole angle}
 \end{figure}
 
-The method outlined in section \ref{sec: ACT} finds the rate constant by dealing with a two body problem only needing to consider the $r$ degree of freedom. The inclusion of the angle $\theta$ in the potential in equation \ref{eq: V_D} complicates this. We could assume that the dipole "locks" onto the monopole and always has an angle $\theta=0$, but that has been shown to not agree with experimental results.\cite{Su1973a} Instead, it is more appropriate to determine an averaged $\theta$ as a function of $r$. The derivation for the average dipole orientation theory (ADO) pioneered and expanded on by Su and Bowers is used.\cite{Su1973, Su1973a} Considering a monopole and dipole, the interaction potential will include both potential terms \ref{eq: V_L} and \ref{eq: V_D}
+The method outlined in section \ref{sec: ACT} finds the rate constant by dealing with a two body problem only needing to consider the $r$ degree of freedom. The inclusion of the angle $\theta$ in the potential in equation \ref{eq: V_D} complicates this. We could assume that the dipole "locks" onto the monopole and always has an angle $\theta=0$, but that has been shown to not agree with experimental results.\cite{Su1973a} Instead, it is more appropriate to determine an averaged $\theta$ as a function of $r$. The derivation for the average dipole orientation theory (ADO) pioneered and expanded on by Su and Bowers is used (this process can also be extrapolated to include quadrupole interactions\cite{Su1975}).\cite{Su1973, Su1973a} Considering a monopole and dipole, the interaction potential will include both potential terms \ref{eq: V_L} and \ref{eq: V_D}
 \begin{equation}
     V(r) = -\frac{\alpha q^2}{2r^4} - \frac{q\mu_D}{r^2} \cos\left(\bar{\theta}(r)\right)
     \label{eq: V_L+V_D}
@@ -179,7 +128,7 @@ A parameterized form is given in Su et al. where the form is similar to that of 
     k_{ADO} = \frac{2 \pi e}{\sqrt{\mu}}\left(\sqrt{\alpha}+C \mu_D\sqrt{\frac{2}{\pi k_B T}}\right)
     \label{eq: k ADO}
 \end{equation}
-where $C$ is the dipole locking constant shown in Figure \ref{fig: C}.\cite{Su1973a}\cite{Troe1985} This process can also be extrapolated to include quadrupole interactions.\cite{Su1975}
+where $C$ is the dipole locking constant shown in Figure \ref{fig: C}.\cite{Su1973a}\cite{Troe1985} We can see that the ADO approximation yields a $\sqrt{1/T}$ dependence on the rate constant in contrast to the Langevin treatment. A comparison of the two rate models for \ce{C+ + H2O} is shown in Figure \ref{fig: ADO Langevin} where the difference between the two is seen clearly down at low temperatures.
 
 \begin{figure}[H]
 	\label{fig: C}
@@ -187,3 +136,11 @@ where $C$ is the dipole locking constant shown in Figure \ref{fig: C}.\cite{Su19
 	\includegraphics[width=0.8\textwidth]{images/ADO_C.pdf}
 	\caption{Dipole locking constant $C$ parameterized by the dipole moment $\mu_D$ and polarizability $\alpha$. Figure taken from "Ion-polar molecule collisions: the effect of ion size on ion-polar molecule rate constants; the parameterization of the average-dipole-orientation theory" by Su et al.\cite{Su1973a}}
 \end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{images/ADO_Langevin_compare.png}
+	\caption{A comparison between ADO and Langevin rate constants for \ce{C+ + H2O}. A large discrepancy is shown at low temperatures where the ADO rate may be and order of magnitude larger than that of the Langevin model.}
+\end{figure}
+
+
