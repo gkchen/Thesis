@@ -1,11 +1,11 @@
-When describing chemical reaction rates, it's instructive to use the order of reaction defined by the sum of the order constituents contribute to the reaction. For example, a typical chemical reaction can be written as
+When observing chemical reaction rates, it's imperative to find the appropriate model to describe the behavior of the disappearance and appearance of the reactants and products. General models can be found for reactions depending on the unique reactants and their associated stoichiometric coefficients. For example, a typical bimolecular chemical reaction can be written as
 \begin{equation}
 	\ce{a[A] + b[B] -> products}
 	\label{eq: general reaction}
 \end{equation}
-Where \ce{[A]} and \ce{[B]} are the concentrations of the reactants and the lower case values are the respective stoichiometric coefficients. The rate $r$ for this chemical reaction occurring can be represented by the rates of each reactant's disappearance or product's appearance, scaled by their coefficient.
+where \ce{[A]} and \ce{[B]} are the concentrations of the reactants and the lower case values are the respective stoichiometric coefficients. The rate $r$ for this chemical reaction occurring can be represented by the rates of each reactant's disappearance, scaled by their stoichiometric coefficient
 \begin{equation}
-	r = -\frac{1}{a}\frac{d\ce{[A]}}{dt} = -\frac{1}{b}\frac{d\ce{[B]}}{dt}
+	r = -\frac{1}{a}\frac{d\ce{[A]}}{dt} = -\frac{1}{b}\frac{d\ce{[B]}}{dt}.
 \end{equation}
 In general, a differential equation can be written as
 \begin{equation}
@@ -17,13 +17,13 @@ where $k$ is called the rate constant and the "order" of the reaction is the sum
 	\frac{d \ce{[A]}}{dt} & = -k\ce{[A]}^a \nonumber \\
 	\ce{[A]} & = \ce{[A]0}e^{-kt} \label{eq: first order sol}
 \end{align}
-where the subscript $0$ denotes the initial concentration of the reactant. We find that the rate constant $k$ has units s$^{-1}$. If we consider a bimolecular reaction of two different species where we let $a=b=1$, the differential form and solution is found to be:
+where the subscript $0$ denotes the initial concentration of the reactant. We find that the rate constant $k$ has units s$^{-1}$. If we consider a bimolecular reaction of two different species where we let $a=b=1$, the differential form and solution are written as
 \begin{align}
 	\frac{d \ce{[A]}}{dt} & = -k \ce{[A]}\ce{[B]} \nonumber \\
-	\frac{\ce{[A]}}{\ce{[B]}} & = \frac{\ce{[A]0}}{\ce{[B]0}}e^{(\ce{[A]0 - [B]0}])kt} \label{eq: second order sol}
+	\frac{\ce{[A]}}{\ce{[B]}} & = \frac{\ce{[A]0}}{\ce{[B]0}}e^{(\ce{[A]0 - [B]0}])kt}. \label{eq: second order sol}
 \end{align}
-To measure $k$, both reactants need to be simultaneously measured, which can add errors and increase the complexity of the experiment. To circumvent this, flooding one reactant such that its total number can be considered constant throughout the reaction process while the scarcer one is depleted can simplify equation \ref{eq: second order sol}. Letting \ce{[A]} and \ce{[B]} be the concentrations of the scarce and flooded reactants respectively: $\ce{[B]0} \gg \ce{[A]0}$, and $\ce{[B]0} \approx \ce{[B]}$ leads to:
+To measure $k$, both reactants need to be simultaneously measured, which can add errors and increase the complexity of the experiment. To circumvent this, flooding one reactant such that its total number can be considered constant throughout the reaction process while the scarcer one is depleted can simplify equation \ref{eq: second order sol}. Letting \ce{[A]} and \ce{[B]} be the concentrations of the scarce and flooded reactants respectively, we approximate $\ce{[B]0} \gg \ce{[A]0}$ and $\ce{[B]0} \approx \ce{[B]}$, leading to
 \begin{equation}
-	\ce{[A]} = \ce{[A]0}e^{-k\ce{[B]0}t} \label{eq: pseudo first order sol}
+	\ce{[A]} = \ce{[A]0}e^{-k\ce{[B]0}t}. \label{eq: pseudo first order sol}
 \end{equation}
 Here, the rate constant $k$ has units of cm$^3$/s. We can readily see that equation \ref{eq: pseudo first order sol} is identical in form to equation \ref{eq: first order sol}. Thus, a reaction of the second-order can then be represented as one of the first-order in what is known as a pseudo-first-order reaction. The reactions discussed in this thesis are exclusively of the pseudo-first-order.
