@@ -11,7 +11,7 @@ Unlike the general derivation for adiabatic capture theory outlined in the previ
 	\label{fig: dipole angle}
 \end{figure}
 
-The method outlined in section \ref{sec: ACT} finds the rate constant by dealing with a two body problem only needing to consider the $r$ degree of freedom. The inclusion of the angle $\theta$ in the potential in equation \ref{eq: V_D} complicates this. We could assume that the dipole "locks" onto the monopole and always has an angle $\theta=0$, but that has been shown to not agree with experimental results.\cite{Su1973a} Instead, it is more appropriate to determine an averaged $\theta$ as a function of $r$. The derivation for the average dipole orientation theory (ADO) pioneered and expanded on by Su and Bowers is used (this process can also be extrapolated to include quadrupole interactions\cite{Su1975}).\cite{Su1973, Su1973a} Considering a monopole and dipole, the interaction potential will include both potential terms \ref{eq: V_L} and \ref{eq: V_D}
+The general adiabatic capture theory derivation outlined in Section \ref{sec: ACT} finds the rate constant by dealing with a two body problem only needing to consider the $r$ degree of freedom. The inclusion of the angle $\theta$ in the potential in equation \ref{eq: V_D} complicates this. We could assume that the dipole "locks" onto the monopole and always has an angle $\theta=0$, but that has been shown to not agree with experimental results.\cite{Su1973a} Instead, it is more appropriate to determine an averaged $\theta$ as a function of $r$. The derivation for the average dipole orientation theory (ADO) pioneered and expanded on by Su and Bowers is used (this process can also be extrapolated to include quadrupole interactions\cite{Su1975}).\cite{Su1973, Su1973a} Considering a monopole and dipole, the interaction potential will include both potential terms \ref{eq: V_L} and \ref{eq: V_D}
 \begin{equation}
     V(r) = -\frac{\alpha q^2}{2r^4} - \frac{q\mu_D}{r^2} \cos\left(\bar{\theta}(r)\right)
     \label{eq: V_L+V_D}
@@ -106,7 +106,7 @@ For diatomics, the energies of rotational states is defined as
 \end{equation*}
 where the rotational constant is $B_e=\hbar^2/(2\mu_R r^2)$, $\mu_R$ is the reduced mass of the molecule, and $r$ is the inter-nuclear separation.
 
-To find the rate constant, the same process described in the general adiabatic capture theory derivation can be applied to the interaction potential in equation \ref{eq: V_L+V_D}). The centrifugal barrier is
+To find the rate constant, the same process for the general adiabatic capture theory derivation from Section \ref{sec: ACT} can be applied to the interaction potential in equation \ref{eq: V_L+V_D}. The centrifugal barrier is
 \begin{equation*}
 	V_{\mathrm{eff}}(r_0) = \dfrac{l^2}{2 \mu_R r_0^2} - \dfrac{q^2 \alpha}{2r_0^4} - \dfrac{q\mu_D}{r_0^2} \cos(\bar{\theta}(r_0)).
 \end{equation*}
@@ -118,12 +118,12 @@ where the impact parameter is again defined as $b=l/(\mu_R v)$. In terms of the 
 \begin{equation*}
 	\langle \sigma \rangle = \dfrac{2 \mu_R^2}{v^2} \sqrt{E_{\mathrm{col}} + q \mu_D \cos(\bar{\theta}(r_o)) + \dfrac{q^2 \alpha}{2 r_0^2}}.
 \end{equation*}
-We now have all the components necessary to find the rate constant by integrating over a translational velocity distribution
+If $r_0$ is known, we may then find the rate constant by integrating over a translational velocity distribution
 \begin{equation*}
 	k(T) \int_0^\infty v f(v) \langle \sigma(v) \rangle dv.
 \end{equation*}
 
-A parameterized form is given in Su et al. where the form is similar to that of just a Langevin term, but now with a dipole interaction term added onto it,\cite{Su1973a}
+A parameterized form is given in Su et al. where the form is similar to that of just a Langevin term, but now with a dipole interaction term added onto it,
 \begin{equation}
     k_{ADO} = \frac{2 \pi e}{\sqrt{\mu}}\left(\sqrt{\alpha}+C \mu_D\sqrt{\frac{2}{\pi k_B T}}\right)
     \label{eq: k ADO}
@@ -141,6 +141,7 @@ where $C$ is the dipole locking constant shown in Figure \ref{fig: C}.\cite{Su19
 	\centering
 	\includegraphics[width=0.8\textwidth]{images/ADO_Langevin_compare.png}
 	\caption{A comparison between ADO and Langevin rate constants for \ce{C+ + H2O}. A large discrepancy is shown at low temperatures where the ADO rate may be and order of magnitude larger than that of the Langevin model.}
+	\label{fig: ADO Langevin}
 \end{figure}
 
 

@@ -1,93 +1,162 @@
-Rate equations used in the shared fitting programs.
+Chemical reaction networks, their rate equations, and solutions are given in this section. The reactions themselves are rewritten for completeness. All solutions to the differential forms assume initial conditions \ce{A(t=0)} = \ce{A0} for arbitrary species \ce{A}.
 
-\section{\ce{Be+ + H2O} All Thermochemically Allows Channels}
+\section{\ce{Be+ + H2O} All Thermochemically Allowed Channels}
 
-Differential forms for reactions:
-
+All of the thermochemically allowed product channels used in the analysis for \ce{Be+ + H2O} study,
+\begin{align}
+	\ce{Be+(^2S1/2) + H2O & -> BeOH+ + H} \tag{\ref{r: Be(S)+H2O->BeOH}} \\
+	\ce{Be+(^2P3/2) + H2O & -> BeOH+ + H} \tag{\ref{r: Be(P)+H2O->BeOH}} \\
+	\ce{Be+(^2P3/2) + H2O & -> H2O+ + Be} \tag{\ref{r: Be(P)+H2O->H2O}} \\
+	\ce{H2O + H2O+ & -> H3O+ + OH} \tag{\ref{r: H2O+H2O->H3O}} \\
+	\ce{Be+(^2P3/2) + H2O & -> BeH+ + O2} \tag{\ref{r: Be(P)+H2O->BeH}} \\
+	\ce{BeH+ + H2O & -> BeOH+ + H2} \tag{\ref{r: BeH+H2O->BeOH}} \\
+	\ce{Be+(^2P3/2) + H2O & -> BeO+ + H2} \tag{\ref{r: Be(P)+H2O->BeO}} \\
+	\ce{BeO+ + H2O & -> BeOH+ + OH}. \tag{\ref{r: BeO+H2O->BeOH}}
+\end{align}
+The differential forms of the above reactions,
 \begin{align*}
-	\ce{Be}(t) = & \ce{Be0} e^{\rho t (-(k_1+k_3+k_5+k_7))} \\
-	\ce{BeH}(t) = & -\frac{e^{-k_6 \rho t} \bigg(\ce{Be0} k_5 \bigg(e^{\rho t (-(k_1+k_3+k_5-k_6+k_7))}-1\bigg)-\ce{BeH0} (k_1+k_3+k_5-k_6+k_7)\bigg)}{k_1+k_3+k_5-k_6+k_7} \\
-	\ce{BeO}(t) = & -\frac{e^{-k_8 \rho t} \bigg(\ce{Be0} k_7 \bigg(e^{\rho t (-(k_1+k_3+k_5+k_7-k_8))}-1\bigg)-\ce{BeO0} (k_1+k_3+k_5+k_7-k_8)\bigg)}{k_1+k_3+k_5+k_7-k_8} \\
-	\ce{BeOH}(t) = & \frac{1}{(k_1+k_3+k_5+k_7) (k_1+k_3+k_5-k_6+k_7) (k_1+k_3+k_5+k_7-k_8)} \bigg[e^{\rho t (-(k_6+k_8))} \\
-	& \bigg(e^{\rho t (-(k_1+k_3+k_5-k_6+k_7-k_8))} \bigg(\ce{Be0} \bigg(k_1^3 \bigg(e^{\rho t (k_1+k_3+k_5+k_7)}-1\bigg) \\
-	& -k_1^2 k_5\bigg(e^{\rho t (k_1+k_3+k_5-k_6+k_7)}-3 e^{\rho t (k_1+k_3+k_5+k_7)}+2\bigg)-k_1^2 k_6 e^{\rho t (k_1+k_3+k_5+k_7)} \\
-	& -k_1^2 k_8 e^{\rho t (k_1+k_3+k_5+k_7)}+2 k_1^2 k_3 \bigg(e^{\rho t (k_1+k_3+k_5+k_7)}-1\bigg)+3 k_1^2 k_7 e^{\rho t (k_1+k_3+k_5+k_7)} \\
-	& +k_1^2 k_6-2 k_1^2 k_7+k_1^2 k_8+k_1 k_3^2 \bigg(e^{\rho t (k_1+k_3+k_5+k_7)}-1\bigg) \\
-	& +k_1 k_5^2 \bigg(-2 e^{\rho t (k_1+k_3+k_5-k_6+k_7)}+3 e^{\rho t (k_1+k_3+k_5+k_7)}-1\bigg) \\
-	& +k_1 k_5 k_8 \bigg(e^{\rho t (k_1+k_3+k_5-k_6+k_7)}-2 e^{\rho t (k_1+k_3+k_5+k_7)}+1\bigg) \\
-	& +k_1 k_6 k_8 e^{\rho t (k_1+k_3+k_5+k_7)}-k_7 (k_1+k_3+k_5+k_7) (k_1+k_3+k_5-k_6+k_7) e^{\rho t (k_1+k_3+k_5+k_7-k_8)} \\
-	& -k_5 (k_3+k_5+k_7) (k_3+k_5+k_7-k_8) e^{\rho t (k_1+k_3+k_5-k_6+k_7)} \\
-	& +(k_5+k_7) (k_3+k_5-k_6+k_7) (k_3+k_5+k_7-k_8) e^{\rho t (k_1+k_3+k_5+k_7)} \\
-	& -2 k_1 k_3 k_5 \bigg(e^{\rho t (k_1+k_3+k_5-k_6+k_7)}-2 e^{\rho t (k_1+k_3+k_5+k_7)}+1\bigg)-k_1 k_3 k_6 e^{\rho t (k_1+k_3+k_5+k_7)}\\
-	& -2 k_1 k_5 k_6 \bigg(e^{\rho t (k_1+k_3+k_5+k_7)}-1\bigg)-2 k_1 k_5 k_7 e^{\rho t (k_1+k_3+k_5-k_6+k_7)}-2 k_1 k_6 k_7 e^{\rho t (k_1+k_3+k_5+k_7)}\\
-	& +3 k_1 k_7^2 e^{\rho t (k_1+k_3+k_5+k_7)}-k_1 k_3 k_8 e^{\rho t (k_1+k_3+k_5+k_7)}-2 k_1 k_7 k_8 e^{\rho t (k_1+k_3+k_5+k_7)}\\
-	& +4 k_1 k_3 k_7 e^{\rho t (k_1+k_3+k_5+k_7)}+6 k_1 k_5 k_7 e^{\rho t (k_1+k_3+k_5+k_7)}+k_1 k_3 k_6-2 k_1 k_3 k_7+k_1 k_3 k_8\\
-	& -2 k_1 k_5 k_7+k_1 k_6 k_7-k_1 k_6 k_8-k_1 k_7^2+2 k_1 k_7 k_8+k_3 k_5 k_6+k_3 k_7 k_8+k_5^2 k_6+k_5 k_6 k_7-k_5 k_6 k_8 \\
-	& +k_5 k_7 k_8-k_6 k_7 k_8+k_7^2 k_8\bigg)+(k_1+k_3+k_5+k_7) (k_1+k_3+k_5-k_6+k_7)\\
-	& (k_1+k_3+k_5+k_7-k_8) \bigg((\ce{BeH0}+\ce{BeOH0}) e^{\rho t (k_1+k_3+k_5+k_7)}-\ce{BeH0} e^{\rho t (k_1+k_3+k_5-k_6+k_7)}\bigg)\bigg)\\
-	& +\ce{BeO0} e^{k_6 \rho t} \bigg(e^{k_8 \rho t}-1\bigg) (k_1+k_3+k_5+k_7) (k_1+k_3+k_5-k_6+k_7) (k_1+k_3+k_5+k_7-k_8)\bigg)\bigg] \\
-	\ce{H2O}(t) = & -\frac{e^{-k_4 \rho t} \bigg(\ce{Be0} k_3 \bigg(e^{\rho t (-(k_1+k_3-k_4+k_5+k_7))}-1\bigg)-\ce{H2O0} (k_1+k_3-k_4+k_5+k_7)\bigg)}{k_1+k_3-k_4+k_5+k_7} \\
-	\ce{H3O}(t) & = \frac{1}{(k_1+k_3+k_5+k_7) (k_1+k_3-k_4+k_5+k_7)}e^{-k_4 \rho t} \bigg(e^{k_4 \rho t} (k_1+k_3-k_4+k_5+k_7)\\
-	& (\ce{Be0} k_3+\ce{H3O0} (k_1+k_3+k_5+k_7))+\ce{Be0} k_3 k_4 e^{\rho t (-(k_1+k_3-k_4+k_5+k_7))}\\
-	& -\ce{Be0} k_3 (k_1+k_3+k_5+k_7)+\ce{H2O0} \bigg(e^{k_4 \rho t}-1\bigg) (k_1+k_3+k_5+k_7) (k_1+k_3-k_4+k_5+k_7)\bigg)
+	\dot{\ce{Be}}(t) & = -(k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}} + k_{\ref{r: Be(P)+H2O->H2O}} + k_{\ref{r: Be(P)+H2O->BeH}} + k_{\ref{r: Be(P)+H2O->BeO}})\rho_{\ce{H2O}} Be(t) \\
+	\dot{\ce{BeH}}(t) & = k_{\ref{r: Be(P)+H2O->BeH}} \rho_{\ce{H2O}} \ce{Be}(t) - k_{\ref{r: BeH+H2O->BeOH}} \rho_{\ce{H2O}} \ce{BeH}(t) \\
+	\dot{\ce{H2O}}(t) & = k_{\ref{r: Be(P)+H2O->H2O}} \rho_{\ce{H2O}} \ce{Be}(t) - k_{\ref{r: H2O+H2O->H3O}} \rho_{\ce{H2O}} \ce{H2O}(t) \\
+	\dot{\ce{H3O}}(t) & = k_{\ref{r: H2O+H2O->H3O}} \rho_{\ce{H2O}} \ce{H2O}(t) \\
+	\dot{\ce{BeO}}(t) & = k_{\ref{r: Be(P)+H2O->BeO}} \rho_{\ce{H2O}} \ce{Be}(t) -k_{\ref{r: BeO+H2O->BeOH}} \rho_{\ce{H2O}} \ce{BeO}(t) \\
+	\dot{\ce{BeOH}}(t) & = k_{\ref{r: Be(P)+H2O->BeO}} \rho_{\ce{H2O}} \ce{Be}(t) + k_{\ref{r: BeH+H2O->BeOH}} \rho_{\ce{H2O}} \ce{BeH}(t) + k_{\ref{r: BeO+H2O->BeOH}} \rho_{\ce{H2O}} \ce{BeO}(t).
+\end{align*}
+Of which, the solutions are as follows,
+\begin{align*}
+	\ce{Be}(t) = & \ce{Be0} e^{\rho_{\ce{H2O}} t (-(k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->H2O}}+k_{\ref{r: Be(P)+H2O->BeH}}+k_{\ref{r: Be(P)+H2O->BeO}}))} \\
+	\ce{BeH}(t) = & -\frac{e^{-k_{\ref{r: BeH+H2O->BeOH}} \rho_{\ce{H2O}} t}}{k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->H2O}}+k_{\ref{r: Be(P)+H2O->BeH}}-k_{\ref{r: BeH+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->BeO}}} \\
+	& \bigg(\ce{Be0} k_{\ref{r: Be(P)+H2O->BeH}} \bigg(e^{\rho_{\ce{H2O}} t (-(k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->H2O}}+k_{\ref{r: Be(P)+H2O->BeH}}-k_{\ref{r: BeH+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->BeO}}))}-1\bigg)-\ce{BeH0} (k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->H2O}}+k_{\ref{r: Be(P)+H2O->BeH}}-k_{\ref{r: BeH+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->BeO}})\bigg) \\
+	\ce{BeO}(t) = & -\frac{e^{-k_{\ref{r: BeO+H2O->BeOH}} \rho_{\ce{H2O}} t}}{k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->H2O}}+k_{\ref{r: Be(P)+H2O->BeH}}+k_{\ref{r: Be(P)+H2O->BeO}}-k_{\ref{r: BeO+H2O->BeOH}}} \\
+	& \bigg(\ce{Be0} k_{\ref{r: Be(P)+H2O->BeO}} \bigg(e^{\rho_{\ce{H2O}} t (-(k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->H2O}}+k_{\ref{r: Be(P)+H2O->BeH}}+k_{\ref{r: Be(P)+H2O->BeO}}-k_{\ref{r: BeO+H2O->BeOH}}))}-1\bigg)-\ce{BeO0} (k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->H2O}}+k_{\ref{r: Be(P)+H2O->BeH}}+k_{\ref{r: Be(P)+H2O->BeO}}-k_{\ref{r: BeO+H2O->BeOH}})\bigg) \\
+	\ce{BeOH}(t) = & \frac{1}{(k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->H2O}}+k_{\ref{r: Be(P)+H2O->BeH}}+k_{\ref{r: Be(P)+H2O->BeO}}) (k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->H2O}}+k_{\ref{r: Be(P)+H2O->BeH}}-k_{\ref{r: BeH+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->BeO}}) (k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->H2O}}+k_{\ref{r: Be(P)+H2O->BeH}}+k_{\ref{r: Be(P)+H2O->BeO}}-k_{\ref{r: BeO+H2O->BeOH}})} \bigg[e^{\rho_{\ce{H2O}} t (-(k_{\ref{r: BeH+H2O->BeOH}}+k_{\ref{r: BeO+H2O->BeOH}}))} \\
+	& \bigg(e^{\rho_{\ce{H2O}} t (-(k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->H2O}}+k_{\ref{r: Be(P)+H2O->BeH}}-k_{\ref{r: BeH+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->BeO}}-k_{\ref{r: BeO+H2O->BeOH}}))} \bigg(\ce{Be0} \bigg(k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}^3 \bigg(e^{\rho_{\ce{H2O}} t (k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->H2O}}+k_{\ref{r: Be(P)+H2O->BeH}}+k_{\ref{r: Be(P)+H2O->BeO}})}-1\bigg) \\
+	& -k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}^2 k_{\ref{r: Be(P)+H2O->BeH}}\bigg(e^{\rho_{\ce{H2O}} t (k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->H2O}}+k_{\ref{r: Be(P)+H2O->BeH}}-k_{\ref{r: BeH+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->BeO}})}-3 e^{\rho_{\ce{H2O}} t (k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->H2O}}+k_{\ref{r: Be(P)+H2O->BeH}}+k_{\ref{r: Be(P)+H2O->BeO}})}+2\bigg)\\
+	&-k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}^2 k_{\ref{r: BeH+H2O->BeOH}} e^{\rho_{\ce{H2O}} t (k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->H2O}}+k_{\ref{r: Be(P)+H2O->BeH}}+k_{\ref{r: Be(P)+H2O->BeO}})} \\
+	& -k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}^2 k_{\ref{r: BeO+H2O->BeOH}} e^{\rho_{\ce{H2O}} t (k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->H2O}}+k_{\ref{r: Be(P)+H2O->BeH}}+k_{\ref{r: Be(P)+H2O->BeO}})}+2 k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}^2 k_{\ref{r: Be(P)+H2O->H2O}} \bigg(e^{\rho_{\ce{H2O}} t (k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->H2O}}+k_{\ref{r: Be(P)+H2O->BeH}}+k_{\ref{r: Be(P)+H2O->BeO}})}-1\bigg)\\
+	&+3 k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}^2 k_{\ref{r: Be(P)+H2O->BeO}} e^{\rho_{\ce{H2O}} t (k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->H2O}}+k_{\ref{r: Be(P)+H2O->BeH}}+k_{\ref{r: Be(P)+H2O->BeO}})} \\
+	& +k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}^2 k_{\ref{r: BeH+H2O->BeOH}}-2 k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}^2 k_{\ref{r: Be(P)+H2O->BeO}}+k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}^2 k_{\ref{r: BeO+H2O->BeOH}}+k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}} k_{\ref{r: Be(P)+H2O->H2O}}^2 \bigg(e^{\rho_{\ce{H2O}} t (k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->H2O}}+k_{\ref{r: Be(P)+H2O->BeH}}+k_{\ref{r: Be(P)+H2O->BeO}})}-1\bigg) \\
+	& +k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}} k_{\ref{r: Be(P)+H2O->BeH}}^2 \bigg(-2 e^{\rho_{\ce{H2O}} t (k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->H2O}}+k_{\ref{r: Be(P)+H2O->BeH}}-k_{\ref{r: BeH+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->BeO}})}+3 e^{\rho_{\ce{H2O}} t (k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->H2O}}+k_{\ref{r: Be(P)+H2O->BeH}}+k_{\ref{r: Be(P)+H2O->BeO}})}-1\bigg) \\
+	& +k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}} k_{\ref{r: Be(P)+H2O->BeH}} k_{\ref{r: BeO+H2O->BeOH}} \bigg(e^{\rho_{\ce{H2O}} t (k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->H2O}}+k_{\ref{r: Be(P)+H2O->BeH}}-k_{\ref{r: BeH+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->BeO}})}-2 e^{\rho_{\ce{H2O}} t (k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->H2O}}+k_{\ref{r: Be(P)+H2O->BeH}}+k_{\ref{r: Be(P)+H2O->BeO}})}+1\bigg) \\
+	& +k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}} k_{\ref{r: BeH+H2O->BeOH}} k_{\ref{r: BeO+H2O->BeOH}} e^{\rho_{\ce{H2O}} t (k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->H2O}}+k_{\ref{r: Be(P)+H2O->BeH}}+k_{\ref{r: Be(P)+H2O->BeO}})}-k_{\ref{r: Be(P)+H2O->BeO}} (k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->H2O}}+k_{\ref{r: Be(P)+H2O->BeH}}+k_{\ref{r: Be(P)+H2O->BeO}})\\
+	&(k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->H2O}}+k_{\ref{r: Be(P)+H2O->BeH}}-k_{\ref{r: BeH+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->BeO}}) e^{\rho_{\ce{H2O}} t (k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->H2O}}+k_{\ref{r: Be(P)+H2O->BeH}}+k_{\ref{r: Be(P)+H2O->BeO}}-k_{\ref{r: BeO+H2O->BeOH}})} \\
+	& -k_{\ref{r: Be(P)+H2O->BeH}} (k_{\ref{r: Be(P)+H2O->H2O}}+k_{\ref{r: Be(P)+H2O->BeH}}+k_{\ref{r: Be(P)+H2O->BeO}}) (k_{\ref{r: Be(P)+H2O->H2O}}+k_{\ref{r: Be(P)+H2O->BeH}}+k_{\ref{r: Be(P)+H2O->BeO}}-k_{\ref{r: BeO+H2O->BeOH}}) e^{\rho_{\ce{H2O}} t (k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->H2O}}+k_{\ref{r: Be(P)+H2O->BeH}}-k_{\ref{r: BeH+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->BeO}})} \\
+	& +(k_{\ref{r: Be(P)+H2O->BeH}}+k_{\ref{r: Be(P)+H2O->BeO}}) (k_{\ref{r: Be(P)+H2O->H2O}}+k_{\ref{r: Be(P)+H2O->BeH}}-k_{\ref{r: BeH+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->BeO}}) (k_{\ref{r: Be(P)+H2O->H2O}}+k_{\ref{r: Be(P)+H2O->BeH}}+k_{\ref{r: Be(P)+H2O->BeO}}-k_{\ref{r: BeO+H2O->BeOH}}) e^{\rho_{\ce{H2O}} t (k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->H2O}}+k_{\ref{r: Be(P)+H2O->BeH}}+k_{\ref{r: Be(P)+H2O->BeO}})} \\
+	& -2 k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}} k_{\ref{r: Be(P)+H2O->H2O}} k_{\ref{r: Be(P)+H2O->BeH}} \bigg(e^{\rho_{\ce{H2O}} t (k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->H2O}}+k_{\ref{r: Be(P)+H2O->BeH}}-k_{\ref{r: BeH+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->BeO}})}-2 e^{\rho_{\ce{H2O}} t (k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->H2O}}+k_{\ref{r: Be(P)+H2O->BeH}}+k_{\ref{r: Be(P)+H2O->BeO}})}+1\bigg)\\
+	&-k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}} k_{\ref{r: Be(P)+H2O->H2O}} k_{\ref{r: BeH+H2O->BeOH}} e^{\rho_{\ce{H2O}} t (k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->H2O}}+k_{\ref{r: Be(P)+H2O->BeH}}+k_{\ref{r: Be(P)+H2O->BeO}})} -2 k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}} k_{\ref{r: Be(P)+H2O->BeH}} k_{\ref{r: BeH+H2O->BeOH}} \bigg(e^{\rho_{\ce{H2O}} t (k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->H2O}}+k_{\ref{r: Be(P)+H2O->BeH}}+k_{\ref{r: Be(P)+H2O->BeO}})}-1\bigg)\\
+	&-2 k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}} k_{\ref{r: Be(P)+H2O->BeH}} k_{\ref{r: Be(P)+H2O->BeO}} e^{\rho_{\ce{H2O}} t (k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->H2O}}+k_{\ref{r: Be(P)+H2O->BeH}}-k_{\ref{r: BeH+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->BeO}})}-2 k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}} k_{\ref{r: BeH+H2O->BeOH}} k_{\ref{r: Be(P)+H2O->BeO}} e^{\rho_{\ce{H2O}} t (k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->H2O}}+k_{\ref{r: Be(P)+H2O->BeH}}+k_{\ref{r: Be(P)+H2O->BeO}})}\\
+	& +3 k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}} k_{\ref{r: Be(P)+H2O->BeO}}^2 e^{\rho_{\ce{H2O}} t (k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->H2O}}+k_{\ref{r: Be(P)+H2O->BeH}}+k_{\ref{r: Be(P)+H2O->BeO}})}-k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}} k_{\ref{r: Be(P)+H2O->H2O}} k_{\ref{r: BeO+H2O->BeOH}} e^{\rho_{\ce{H2O}} t (k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->H2O}}+k_{\ref{r: Be(P)+H2O->BeH}}+k_{\ref{r: Be(P)+H2O->BeO}})}\\
+	&-2 k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}} k_{\ref{r: Be(P)+H2O->BeO}} k_{\ref{r: BeO+H2O->BeOH}} e^{\rho_{\ce{H2O}} t (k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->H2O}}+k_{\ref{r: Be(P)+H2O->BeH}}+k_{\ref{r: Be(P)+H2O->BeO}})}+4 k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}} k_{\ref{r: Be(P)+H2O->H2O}} k_{\ref{r: Be(P)+H2O->BeO}} e^{\rho_{\ce{H2O}} t (k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->H2O}}+k_{\ref{r: Be(P)+H2O->BeH}}+k_{\ref{r: Be(P)+H2O->BeO}})} \\
+	& +6 k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}} k_{\ref{r: Be(P)+H2O->BeH}} k_{\ref{r: Be(P)+H2O->BeO}} e^{\rho_{\ce{H2O}} t (k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->H2O}}+k_{\ref{r: Be(P)+H2O->BeH}}+k_{\ref{r: Be(P)+H2O->BeO}})}+k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}} k_{\ref{r: Be(P)+H2O->H2O}} k_{\ref{r: BeH+H2O->BeOH}}-2 k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}} k_{\ref{r: Be(P)+H2O->H2O}} k_{\ref{r: Be(P)+H2O->BeO}} \\
+	& +k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}} k_{\ref{r: Be(P)+H2O->H2O}} k_{\ref{r: BeO+H2O->BeOH}}-2 k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}} k_{\ref{r: Be(P)+H2O->BeH}} k_{\ref{r: Be(P)+H2O->BeO}}+k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}} k_{\ref{r: BeH+H2O->BeOH}} k_{\ref{r: Be(P)+H2O->BeO}}-k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}} k_{\ref{r: BeH+H2O->BeOH}} k_{\ref{r: BeO+H2O->BeOH}}-k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}} k_{\ref{r: Be(P)+H2O->BeO}}^2\\
+	&+2 k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}} k_{\ref{r: Be(P)+H2O->BeO}} k_{\ref{r: BeO+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->H2O}} k_{\ref{r: Be(P)+H2O->BeH}} k_{\ref{r: BeH+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->H2O}} k_{\ref{r: Be(P)+H2O->BeO}} k_{\ref{r: BeO+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->BeH}}^2 k_{\ref{r: BeH+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->BeH}} k_{\ref{r: BeH+H2O->BeOH}} k_{\ref{r: Be(P)+H2O->BeO}}-k_{\ref{r: Be(P)+H2O->BeH}} k_{\ref{r: BeH+H2O->BeOH}} k_{\ref{r: BeO+H2O->BeOH}} \\
+	& +k_{\ref{r: Be(P)+H2O->BeH}} k_{\ref{r: Be(P)+H2O->BeO}} k_{\ref{r: BeO+H2O->BeOH}}-k_{\ref{r: BeH+H2O->BeOH}} k_{\ref{r: Be(P)+H2O->BeO}} k_{\ref{r: BeO+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->BeO}}^2 k_{\ref{r: BeO+H2O->BeOH}}\bigg)+(k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->H2O}}+k_{\ref{r: Be(P)+H2O->BeH}}+k_{\ref{r: Be(P)+H2O->BeO}}) \\
+	& (k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->H2O}}+k_{\ref{r: Be(P)+H2O->BeH}}-k_{\ref{r: BeH+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->BeO}})(k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->H2O}}+k_{\ref{r: Be(P)+H2O->BeH}}+k_{\ref{r: Be(P)+H2O->BeO}}-k_{\ref{r: BeO+H2O->BeOH}}) \\
+	& \bigg((\ce{BeH0}+\ce{BeOH0}) e^{\rho_{\ce{H2O}} t (k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->H2O}}+k_{\ref{r: Be(P)+H2O->BeH}}+k_{\ref{r: Be(P)+H2O->BeO}})} -\ce{BeH0} e^{\rho_{\ce{H2O}} t (k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->H2O}}+k_{\ref{r: Be(P)+H2O->BeH}}-k_{\ref{r: BeH+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->BeO}})}\bigg)\bigg) \\
+	& +\ce{BeO0} e^{k_{\ref{r: BeH+H2O->BeOH}} \rho_{\ce{H2O}} t} \bigg(e^{k_{\ref{r: BeO+H2O->BeOH}} \rho_{\ce{H2O}} t}-1\bigg) (k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->H2O}}+k_{\ref{r: Be(P)+H2O->BeH}}+k_{\ref{r: Be(P)+H2O->BeO}}) (k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->H2O}}+k_{\ref{r: Be(P)+H2O->BeH}}-k_{\ref{r: BeH+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->BeO}}) \\
+	&(k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->H2O}}+k_{\ref{r: Be(P)+H2O->BeH}}+k_{\ref{r: Be(P)+H2O->BeO}}-k_{\ref{r: BeO+H2O->BeOH}})\bigg)\bigg] \\
+	\ce{H2O}(t) = & -\frac{e^{-k_{\ref{r: H2O+H2O->H3O}} \rho_{\ce{H2O}} t}}{k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->H2O}}-k_{\ref{r: H2O+H2O->H3O}}+k_{\ref{r: Be(P)+H2O->BeH}}+k_{\ref{r: Be(P)+H2O->BeO}}} \\
+	& \bigg(\ce{Be0} k_{\ref{r: Be(P)+H2O->H2O}} \bigg(e^{\rho_{\ce{H2O}} t (-(k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->H2O}}-k_{\ref{r: H2O+H2O->H3O}}+k_{\ref{r: Be(P)+H2O->BeH}}+k_{\ref{r: Be(P)+H2O->BeO}}))}-1\bigg)-\ce{H2O0} (k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->H2O}}-k_{\ref{r: H2O+H2O->H3O}}+k_{\ref{r: Be(P)+H2O->BeH}}+k_{\ref{r: Be(P)+H2O->BeO}})\bigg) \\
+	\ce{H3O}(t) & = \frac{e^{-k_{\ref{r: H2O+H2O->H3O}} \rho_{\ce{H2O}} t} }{(k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->H2O}}+k_{\ref{r: Be(P)+H2O->BeH}}+k_{\ref{r: Be(P)+H2O->BeO}}) (k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->H2O}}-k_{\ref{r: H2O+H2O->H3O}}+k_{\ref{r: Be(P)+H2O->BeH}}+k_{\ref{r: Be(P)+H2O->BeO}})} \\
+	& \bigg(e^{k_{\ref{r: H2O+H2O->H3O}} \rho_{\ce{H2O}} t} (k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->H2O}}-k_{\ref{r: H2O+H2O->H3O}}+k_{\ref{r: Be(P)+H2O->BeH}}+k_{\ref{r: Be(P)+H2O->BeO}})\\
+	& (\ce{Be0} k_{\ref{r: Be(P)+H2O->H2O}}+\ce{H3O0} (k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->H2O}}+k_{\ref{r: Be(P)+H2O->BeH}}+k_{\ref{r: Be(P)+H2O->BeO}}))+\ce{Be0} k_{\ref{r: Be(P)+H2O->H2O}} k_{\ref{r: H2O+H2O->H3O}} e^{\rho_{\ce{H2O}} t (-(k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->H2O}}-k_{\ref{r: H2O+H2O->H3O}}+k_{\ref{r: Be(P)+H2O->BeH}}+k_{\ref{r: Be(P)+H2O->BeO}}))}\\
+	& -\ce{Be0} k_{\ref{r: Be(P)+H2O->H2O}} (k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->H2O}}+k_{\ref{r: Be(P)+H2O->BeH}}+k_{\ref{r: Be(P)+H2O->BeO}})+\ce{H2O0} \bigg(e^{k_{\ref{r: H2O+H2O->H3O}} \rho_{\ce{H2O}} t}-1\bigg) (k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->H2O}}+k_{\ref{r: Be(P)+H2O->BeH}}+k_{\ref{r: Be(P)+H2O->BeO}}) \\
+	& (k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}+k_{\ref{r: Be(P)+H2O->H2O}}-k_{\ref{r: H2O+H2O->H3O}}+k_{\ref{r: Be(P)+H2O->BeH}}+k_{\ref{r: Be(P)+H2O->BeO}})\bigg).
 \end{align*}
 
-\section{\ce{Be+ + H2O + H2}} \label{sec: Be+H2O+H2 eqs}
+\section{\ce{Be+ + H2O + H2} Background Reactions} \label{sec: Be+H2O+H2 eqs}
 
-Differential forms for reactions \ref{r: Be(P)+H2->BeH}, \ref{r: BeH+H2O->BeOH}, \ref{r: Be(S)+H2O->BeOH}, and \ref{r: Be(P)+H2O->BeOH} occurring concurrently:
-
-\begin{align}
-	\dot{\ce{Be}}(t) & = (-k_1 \rho_1 + k_2 \rho_2) \ce{Be}(t) \\
-	\dot{\ce{BeH}}(t) & = k_1 \rho_1 \ce{Be}(t) - k_3 \rho_2 \ce{BeH}(t) \\
-	\dot{\ce{BeOH}}(t) & = k_2 \rho_2 \ce{Be}(t) + k_3 \rho_3 \ce{BeH}(t)
-\end{align}
-
-Where $\rho_1$ is the density of \ce{H2} and $\rho_2$ is the density of \ce{H2O}. The solutions are as follows:
-
-\begin{align}
-	\ce{Be}(t) = & \ce{Be0} e^{t (-(k_1 \rho_1+k_2 \rho_2))} \\
-	\ce{BeH}(t) = & \frac{1}{\rho_2 (k_3-k_2)-k_1 \rho_1} \big[e^{-k_3 \rho_2 t} (\ce{Be0} k_1 \rho_1 \left(e^{-(k_1 \rho_1+k_2 \rho_2-k_3 \rho_2)t}-1\right) \\
-	& -\ce{BeH0} (k_1 \rho_1+\rho_2 (k_2-k_3)))\big] \\
-	\ce{BeOH}(t) = & \frac{e^{-k_3 \rho_2 t}}{\rho_2 (k_3-k_2)-k_1 \rho_1} \big[\ce{Be0} (k_1 \rho_1 - (k_1 \rho_1+k_2 \rho_2-k_3 \rho_2) e^{k_3 \rho_2 t} \\
-	& +\rho_2 (k_2-k_3) e^{-(k_1 \rho_1+\rho_2 (k_2-k_3))t}) \\
-	& +\left((\ce{BeH0}+\ce{BeOH0}) e^{k_3 \rho_2 t}-\ce{BeH0}\right) (\rho_2 (k_3-k_2)-k_1 \rho_1)\big]
-\end{align}
+Background reactions expected due to residual \ce{H2} and \ce{H2O} in the trap chamber,
+\begin{align*}
+	\ce{Be+(^2P3/2) + H2 & -> BeH+ + H} \tag{\ref{r: Be(P)+H2->BeH}} \\
+	\ce{Be+(^2S1/2) + H2O & -> BeOH+ + H} \tag{\ref{r: Be(S)+H2O->BeOH}} \\
+	\ce{Be+(^2P3/2) + H2O & -> BeOH+ + H} \tag{\ref{r: Be(P)+H2O->BeOH}} \\
+	\ce{BeH+ + H2O & -> BeOH+ + H2}. \tag{\ref{r: BeH+H2O->BeOH}}
+\end{align*}
+The differential forms of the above reactions,
+\begin{align*}
+	\dot{\ce{Be}}(t) & = (-k_{\ref{r: Be(P)+H2->BeH}} \rho_{\ce{H2}} + k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}} \rho_{\ce{H2O}}) \ce{Be}(t) \\
+	\dot{\ce{BeH}}(t) & = k_{\ref{r: Be(P)+H2->BeH}} \rho_{\ce{H2}} \ce{Be}(t) - k_{\ref{r: BeH+H2O->BeOH}} \rho_{\ce{H2O}} \ce{BeH}(t) \\
+	\dot{\ce{BeOH}}(t) & = k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}} \rho_{\ce{H2O}} \ce{Be}(t) + k_{\ref{r: BeH+H2O->BeOH}} \rho_3 \ce{BeH}(t)
+\end{align*}
+Of which the solutions are,
+\begin{align*}
+	\ce{Be}(t) = & \ce{Be0} e^{t (-(k_{\ref{r: Be(P)+H2->BeH}} \rho_{\ce{H2O}}+k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}} \rho_{\ce{H2O}}))} \\
+	\ce{BeH}(t) = & \frac{1}{\rho_{\ce{H2O}} (k_{\ref{r: BeH+H2O->BeOH}}-k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}})-k_{\ref{r: Be(P)+H2->BeH}} \rho_{\ce{H2O}}} \big[e^{-k_{\ref{r: BeH+H2O->BeOH}} \rho_{\ce{H2O}} t} (\ce{Be0} k_{\ref{r: Be(P)+H2->BeH}} \rho_{\ce{H2O}} \left(e^{-(k_{\ref{r: Be(P)+H2->BeH}} \rho_{\ce{H2O}}+k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}} \rho_{\ce{H2O}}-k_{\ref{r: BeH+H2O->BeOH}} \rho_{\ce{H2O}})t}-1\right) \\
+	& -\ce{BeH0} (k_{\ref{r: Be(P)+H2->BeH}} \rho_{\ce{H2O}}+\rho_{\ce{H2O}} (k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}-k_{\ref{r: BeH+H2O->BeOH}})))\big] \\
+	\ce{BeOH}(t) = & \frac{e^{-k_{\ref{r: BeH+H2O->BeOH}} \rho_{\ce{H2O}} t}}{\rho_{\ce{H2O}} (k_{\ref{r: BeH+H2O->BeOH}}-k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}})-k_{\ref{r: Be(P)+H2->BeH}} \rho_{\ce{H2O}}} \big[\ce{Be0} (k_{\ref{r: Be(P)+H2->BeH}} \rho_{\ce{H2O}} - (k_{\ref{r: Be(P)+H2->BeH}} \rho_{\ce{H2O}}+k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}} \rho_{\ce{H2O}}-k_{\ref{r: BeH+H2O->BeOH}} \rho_{\ce{H2O}}) e^{k_{\ref{r: BeH+H2O->BeOH}} \rho_{\ce{H2O}} t} \\
+	& +\rho_{\ce{H2O}} (k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}-k_{\ref{r: BeH+H2O->BeOH}}) e^{-(k_{\ref{r: Be(P)+H2->BeH}} \rho_{\ce{H2O}}+\rho_{\ce{H2O}} (k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}}-k_{\ref{r: BeH+H2O->BeOH}}))t}) \\
+	& +\left((\ce{BeH0}+\ce{BeOH0}) e^{k_{\ref{r: BeH+H2O->BeOH}} \rho_{\ce{H2O}} t}-\ce{BeH0}\right) (\rho_{\ce{H2O}} (k_{\ref{r: BeH+H2O->BeOH}}-k_{\ref{r: Be(S)+H2O->BeOH} + \ref{r: Be(P)+H2O->BeOH}})-k_{\ref{r: Be(P)+H2->BeH}} \rho_{\ce{H2O}})\big].
+\end{align*}
 
 \section{\ce{Be+ + H2O/HOD/D2O}} \label{sec: Be+HOD eqs}
 
-Differential forms for reactions \ref{r: Be(S)+H2O->BeOH}, \ref{r: Be(S)+HOD->BeOD}, \ref{r: Be(S)+HOD->BeOH}, and \ref{r: Be(S)+D2O->BeOD} occurring concurrently:
-
-\begin{align}
+Reactions between \ce{Be+} and water isotopologues \ce{H2O}, \ce{HOD}, and \ce{D2O},
+\begin{align*}
+	\ce{Be+(^2S1/2) + H2O & -> BeOH+ + H} \tag{\ref{r: Be(S)+H2O->BeOH}} \\
+	\ce{Be+(^2S1/2) + HOD & -> BeOD+ + H} \tag{\ref{r: Be(S)+HOD->BeOD}} \\
+	\ce{& -> BeOH+ + D} \tag{\ref{r: Be(S)+HOD->BeOH}} \\
+	\ce{Be+(^2S1/2) + D2O & -> BeOD+ + D} \tag{\ref{r: Be(S)+D2O->BeOD}}
+\end{align*}
+The differential forms of the above reactions,
+\begin{align*}
 	\dot{\ce{Be}}(t) & = -(k_1\rho_1+k_2\rho_2+k_3\rho_3)\ce{Be}(t)\\
 	\dot{\ce{BeOH}}(t) & = (k_1\rho_1+(1-\eta)k_2\rho_2)\ce{Be}(t)\\
 	\dot{\ce{BeOD}}(t) & = (k_3\rho_3+\eta k_2\rho_2)\ce{Be}(t)
-\end{align}
-
-Where $\rho_1$ is the density of \ce{H2O}, $\rho_2$ is the density of \ce{HOD}, and $\rho_3$ is the density of \ce{D2O}. The solutions are as follows:
-
+\end{align*}
+Of which the solutions are,
 \begin{align}
 	\ce{Be}(t) = &  \ce{Be0} e^{-(k_1 \rho_1+k_2 \rho_2+k_3 \rho_3)t} \label{eq: HOD Be(t)} \\
 	\ce{BeOD}(t) = & \frac{1}{k_1 \rho_1+k_2 \rho_2+k_3 \rho_3} \big[\ce{Be0} (\eta k_2 \rho_2+k_3 \rho_3) \left(1-e^{-(k_1 \rho_1+k_2 \rho_2+k_3 \rho_3)t}\right) \label{eq: HOD BeOD(t)} \\
 	& +\ce{BeOD0} (k_1 \rho_1+k_2 \rho_2+k_3 \rho_3)\big] \\
 	\ce{BeOH}(t) = & \frac{1}{k_1 \rho_1+k_2 \rho_2+k_3 \rho_3}\big[\ce{Be0} (k_1 \rho_1-(\eta-1) k_2 \rho_2) \left(1 - e^{-(k_1 \rho_1+k_2 \rho_2+k_3 \rho_3)t}\right) \\
-	& + \ce{BeOH0} (k_1 \rho_1+k_2 \rho_2+k_3 \rho_3)\big] \label{eq: HOD BeOH(t)}
+	& + \ce{BeOH0} (k_1 \rho_1+k_2 \rho_2+k_3 \rho_3)\big]. \label{eq: HOD BeOH(t)}
 \end{align}
 
 \section{\ce{C+ + H2O}} \label{sec: C+H2O eqs}
 
-Differential forms for \ref{r: C+H2O->HCO}, \ref{r: C+H2O->HOC}, and \ref{r: [HCO]+H2O->H3O}.
-
-\begin{align}
+The production of the formyl isomers and subsequent reactions with water,
+\begin{align*}
+	\ce{C+ + H2O & -> HCO+ + H} \tag{\ref{r: C+H2O->HCO}} \\
+	\ce{& -> HOC+ + H} \tag{\ref{r: C+H2O->HOC}} \\
+	\ce{HOC+ + CO & -> HCO+ + CO}. \tag{\ref{r: HOC+CO->HCO}}
+\end{align*}
+The differential forms of the above reactions,
+\begin{align*}
 	\dot{\ce{C}}(t) & = -k_1 \rho \ce{C}(t) \\
 	\dot{\ce{[HCO]}}(t) & = \rho(k_1 \ce{C}(t) + k_2 \ce{[HCO]}(t)) \\
-	\dot{\ce{H3O}}(t) & = k_2 \rho \ce{[HCO]}(t)
+	\dot{\ce{H3O}}(t) & = k_2 \rho \ce{[HCO]}(t).
+\end{align*}
+Of which the solutions are,
+\begin{align}
+	\ce{C}(t) & = \ce{C0} e^{-k_1 \rho t} \label{eq: H2O C(t)} \\
+	\ce{[HCO]}(t) & = \frac{e^{-(k_1 + k_2) \rho t}}{k_1 - k_2} \left(e^{k_1 \rho t}((\ce{C0} + \ce{[HCO]0})k_1 - \ce{[HCO]0} k_2) - \ce{C0} e^{-(k_1 + k_2) \rho t}\right) \label{eq: H2O [HCO](t)} \\
+	%	H_3O(t) & = \frac{\left([HCO]_0 e^{-k_2 \rho t} - (H_3O_0 + [HCO]_0) \right)(k_2 - k_1) + C_0\left( k_1 \left(1 - e^{-k_2 \rho t}\right) + k_2 \left(e^{-k_1 \rho t} - 1\right) \right)}{k_1 - k_2} \label{eq: [HCO]+H2O->H3O(t)}
+	\ce{H3O}(t) & = \ce{H3O0} + \ce{[HCO]0} (1 - e^{-k_2 \rho t}) + \frac{\ce{C0}\left( k_1 \left(1 - e^{-k_2 \rho t}\right) + k_2 \left(e^{-k_1 \rho t} - 1\right) \right)}{k_1 - k_2}. \label{eq: H2O H3O(t)}
 \end{align}
 
-Where $\rho$ is the density of \ce{H2O}. The solutions are as follows:
+\section{\ce{[HCO]+ + X}} \label{sec: [HCO]+X eqs}
 
+The reactions of the isomers \ce{[HCO]+} with via titration gas \ce{X},
+\begin{align*}
+	\ce{HOC+ + X & -> XH+ + CO} \tag{\ref{r: X+HOC->XH}}
+\end{align*}
+The differential form of the above reaction,
+\begin{align*}
+	\dot{\ce{HOC}}(t) & = - k_{\ref{r: X+HOC->XH}} \rho_{\ce{X}} \ce{HOC}(t) \\
+	\dot{\ce{XH}}(t) & = k_{\ref{r: X+HOC->XH}} \rho_{\ce{X}} \ce{HOC}(t).
+\end{align*}
+Of which the solutions are,
+\begin{align*}
+	\ce{HOC}(t) & = \ce{HOC0}e^{-k_{\ref{r: X+HOC->XH}} \rho_{\ce{X}} t} \\
+	\ce{XH}(t) & = \ce{HOC0}\left(1-e^{-k_{\ref{r: X+HOC->XH}} \rho_{\ce{X}} t}\right) + \ce{XH0}.
+\end{align*}
+This is the idealized situation, but we cannot observe just \ce{HOC+} in the trap, only the combination of \ce{HCO+} and \ce{HOC+}, thus
+\begin{equation*}
+	\ce{[HCO](t) = HOC(t) + HCO(t)}
+\end{equation*}
+where due to the unreactivity of \ce{HCO+} (reaction \ref{r: X+HCO->NR}), \ce{HCO(t) = HCO0}. The solutions to the observable species are then,
 \begin{align}
-	\ce{C}(t) & = \ce{C0} e^{-k_1 \rho t} \\
-	\ce{[HCO]}(t) & = \frac{e^{-(k_1 + k_2) \rho t}}{k_1 - k_2} \left(e^{k_1 \rho t}((\ce{C0} + \ce{[HCO]0})k_1 - \ce{[HCO]0} k_2) - \ce{C0} e^{-(k_1 + k_2) \rho t}\right) \\
-	%	H_3O(t) & = \frac{\left([HCO]_0 e^{-k_2 \rho t} - (H_3O_0 + [HCO]_0) \right)(k_2 - k_1) + C_0\left( k_1 \left(1 - e^{-k_2 \rho t}\right) + k_2 \left(e^{-k_1 \rho t} - 1\right) \right)}{k_1 - k_2} \label{eq: [HCO]+H2O->H3O(t)}
-	\ce{H3O}(t) & = \ce{H3O0} + \ce{[HCO]0} (1 - e^{-k_2 \rho t}) + \frac{\ce{C0}\left( k_1 \left(1 - e^{-k_2 \rho t}\right) + k_2 \left(e^{-k_1 \rho t} - 1\right) \right)}{k_1 - k_2}
+	\ce{[HCO]}(t) & = \ce{HOC0}e^{-k_{\ref{r: X+HOC->XH}} \rho_{\ce{X}} t} + \ce{HCO0} \label{eq: X HOC(t)} \\
+	\ce{XH}(t) & = \ce{HOC0}\left(1-e^{-k_{\ref{r: X+HOC->XH}} \rho_{\ce{X}} t}\right) + \ce{XH0}. \label{eq: X XH(t)}
 \end{align}

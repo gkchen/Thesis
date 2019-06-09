@@ -31,6 +31,7 @@
 \usepackage{cancel}
 \usepackage{epigraph}
 \usepackage{soul}
+\usepackage{setspace}
 \allowdisplaybreaks
 %\usepackage{ulem}
 %\usepackage{bookmark}
@@ -62,7 +63,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\dedication     {\textsl{---}}
+\dedication     {\textsl{For my family}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -96,16 +97,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \chapter{Introduction}
-	\input{chapters/thesis_intro}
+\input{chapters/thesis_intro}
 	
 	\section{Interstellar Chemistry}
 	\input{chapters/interstellar_chemistry}
-	
+
 	\section{Apparatus Overview}
 	\input{chapters/apparatus_overview}
-	
-%	\section{Thesis Outline}
-%	\input{chapters/thesis_outline}
 	
 \chapter{Chemical Rate Constants}
 	\input{chapters/pseudo_first_order}
@@ -119,9 +117,8 @@
 		\subsection{Average Dipole Orientation (ADO)} \label{sec: ADO}
 		\input{chapters/ADO}
 	
-
-%	\section{Statistical State Counting}
-%	\input{chapters/state_counting}
+%%	\section{Statistical State Counting}
+%%	\input{chapters/state_counting}
 
 \chapter{The Cryogenic Buffer Gas Beam (CBGB)}
 \input{chapters/CBGB_intro}
@@ -175,44 +172,44 @@
 	\input{chapters/dual_loading}
 
 \chapter{Optical Control of Reactions between Water and Laser-Cooled \ce{Be+} Ions} \label{sec: Be+H2O}
-%	\input{chapters/Be_H2O_paper}
+%%	\input{chapters/Be_H2O_paper}
 \input{chapters/Be_H2O}
 
 \chapter{Isotope-selective chemistry in the Be$^+$($^2$S$_{1/2}$) + HOD $\rightarrow$ BeOD$^+$/BeOH$^+$ + H/D reaction}
 \input{chapters/Be_HOD}
 
-%\chapter{\ce{O2} Titration}
-%	\section{\ce{Be+ + O2}}
-%	\input{chapters/Be_O2}
-%	
-%	\section{\ce{C+ + O2}}
-%	\input{chapters/C_O2}
+%%\chapter{\ce{O2} Titration}
+%%	\section{\ce{Be+ + O2}}
+%%	\input{chapters/Be_O2}
+%%	
+%%	\section{\ce{C+ + O2}}
+%%	\input{chapters/C_O2}
 
-\chapter{Low Temperature \ce{C+ + H2O}} \label{sec: [HCO]}
+\chapter{\ce{C+ + H2O}} \label{sec: [HCO]}
 \input{chapters/C_H2O}
 	
-%	\section{Experimental}
-%	
-%		\subsection{Secondary Reactions}
-%		\input{chapters/formyl_isomers}
-%	
-%		\subsection{Internal Relaxation}
-%		\input{chapters/C_O2}
-%		
-%		%	\section{\ce{CO2} Titration}
-%		%	\input{chapters/CO2_titration}
-%		
-%		\subsection{Determination of Branching Ratio}
-%		\input{chapters/ratio_intro}
-%		
-%			\subsubsection{\ce{CO2} Titration}
-%			\input{chapters/CO2_titration}
-%	
-%			\subsubsection{\ce{^{15}N2} Titration}
-%			\input{chapters/N2_titration}
-%			
-%	\section{Conclusion}
-%	\input{chapters/C_H2O_conclusion}
+%%	\section{Experimental}
+%%	
+%%		\subsection{Secondary Reactions}
+%%		\input{chapters/formyl_isomers}
+%%	
+%%		\subsection{Internal Relaxation}
+%%		\input{chapters/C_O2}
+%%		
+%%		%	\section{\ce{CO2} Titration}
+%%		%	\input{chapters/CO2_titration}
+%%		
+%%		\subsection{Determination of Branching Ratio}
+%%		\input{chapters/ratio_intro}
+%%		
+%%			\subsubsection{\ce{CO2} Titration}
+%%			\input{chapters/CO2_titration}
+%%	
+%%			\subsubsection{\ce{^{15}N2} Titration}
+%%			\input{chapters/N2_titration}
+%%			
+%%	\section{Conclusion}
+%%	\input{chapters/C_H2O_conclusion}
 
 \chapter{Conclusion and Future Outlook}
 \input{chapters/conclusion}
@@ -237,4 +234,4 @@
 \bibliographystyle{plain}
 \bibliography{bibliography}    % bibliography references
 
-\end {document}
+\end{document}

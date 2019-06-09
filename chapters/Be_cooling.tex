@@ -1,22 +1,10 @@
-To reach the low reaction temperatures desired for our experiment, we need both a cold molecule source as well as a cold and controlled ion source. We may trap \ce{Be+} ions, but given the trap depth of 3 eV, the range of reaction temperatures is vast. Using laser cooling of translational modes of the ions on a closed transition allows us cool down the ion such that clouds and crystals form with temperatures not exceeding 500 mK.\cite{Wineland1979}
+To reach the low reaction temperatures desired for our experiment, we need both a cold molecule source as well as a cold and controlled ion source. We may trap \ce{Be+} ions, but given the trap depth of 6 eV, the range of reaction temperatures is vast. Using laser cooling of translational modes of the ions on a closed transition allows us cool down the ion such that clouds and crystals form with temperatures not exceeding 500 mK.\cite{Wineland1979}
 
 Our atom of choice is \ce{^9Be}, which is the only stable isotope of beryllium with a nuclear spin of $I=3/2$. Being an alkaline earth atom, \ce{^9Be} has two valence electrons, and by stripping one off, we are left with an ion with a structure very similar to those of alkali atoms. The states of interest for our work are the \ce{^2S1/2} ground state and \ce{^2P3/2} excited state. In the ground state, the hyperfine splitting between the lower $F=2$ and $F=1$ manifolds is 1.25 GHz \ref{Wineland1983}. Defining the cooling transition on the \ce{^2P3/2} state from the $F=2$ ground manifold allows one to access a stretch transition between the ground $m_F=2$ to excited $m_F'=3$ states with magnetic fields on the order of $2 \times 10^{-5}$ T.\ref{Langer2006} In principle, this scheme does not require any repumping out of the $S$ orbital $F=1$ manifold. Our apparatus does not easily accommodate magnetic field coils necessary to resolve the hyperfine states, requiring repumping out of the $F=1$ manifold. Acousto-optic modulators (AOMs) driven at 400 MHz are used to bridge the 1.25 GHz hyperfine splitting.
 
-Addressing the \ce{^2S1/2}$\rightarrow$\ce{^2P3/2} transition is done with a Toptica TA-FHG Pro tuned to 313 nm with a peak power of 400 mW. The fundamental laser light is blue-detuned by 400 MHz from the cooling transition, which is then passed through a 400 MHz AOM to bring it back on resonance. The unperturbed, transmitted light, is then double passed through another 400 MHz AOM to repump the population that has fallen into the ground $F=1$ manifold. An additional AOM driven at 200 MHz creates red sidebands for both cooling and repump lights create our recapture beams. These aim to cool particularly hot \ce{Be+} ions produced after ablation not well addressed by the main cooling lasers, that would otherwise be lost in A-ramping. The \ce{^9Be+} cooling diagram and AOM set up is shown in Figures \ref{fig: Be structure} and \ref{fig: AOMs}. A feature of this laser set up is since the frequencies we utilize are all produced by the AOM's, we can quickly shut on and off the cooling lasers at will.
+Addressing the \ce{^2S1/2}$\rightarrow$\ce{^2P3/2} transition is done with a Toptica TA-FHG Pro tuned to 313 nm with a peak power of 400 mW. The Toptica TA-FHG Pro is an IR 1252 nm diode with peak power of >4 W from where 626 nm light is produced via second harmonic generation (SHG), and then doubled again for fourth harmonic generation (FHG). We direct $\approx 10\%$ of the 626 nm light produced in SHG, to a WS-U wavelength meter to monitor the frequency. With a software PID loop, we feedback to the diode current to lock the laser to the desired frequency to within 1 MHz precision.
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.6\textwidth]{images/Be_cooling_lasers.pdf}
-	\caption{Electronic structure of \ce{^9Be+} showing the main cooling and repump frequencies (blue) and red detuned recooling beams (orange). The fundamental light from the laser is blue detuned from the \ce{^2S1/2(F=2)}$\rightarrow$\ce{^2P3/2} transition by 400 MHz (middle dashed line), where an AOM driven at 400 MHz brings it back to resonance. Another AOM driven at 400 MHz is double passed to address the \ce{^2S1/2(F=1)}$\rightarrow$\ce{^2P3/2} repump transition. Both beams are then fed through an AOM driven at 200 MHz to produce redetuned recapture beams to cool particularly hot \ce{Be+} ions poorly addressed by the main cooling beams.}
-	\label{fig: Be structure}
-\end{figure}
-
-\begin{figure}[H]
-	\centering
-	\missingfigure{Laser and AOM's}
-	\caption{Diagram showing the AOM set up to produce the cooling beams, as well as recapture beams shown in Figure \ref{fig: Be structure}.}
-	\label{fig: AOMs}
-\end{figure}
+The fundamental laser light is blue-detuned by 400 MHz from the cooling transition, which is then passed through a 400 MHz AOM to bring it back on resonance. The unperturbed, transmitted light, is then double passed through another 400 MHz AOM to repump the population that has fallen into the ground $F=1$ manifold. An additional AOM driven at 200 MHz creates red sidebands for both cooling and repump lights create our recapture beams. These aim to cool particularly hot \ce{Be+} ions produced after ablation not well addressed by the main cooling lasers, that would otherwise be lost in A-ramping. The \ce{^9Be+} cooling diagram and AOM set up is shown in Figures \ref{fig: Be structure} and \ref{fig: AOMs}. A feature of this laser set up is since the frequencies we utilize are all produced by the AOMs, we can quickly shut on and off the cooling lasers at will.
 
 As we excite the cooling transition, force is being imparted onto the ion via absorption of the photons and spontaneous emission. We can define the force to be the product of the scattering rate of a two level system and the momentum of each photon.
 \begin{align}
@@ -32,3 +20,17 @@ Where we define the damping coefficient:
 	\beta= 4 \hbar k^2 \frac{s \frac{\delta}{\Gamma}}{1+s+4\left(\frac{\delta}{\Gamma}\right)^2}
 \end{equation*}
 In the ion trap, the ion's trajectory is mixed along each axis, allowing for the 3 dimensional laser cooling with just one beam angled from both radial and axial axes of the trap.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.6\textwidth]{images/Be_cooling_lasers.pdf}
+	\caption{Electronic structure of \ce{^9Be+} showing the main cooling and repump frequencies (blue) and red detuned recooling beams (orange). The fundamental light from the laser is blue detuned from the \ce{^2S1/2(F=2)}$\rightarrow$\ce{^2P3/2} transition by 400 MHz (middle dashed line), where an AOM driven at 400 MHz brings it back to resonance. Another AOM driven at 400 MHz is double passed to address the \ce{^2S1/2(F=1)}$\rightarrow$\ce{^2P3/2} repump transition. Both beams are then fed through an AOM driven at 200 MHz to produce redetuned recapture beams to cool particularly hot \ce{Be+} ions poorly addressed by the main cooling beams. A diagram of the set up is shown in Figure \ref{fig: AOMs}.}
+	\label{fig: Be structure}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{images/AOMs.pdf}
+	\caption{Diagram showing the AOM set up to produce the main cooling beam, repump, as well as recapture beams shown in Figure \ref{fig: Be structure}. $\sim 10\%$ of the  626 nm light produced during SHG is coupled into a WS-U Wavelength Meter to monitor the frequency for locking. The light being read off the power meter is monitored to detect drifts in power as well as calculate the power on the ions.}
+	\label{fig: AOMs}
+\end{figure}

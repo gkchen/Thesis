@@ -8,7 +8,7 @@ where $P$ is pressure and $f$ is the volumetric flow rate, this translates to ab
 \begin{align}
 	C_{ap} & = A \frac{\bar{v}}{4} \nonumber \\
 %	\frac{\dot{N}}{n_b} & =  A \frac{\bar{v}}{4} \nonumber \\ 
-	n_{b} & = \frac{4 \dot{N}}{A_{aperture} \bar{v}} \label{eq: n_b}
+	n_{b} & = \frac{4 \dot{N}}{A_{\mathrm{aperture}} \bar{v}} \label{eq: n_b}
 \end{align}
 In general, buffer gas beams operate with stagnation densities around $10^{15}-10^{17}$cm$^{-3}$. Outside of the cell, we can describe the density of the beam as a function of distance. \cite{Pauly}
 \begin{equation}
@@ -21,41 +21,21 @@ Where $z$ is the distance from the aperture into the vacuum side, $n_0$ is the i
 \end{equation*}
 But there is something that we must consider, that is that we aren't seeing the full aperture while at all locations, we are actually seeing an appended area due to the inclusion of apertures and skimmers in the way. While only $n_0$ is only dependent on the aperture size of the cell, $n(z)$ will have a set value defined by the smallest aperture in the beam path. For us, although our cell aperture is $\approx$ 9 mm in diameter, we have multiple apertures and skimmers in the way, the smallest of which is a skimmer from Beam Dynamics with a diameter of 2 mm.
 
-Sympathetic cooling occurs through collisions between the hot target species being introduced and the cryogenic buffer gas particles. We may consider each hard sphere collision to transfer heat from the hot target species ($T_s$) to the cold buffer gas at constant temperature ($T_b$).
-\begin{equation*}
-	\Delta T_s = -\frac{T_s - T_b}{k}
-\end{equation*}
-Where $k \equiv \frac{(m_b + m_s)^2}{2 m_b m_s}$. For the $N^{\text{th}}$ collision, we can write the change in temperature:
-\begin{equation*}
-	T_s(N) - T_s(N-1) = -\frac{T_s(N-1)-T_b}{k}
-\end{equation*}
-For large values of $N$, where the change in temperature becomes small, we can turn the discrete equations into a differential form.
-\begin{equation*}
-	\frac{d T_s(N)}{dN} = -\frac{T_s(N) - T_b}{k}
-\end{equation*}
-Which we can solve with the condition that $T_s(0)=T_0$
-\begin{align*}
-%	T_s(N) & = (T_0 - T_b)e^{-N/k} +T_b \\
-	\frac{T_s(N)}{T_b} & = \left(\frac{T_0}{T_b} - 1\right)e^{-\frac{N}{k}} +1 \\
-	& \approx \frac{T_0}{T_b}e^{-\frac{N}{k}} + 1
-\end{align*}
-Assuming an ablation loading process in which $T_0=1 \times 10^4$ K, we find that it still only takes $\approx 12$ collisions to thermalize the target species within a factor of 2 of the buffer gas temperature. In general $\approx 100$ collisions are needed to relax rotational states to the same range. Vibrational degrees of freedom may take upwards of $10^4$ collisions to fully thermalize if the elastic collision energy is much lower than the internal vibrational level.
-
 By finding the mean free path, we can consider the characteristic length the particles travel to be thermalized with the buffer gas, this is then compared to the characteristic length of the cell to determine the effectiveness of the cooling.
 \begin{equation*}
-	\lambda = \frac{A_{aperture} \bar{v}}{4 f \sigma \sqrt{m_s/m_b}}
+	\lambda = \frac{A_{\mathrm{aperture}} \bar{v}}{4 f \sigma \sqrt{m_s/m_b}}
 \end{equation*}
 If a species is introduced into the buffer gas cell that has a lower vapor pressure than that is allowed at the current temperature, it will be lost when it comes in contact with the cell walls. The rate of this loss can be described as the  characteristic time of diffusion of a particle in the buffer gas to the physical dimensions of the cell set the diffusion time constant:
 \begin{equation}
-	\tau_{diff} = \frac{16}{9 \pi} \frac{A_{cell} n_{0,b} \sigma}{\bar{v}} \label{eq: tau_diff}
+	\tau_{\mathrm{diff}} = \frac{16}{9 \pi} \frac{A_{\mathrm{cell}} n_{0,b} \sigma}{\bar{v}} \label{eq: tau_diff}
 \end{equation}
 where $\sigma$ represents the collisional cross section for the buffer gas with the target species. On the other hand, we have the characteristic pump out time given by the conductance of a cell aperture:
 \begin{equation}
-	\tau_{pump}=\frac{4V_{cell}}{\bar{v}A_{aperture}} \label{eq: tau_pump}
+	\tau_{\mathrm{pump}}=\frac{4V_{\mathrm{cell}}}{\bar{v}A_{\mathrm{aperture}}} \label{eq: tau_pump}
 \end{equation}
 By combining equations \cref{eq: tau_diff,eq: tau_pump}, we can get a dimensionless ratio, $\gamma$ that characterizes the extraction fraction out of the cell.
 \begin{equation}
-	\gamma = \frac{\tau_{diff}}{\tau_{pump}} = \frac{\sigma f}{L_{cell} \bar{v}} \label{eq: gamma}
+	\gamma = \frac{\tau_{\mathrm{diff}}}{\tau_{\mathrm{pump}}} = \frac{\sigma f}{L_{\mathrm{cell}} \bar{v}} \label{eq: gamma}
 \end{equation}
 Notice that the $\gamma$ factor does not depend on aperture size, this is generally true, but increasing the aperture size will lower your number density within the cell, which then influences the characteristic length scale of thermalization. Larger apertures thus run the risk of not allowing your particles to fully thermalize in rotational/vibrational states. But decreasing the aperture size can make alignment as well as controlling the number density more difficult, as finer control over the flow rate is necessary for equivalent flow regimes.
 
@@ -64,6 +44,6 @@ Using equations \cref{eq: gamma,eq: n_b}, knowing the physical dimensions of the
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1\textwidth]{images/CBGB_flow_characteristics.png}
-	\caption{Theoretically derived buffer gas beam properties of interest given the physical dimensions of our cell in particular: $d_{aperture} = 9$ mm. A) $\gamma$ extraction ratio, dotted red line indicates $\gamma = 1$ where hydrodynamic entrainment begins. B) Number density of buffer gas species within the experimental cell, given an enclosed back wall. The density of target species introduced should stay under 1\% of the buffer gas density for other properties to hold. C) Number of collisions a target species particle would expect before extraction out of the cell, the dotted red line indicates 100 collisions before extraction, when rotational degrees of freedom are characteristically thermalized.}
+	\caption{Theoretically derived buffer gas beam properties of interest given the physical dimensions of our cell in particular: $d_{\mathrm{aperture}} = 9$ mm. A) $\gamma$ extraction ratio, dotted red line indicates $\gamma = 1$ where hydrodynamic entrainment begins. B) Number density of buffer gas species within the experimental cell, given an enclosed back wall. The density of target species introduced should stay under 1\% of the buffer gas density for other properties to hold. C) Number of collisions a target species particle would expect before extraction out of the cell, the dotted red line indicates 100 collisions before extraction, when rotational degrees of freedom are characteristically thermalized.}
 	\label{fig: buffer_gas_flow}
 \end{figure}
