@@ -1,36 +1,36 @@
-Use RF fields in a linear quadrupole ion trap (LQT) to trap charged particles spatially.\cite{Wolfgang1990} Consider a 3 dimensional potential that could trap a particle, we may assume the form:
+Use RF fields in a linear quadrupole ion trap (LQT) to trap charged particles spatially.\cite{Wolfgang1990} Consider a 3 dimensional potential that could trap a particle, we may assume the form,
 \begin{align*}
-	\Phi = \frac{\Phi}{r_0^2} \sum_{i=1}^3 \alpha_i r_i^2
+	\Phi = \frac{\Phi}{r_0^2} \sum_{i=1}^3 \alpha_i r_i^2.
 \end{align*}
-Where $r_0$ is the distance to the potential surfaces and $r_{1,2,3}$ correspond to $x$, $y$, and $z$ respectively. But by Laplace's equation, $\Delta \Phi = 0$, we don't get a confining potential as one of the terms $\alpha_i$ must be negative, leading to a saddle-like potential. To get around this, we may vary the potential in time to create a pseudo-potential that can confine a subset of ions:
+Where $r_0$ is the distance to the potential surfaces and $r_{1,2,3}$ correspond to $x$, $y$, and $z$ respectively. But by Laplace's equation, $\Delta \Phi = 0$, we don't get a confining potential as one of the terms $\alpha_i$ must be negative, leading to a saddle-like potential. To get around this, we may vary the potential in time to create a pseudo-potential that can confine a subset of ions,
 \begin{equation*}
-	\Phi_0(t) = V_{DC} + V_{rf} \cos(\Omega_{rf} t)
+	\Phi_0(t) = V_{DC} + V_{rf} \cos(\Omega_{rf} t).
 \end{equation*}
-Solving for the equations of motion, we find:
+Solving for the equations of motion, we find,
 \begin{equation}
-	\ddot{r}_i + \frac{2 \alpha_i e}{m r_0^2}(V_{DC} + V_{AC} \cos(\Omega_{rf} t))r_0 = 0
+	\ddot{r}_i + \frac{2 \alpha_i e}{m r_0^2}(V_{DC} + V_{AC} \cos(\Omega_{rf} t))r_0 = 0.
 \end{equation}
-To solve this, we make changes of variable:
+To solve this, we make changes of variable where
 \begin{align}
 	a & = \frac{8eV_{DC}}{mr_0^2\Omega_{rf}^2} \label{eq: a param} \\
 	q & = \frac{4eV_{DC}}{mr_0^2\Omega_{rf}^2} \label{eq: q param} \\
-	\tau & = \frac{1}{2}\Omega_{rf} t \nonumber
+	\tau & = \frac{1}{2}\Omega_{rf} t. \nonumber
 \end{align}
-To then find the characteristic Mathieu equation:
+To then find the characteristic Mathieu equation,
 \begin{equation}
-	\frac{\partial^2 u}{\partial \tau^2} + (a - 2q \cos(2 \tau))u = 0
+	\frac{\partial^2 u}{\partial \tau^2} + (a - 2q \cos(2 \tau))u = 0.
 	\label{eq: Mathieu diffeq}
 \end{equation}
 A diagram showing stable solutions to equation \ref{eq: Mathieu diffeq} with the experimental trap values is shown in figure \ref{fig: stability}. To provide full 3 dimensional trapping, DC end cap voltages of around 200 V are applied to contain the ions axially.
 
-Considering our linear quadrupole trap, where we have radial symmetry, the conditions for the $x$ and $y$ orientations are the same, where $a_x = a_y = -\frac{1}{2}a_z$ as well as $q_x = q_y = -\frac{1}{2}q_z$. As long as we are in a regime where $a \ll q^2 \ll 1$, we can approximate the pseudo-potential as a harmonic oscillator where multiples of the secular frequency are the allowed modes.
+Considering our linear quadrupole trap, where we have radial symmetry, the conditions for the $x$ and $y$ orientations are the same, where $a_x = a_y = -\frac{1}{2}a_z$ as well as $q_x = q_y = -\frac{1}{2}q_z$. As long as we are in a regime where $a \ll q^2 \ll 1$, we can approximate the pseudo-potential as a harmonic oscillator where multiples of the secular frequency are the allowed modes,
 \begin{equation}
 	\omega_i = \gamma_i \frac{\Omega_{rf}}{2}
 	\label{eq: secular freq}
 \end{equation}
-Where $\gamma_i = \sqrt{a_i + \frac{q_i^2}{2}}$. Inside this harmonic potential, the ions may move around up until the point at which they would hit the trap rods. Keeping with the harmonic potential approximation, we can characterize the maximum energy an ion may have in the trap to be when the energy of the ion at the condition where it would be displaced far enough to hit a rod.
+where $\gamma_i = \sqrt{a_i + \frac{q_i^2}{2}}$. Inside this harmonic potential, the ions may move around up until the point at which they would hit the trap rods. Keeping with the harmonic potential approximation, we can characterize the maximum energy an ion may have in the trap to be when the energy of the ion at the condition where it would be displaced far enough to hit a rod
 \begin{equation}
-	E_0 = \frac{m}{2e} \omega_{sec}^2r_0^2
+	E_0 = \frac{m}{2e} \omega_{sec}^2r_0^2.
 	\label{eq: trap depth}
 \end{equation}
 Compiling the relevant trap parameters and using equations \cref{eq: secular freq,eq: trap depth}:

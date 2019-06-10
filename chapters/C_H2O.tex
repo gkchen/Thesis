@@ -1,6 +1,6 @@
 \section{Prologue}
 
-Here we get to the overall goal of the thesis, the determination of the formyl isomer branching ratio at temperatures relevant to the ISM. The results up to this point were, more or less, due to the need to understand the reactions that occur in the trap and how they may affect the isomer measurement. 
+Here we get to the overall goal of the thesis, the determination of the formyl isomer branching ratio at temperatures relevant to the ISM. Building on the work previously described, there is yet one more technical hurdle that needs to be surmounted, which is the separation of isomers. Unlike the previous branching ratio measurements, the isomers have the same mass, and thus are not separately detectable on the TOF. The addition of this secondary reaction requires careful study to ensure the final measurement is truly the value of interest.
 
 \section{Introduction}
 
@@ -46,37 +46,35 @@ By definition, these formyl isomers of reactions \cref{r: C+H2O->HCO,r: C+H2O->H
 
 The previous 305 K measurement of the branching ratio used a titration gas as well in a selected ion flow tube (SIFT) instrument with \ce{N2O}, while rate constants for reactions with \ce{O2}, \ce{Kr}, \ce{Xe}, \ce{CO}, \ce{CO2}, and \ce{CH4} were explored.\cite{Love1987,Freeman1987} Titration with \ce{Xe}, \ce{CO2}, \ce{CH4}, \ce{N2O}, and \ce{^15N2} were tested with varying degrees of success. Due to reactions with the trapped \ce{C+}, \ce{CH4} produced new $m/z$ peaks due to a direct reaction, as well as subsequent reactions, at which point we could not be certain the peaks of interest were due to the main reaction. The effect of \ce{N2O} onto \ce{Be+} was not known before our study, and are still not completely understood. There seem to be multiple subsequent reactions occurring because the \ce{Be+} is quickly depleted from the trap without replacement, meaning, a very heavy ion that is not stable is being produced, causing an overall loss of ions in the trap. Without the coolant ion, the mass resolution of the TOF declines significantly, to where the masses of interest start overlapping with nearby signals. With \ce{Xe}, the charged product \ce{XeH+} has a mass to charge ratio of $m/z=132$, far too heavy for the trap, meaning we would have to know exactly how much of both isomers were produced in a single run to derive a branching ratio, which was not a reliable measurement. In the end, we used a gas that was not previously used in the literature, \ce{^15N2} as it only reacts with \ce{HOC+}, while producing a new mass peak. \ce{O2} was also introduced into the chamber to not separate the isomers, but to determine if there were long lived internal states that would affect the branching ratio results.
 
-\section{Internal Relaxation}
+\section{Internal Relaxation} \label{sec: internal relaxation}
 
 Through the \ce{C+ + H2O} reaction, 3.34 eV of energy is released in the production of \ce{HOC+}, while an even greater 5.05 eV for \ce{HCO+}. The released energy has two avenues, the kinetic energy of the reaction products of \ce{[HCO]+} and \ce{H}, and the internal states of the isomer produced. If the isomer is produced in a highly excited internal state, this could cause problems for our titration process if they are long lived and of high enough energy to cause the more stable \ce{HCO+} to react with a titration gas \ce{CO2H} when it would not have in its internal ground state. If \ce{HCO+} retains but 0.48 eV of the initial 5.05 eV in an internal state, it could cause the production of \ce{CO2H+}, despite not being reactive in the ground state.
 
-To see if these internal states may be an issue, we use \ce{O2} as a titration gas. Table \ref{tab: affinities} shows that \ce{O2} is only 0.05 eV away from being able to react with the less stable \ce{HOC+}. By introducing \ce{H2O} via the general valve, and \ce{O2} from a valve behind a leak valve, the two gasses can be introduced with a well defined time delay. Mauclaire et al. found that the radiative lifetimes of these states can be as high as $\approx 300$ ms\cite{Mauclaire1995} which means a delay of 1 s between the introduction of the two gasses should be sufficient for more than 99\% of the internally excited states to have radiatively decayed, preventing any production of \ce{O2H+}. The procedure is performed and resulting TOF trace is shown in Figure \ref{fig: O2 titration}.
+To see if these internal states may be an issue, we use \ce{O2} as a titration gas. Table \ref{tab: affinities} shows that \ce{O2} is only 0.05 eV away from being able to react with the less stable \ce{HOC+}. By introducing \ce{H2O} via the pulsed valve, and \ce{O2} from a valve behind a leak valve, the two gasses can be introduced with a well defined time delay. Mauclaire et al. found that the radiative lifetimes of these states can be as high as $\approx 300$ ms\cite{Mauclaire1995} which means a delay of 1 s between the introduction of the two gasses should be sufficient for more than 99\% of the internally excited states to have radiatively decayed, preventing any production of \ce{O2H+}. The procedure is performed and resulting TOF trace is shown in Figure \ref{fig: O2 titration}.
 
 \begin{figure}
 	\centering
 	\includegraphics[width=0.8\textwidth]{images/O2_titration.png}
-	\caption{Average of 10 TOF traces showing reaction products}
+	\caption{Average of 10 TOF traces of products produced by \ce{C+} and \ce{Be+} with \ce{H2O} interacting with \ce{O2}. The absence of a peak at $m/z=33$, corresponding to \ce{O2H+}, indicates that the isomers \ce{[HCO]+} have relaxed to the ground state and do not react with \ce{O2}.}
 	\label{fig: O2 titration}
 \end{figure}
 
-There is an anomalous peaks that we do not know the origin of at $m/z=11$, which we have denoted \ce{BeH2+}. Despite this, it is clear that there is no production of \ce{O2H+}. Given a 1 s delay between the introduction of \ce{H2O} and the titration gas, the \ce{HOC+} isomer has internally relaxed to at least less than 0.2 eV. For \ce{HCO+}, there is reason to believe the the relaxation rate would be even greater, as \ce{HCO+} has a dipole moment approximately 2 times that of \ce{HOC+}.\cite{Rogers1982} With the titration gasses we use to separate the isomers, \ce{CO2} and \ce{^15N2}, the \ce{HCO+} would have to maintain an internal excited state greater than 0.48 eV and 1.05 eV, respectively, to skew the results. The lack of a proton exchange signal with \ce{O2} alleviates this concern.
+There is an anomalous peaks that we do not know the origin of at $m/z=11$, which we have denoted \ce{BeH2+}. Despite this, it is clear that there is no production of \ce{O2H+}. Given a 1 s delay between the introduction of \ce{H2O} and the titration gas, the \ce{HOC+} isomer has internally relaxed to at least less than 0.2 eV. For \ce{HCO+}, there is reason to believe that the relaxation rate would be even greater, as \ce{HCO+} has a dipole moment approximately 2 times that of \ce{HOC+}.\cite{Rogers1982} With the titration gasses we use to separate the isomers, \ce{CO2} and \ce{^15N2}, the \ce{HCO+} would have to maintain an internal excited state greater than 0.48 eV and 1.05 eV, respectively, to skew the results. The lack of a proton exchange signal with \ce{O2} alleviates this concern. Furthermore, the probability of an unintended reaction can be modeled as a coincidence rate given by 
+\begin{equation*}
+	\Gamma_{\mathrm{co}} = 2 \Gamma_1 \Gamma_2 \tau
+\end{equation*}
+where $\Gamma_{\mathrm{co}}$ is the rate that the production of \ce{HCO+} ($\Gamma_1$) and subsequent collision with a titration gas ($\Gamma_2$) occurring within a window $\tau$. Although we have introduced \ce{O2} in quantities such that the rate constant of it reacting with \ce{HOC+} is much larger than that of \ce{HOC+} production itself, the two reaction rates are coupled. The maximum rate that $\Gamma_2$ may reach is $\Gamma_1$, thus, we let $\Gamma_1 = \Gamma_2$.
 
-%Theoretically, the probability of this 
-%\begin{align*}
-%	\Gamma_{\mathrm{co}} & = 2 \Gamma_1 \Gamma_2 \tau \\
-%	\intertext{$\Gamma_2 \rightarrow \Gamma_1$}
-%	& = 2\Gamma_1^2 \tau
-%\end{align*}
-%where $\Gamma_1 \approx 7 \times 10^{-3}$ s$^{-1}$, $\tau=0.3$ s, we find that $\Gamma_{\mathrm{co}} \approx 3 \times 10^{-5}$. This means, at our operating pressures, we may have 0.4\% of our signal be affected by a highly excited internal state that may cause unwanted reactions.
+With the pressures we introduced into the chamber, we may estimate that $\Gamma_1 \approx 7 \times 10^{-3}$ s$^{-1}$, with a characteristic window $\tau=0.3$ s, we find that $\Gamma_{\mathrm{co}} \approx 1 \times 10^{-4}$ s$^{-1}$. Normalizing $\Gamma_{\mathrm{co}}$ by $\Gamma_1$ yields $0.004$, the conditional probability of an \ce{O2} molecule colliding with \ce{HOC+} within the theoretical characteristic decay time of an internal state. With this estimation, leaving the titration gas on while the initial reaction occurs could yield at most a 0.4\% error in our measurement, well below even thes statistical error. For the sake of reproducibility, we chose to leave the titration gas on for \ce{^15N2}, but it cannot be done with \ce{CO2}, due to \ce{C+ + CO2} reactions. In the cases where the titration gas reacts with either \ce{Be+} or \ce{C+}, we perform the procedure described above.
 
-\section{Secondary Reactions}
+\section{Isomer Specific Reaction Rates}
 
 As mentioned in previous sections, our ion trap continually holds the ions initially loaded, as well as the subsequent charged reaction products (within the trappable mass range). This feature is of particular importance for us, as we cannot directly read off the ratio of the isomers and will need to contend with the possibility that the two isomers will continually react with \ce{H2O} at different rates:
 \begin{align}
 	\ce{HCO+ + H2O & -> H3O+ + CO} \label{r: HCO+H2O->H3O} \\
 	\ce{HOC+ + H2O & -> H3O+ + CO} \label{r: HOC+H2O->H3O}
 \end{align}
-Theoretically, the differing dipole moments of the isomers would produce different dipole-dipole interactions with \ce{H2O}. Literature shows that averaged dipole moments for \ce{HCO+} and \ce{HOC+} are 4.6 D and 2.4 D, respectively.\cite{Rogers1982} But these contribute the a induced dipole-induced dipole rate constant contribution, which is very short ranged ($1/r^6$) and do not contribute much to the overall rate constant.
+Theoretically, the differing dipole moments of the isomers would produce different dipole-dipole interactions with \ce{H2O}. But these contribute the a induced dipole-induced dipole rate constant contribution, which is very short ranged ($1/r^6$) and do not contribute much to the overall rate constant.
 
 We cannot deterministically measure the rate of reaction \ref{r: HOC+H2O->H3O} because there is not a way to produce only \ce{HOC+}, but we may produce only \ce{HCO+}. Considering reactions \ref{r: X+HOC->HCO} and \ref{r: X+HOC->XH}, if we let \ce{X = CO}, we find that both reactions can only yield \ce{HCO+}, allowing us to solely produce one of the isomers:
 \begin{equation}
@@ -102,7 +100,7 @@ Although we cannot make a statement about the rate of reaction \ref{r: HOC+H2O->
 \begin{equation}
 	\ce{[HCO]+ + H2O -> H3O+ + CO}. \label{r: [HCO]+H2O->H3O}
 \end{equation}
-With this understanding, we may take the ratio of isomers at $m/z=29$ to be constant with respect to the \ce{H2O} beam exposure.
+With this understanding, we may take the ratio of isomers at $m/z=29$ to be constant with respect to the \ce{H2O} beam exposure. Furthermore, the rate constant for the production of \ce{[HCO]+} is found to agree with the ADO approximation of $k_{\mathrm{ADO}} = 7.7 \times 10^{-9}$ cm$^3$/s.
 
 \section{Determination of Branching Ratio}
 
@@ -143,33 +141,26 @@ Being non-reactive with \ce{Be+} while having a product mass that is still withi
 %	\caption{RGA fractionation of \ce{CO2} as given by http://ytionline.com/technical-information/rga-spectra-data-fragmentation-factor/}
 %\end{table}
 
-\subsubsection{\ce{C+ + CO2}}
-By ablating both \ce{C+} and \ce{Be+} into the trap and introducing \ce{CO2} via the leak valve, we find the expected reactions \ref{r: C+CO2->CO}, \ref{r: C+CO2->CO2}, and \ref{r: CO+CO2->CO2} as well as unexpected peaks appearing at $m/z=15, 29$, and $45$.
+\subsubsection{Parameterization of Anomalies}
 
-\begin{figure}
+By ablating both \ce{C+} and \ce{Be+} into the trap and introducing \ce{CO2} via the leak valve, we find the expected products from reactions \ref{r: C+CO2->CO}, \ref{r: C+CO2->CO2}, and \ref{r: CO+CO2->CO2} as well as unexpected peaks appearing at $m/z=15, 29$, and $45$ seen in Figure \ref{fig: C+CO2 TOF}. Labels in Figures \ref{fig: C+CO2 TOF} and \ref{fig: C+CO2 traces} are of predicted chemicals coinciding with the masses. These peaks may suggest contamination due to stray \ce{H2O} in the leak valve, but the lack of a $m/z=26$ peak, coinciding with \ce{BeOH+}, suggests this is not due to \ce{H2O}. We should also expect to see an abundance of \ce{H3O+} due to reactions between the alleged \ce{[HCO]+} and \ce{CO2H+}, which we also do not see. Furthermore, the inclusion of \ce{H2O} does not explain the appearance of $m/z=15$. Despite the unknown peaks at the $m/z=29$ and $45$, we can estimate the amount of the unknown peaks we are creating as a function of \ce{CO2} exposure.
+
+\begin{figure}[H]
 	\label{fig: C+CO2 TOF}
 	\centering
 	\includegraphics[width=0.8\textwidth]{images/C_CO2_TOF.png}
-	\caption{TOF trace of laser-cooled \ce{Be+} and \ce{C+} reacting with $\approx 1 \times 10^{-8}$ Torr \ce{CO2} introduced via leak valve for 40 seconds.}
+	\caption{TOF trace of laser-cooled \ce{Be+} and \ce{C+} reacting with $\approx 1 \times 10^{-8}$ Torr \ce{CO2} introduced via leak valve for 40 seconds. Peaks appearing at $m/z=15$, 29, and 45 are unexpected and will affect the determination of the formyl isomer branching ratio.}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[H]
 	\label{fig: C+CO2 traces}
 	\centering
 	\includegraphics[width=0.8\textwidth]{images/C_CO2_traces.png}
 	\caption{Integrated ion signal of individual TOF traces normalized by total ion signal excluding \ce{Be+} at various \ce{CO2} exposure times.}
 \end{figure}
 
-Labels in Figures \ref{fig: C+CO2 TOF} and \ref{fig: C+CO2 traces} are of predicted chemicals coinciding with the masses. These peaks suggest contamination with stray \ce{H2O} in the leak valve, but the lack of a $m/z=26$ peak, coinciding with \ce{BeOH+}, suggests this is not due to \ce{H2O}. We should also expect to see an abundance of \ce{H3O+} due to reactions between the alleged \ce{[HCO]+} and \ce{CO2H+}, which we also do not see. Furthermore, the inclusion of \ce{H2O} does not explain the appearance of $m/z=15$.
-\begin{align}
-	\ce{CO+ + H2O & -> H2O+ + CO} \\
-	\ce{CO2+ + H2O & -> CO2H+ + OH} \label{r: CO2+H2O->CO2H} \\
-	\ce{CO2H+ + H2O & -> H3O+ + CO2}
-\end{align}
-I still doubt that the 29 mass is due to \ce{C+} directly reacting with \ce{H2O} because the traces clearly show it increasing despite the depletion of \ce{C+}, indicating it is a second order reaction. It wouldn't be \ce{H2} either, because we would see \ce{BeH+} in the trap, as well as many other peaks associated with \ce{C+ + H2} including 14, 16, and 17.
-
 \subsubsection{\ce{Be+ + C+ + H2O} with \ce{CO2}}
-Water is introduced into the chamber via the CBGB with the cell held at a temperature of 20K. After $(10 \pm 1)$ seconds of exposure, the gate valve is closed and \ce{CO2} is leaked in to react away the formyl isomers such that $\approx 99\%$ are reacted away (determined by the disappearance of \ce{C+}).
+To determine the isomer branching ratio with \ce{CO2}, \ce{H2O} is introduced into the chamber via the CBGB with the cell held at a temperature of 20 K. After $(10 \pm 1)$ seconds of exposure, the gate valve is closed and \ce{CO2} is leaked in to react away the formyl isomers such that $\approx 99\%$ are reacted away (determined by the disappearance of \ce{C+}).
 
 \begin{figure}[H]
 	\centering
@@ -178,11 +169,9 @@ Water is introduced into the chamber via the CBGB with the cell held at a temper
 \end{figure}
 
 Knowing the anomalous peaks in the previous tests, the peaks of interest are not exclusively the branching ratio between the formyl isomers, where we define $\gamma$ as the fraction of products that produce \ce{HOC+}. By taking the solutions to the differential equations for the \ce{C+ + H2O} reaction network in Section \ref{sec: C+H2O eqs}, we define the ratio of the formyl isomers and remaining \ce{C+}.
-
-\begin{equation}
+\begin{equation*}
 	\alpha(t) \equiv \frac{\ce{[HCO](t)}}{\ce{[HCO](t) + C(t)}}
-\end{equation}
-
+\end{equation*}
 In the data taken, we introduced the water in the beam for approximately 10s, the fraction of \ce{C+} that has turned into \ce{[HCO]+} is thus $\alpha = 0.37 \pm 0.02$. Considering that after titration with \ce{CO2}, the fraction of the remaining 63\% of \ce{C+} has turned into equal amounts of $m/z=29, 45$ defined as $\beta = 0.17 \pm 0.02$.
 \begin{align*}
 	N_C(0) & = N_0 \\
@@ -197,16 +186,16 @@ Where $N_C(t)$ is the amount of \ce{C+} is in the trap after being exposed to ei
 	N_{45}(\tau_1 + \tau_2) & = N_{29}(\tau_1)\gamma + N_C(\tau_1)\beta \\
 	& = N_0(\alpha \gamma+\beta(1-\alpha))
 \end{align*}
-The directly measured ratio $\eta \equiv \frac{\ce{CO2H+}}{\ce{CO2H+} + \ce{HCO+}} = 0.55 \pm 0.02$, is equated to the combination of the possible sources of competing mass peaks:
+The directly measured ratio $\eta \equiv \frac{\ce{CO2H+}}{\ce{CO2H+} + \ce{HCO+}} = 0.55 \pm 0.02$, is equated to the combination of the possible sources of competing mass peaks
 \begin{align}
 	\eta = 0.55 & = \frac{N_{45}(\tau_1 + \tau_2)}{N_{29}(\tau_1 + \tau_2) + N_{45}(\tau_1 + \tau_2)}
 \end{align}
-To find the branching ratio of the \ce{HOC+} channel, we solve for $\gamma$:
+which is rewritten as a function of the values $\alpha$, $\beta$, and $\gamma$. Solving for the original branching ratio $\gamma$,
 \begin{align}
 	\eta & = \frac{\beta - \alpha \beta + \alpha \gamma}{\alpha + 2\beta - 2\alpha\beta} \nonumber \\
-	\gamma & = \frac{1}{\alpha} (\alpha \eta + \beta(\alpha + 2\eta - 2\alpha \eta - 1)) \label{e: gamma branching ratio}
+	\gamma & = \frac{1}{\alpha} (\alpha \eta + \beta(\alpha + 2\eta - 2\alpha \eta - 1)). \label{e: gamma branching ratio}
 \end{align}
-Using equation \ref{e: gamma branching ratio}, we find at the true branching ratio is scaled from $0.55 \pm 0.03$ to $0.58 \pm 0.05$. The error bars are fairly large on this measurement due to the unknown species contributing to our direct ratio measurement.
+Plugging in values into equation \ref{e: gamma branching ratio}, we find at the true branching ratio is scaled from $0.55 \pm 0.03$ to $0.58 \pm 0.05$. The error bars are fairly large on this measurement due to the unknown species contributing to our direct ratio measurement.
 
 \subsection{\ce{^{15}N2} Titration}
 
@@ -228,12 +217,13 @@ To verify reaction \ref{r: HOC+CO->HCO}, trapped \ce{Be+} and \ce{C+} ions are e
 
 Integrated \ce{N2H+} signal was found to be below the threshold for a null signal, demonstrating both points that reaction \ref{r: HOC+CO->HCO} proceeds as expected, and experimental verification that reaction \ref{r: HCO+N2->NA} does not occur.
 
-To determine the branching ratio, \ce{Be+} and \ce{C+} in the trap are exposed to the CBGB for 10 s, after which, the beam shutter in the beam path is closed. \ce{^15N2} is constantly introduced via leak valve to react with the \ce{HOC+}. Repeating this process over various densities of \ce{^15N2} allows us to determine the isomer branching ratio as well as the proton transfer rate constant. We expect the ratio of \ce{N2H+} and \ce{[HCO]+} to follow the form:
-\begin{equation}
-	\frac{\ce{^{15}N2H+}(t)}{\ce{^{15}N2H+}(t)+\ce{[HCO]+}(t)} = C \left( 1-e^{-k_{\ref{r: X+HOC->XH}} \rho t} \right)
-	\label{eq: N2 asymptote}
-\end{equation}
-A fit performed on the data over various densities yields a rate constant of $k_{\ref{r: X+HOC->XH}} = ((6.6 \pm 1.0) \times 10^{-10})$ cm$^3$/s, and a final branching ratio of $\ce{HOC+}:\ce{HCO+} = 0.58 \pm 0.01$, in good agreement with the \ce{CO2} titration results.
+\subsubsection{10 K Reaction Temperature}
+
+\ce{Be+} and \ce{C+} in the trap are exposed to the CBGB for 10 s, after which, the beam shutter in the beam path is closed, and \ce{^15N2} is constantly introduced via leak valve to react with the \ce{HOC+}. Repeating this process over various densities of \ce{^15N2} allows us to determine the isomer branching ratio as well as the proton transfer rate constant. Manipulation of solutions \ref{eq: X XH(t)} and \ref{eq: X [HCO](t)}, setting \ce{XH0 = 0}, yields the ratio of \ce{N2H+} and \ce{[HCO]+},
+\begin{align}
+	\frac{\ce{^{15}N2H+}(t)}{\ce{^{15}N2H+}(t)+\ce{[HCO]+}(t)} = \eta \left( 1-e^{-k_{\ref{r: X+HOC->XH}} \rho t} \right) \label{eq: N2 asymptote}
+\end{align}
+where $\eta = \frac{\ce{HOC0}}{\ce{HOC0}+\ce{HCO0}}$. A fit performed on the data over various densities yields a rate constant of $k_{\ref{r: X+HOC->XH}} = ((6.6 \pm 1.0) \times 10^{-10})$ cm$^3$/s, and a final branching ratio of $\ce{HOC+}:\ce{HCO+} = 0.58 \pm 0.01$, in good agreement with the \ce{CO2} titration results.
 
 \begin{figure}[H]
 	\centering
@@ -243,11 +233,38 @@ A fit performed on the data over various densities yields a rate constant of $k_
 			\includegraphics[width=0.5\textwidth]{images/N2_pressure_scan_small.png}
 		\end{tabular}
 	}
-	\caption{a) Average of 10 TOF traces of \ce{Be+} and \ce{C+} exposed to water from the CBGB (10 s), then exposed to \ce{^15N2} from the leak valve (10 s) at a density of $1 \times 10^9$ cc$^{-1}$. b) The fraction of the titrated isomers, $\eta \equiv \ce{^{15}N2H+}/(\ce{^{15}N2H+}+\ce{[HCO]+})$, as a function of \ce{^15N2} density. Fitted parameters yield values $C = 0.58 \pm 0.01$, $k_{\ref{r: X+HOC->XH}} = ((6.6 \pm 1.0) \times 10^{-10})$ cm$^3$/s.}
+	\caption{a) Average of 10 TOF traces of \ce{Be+} and \ce{C+} exposed to water from the CBGB and \ce{^15N2} from the leak valve (10 s) at a density of $1 \times 10^9$ cc$^{-1}$. b) The fraction of the titrated isomers as a function of \ce{^15N2} density. Fitted parameters yield values $\eta = 0.58 \pm 0.01$, $k_{\ref{r: X+HOC->XH}} = ((6.6 \pm 1.0) \times 10^{-10})$ cm$^3$/s.}
 	\label{fig: N2 pressure scan}
 \end{figure}
 
-To estimate a limit on the isomerization, we consider the titration reactions \ref{r: X+HOC->HCO} and \ref{r: X+HOC->XH}, where \ce{X = ^{15}N2} in the context that we can only determine the abundance of \ce{[HCO]+} and \ce{^{15}N2H+}. As a function of pressure, we cannot see reaction \ref{r: X+HOC->HCO}, but if it does contribute, we should see a discrepancy in the total rate constant, which we estimate to be Langevin: $k_L = 8.0 \times 10^{-10}$. This gives us a possible isomerization rate of 18\%, which then yield a branching ratio of 70:30.
+To estimate a limit on the isomerization, we consider the titration reactions \ref{r: X+HOC->HCO} and \ref{r: X+HOC->XH}, where \ce{X = ^{15}N2} in the context that we can only determine the abundance of \ce{[HCO]+} and \ce{^{15}N2H+}. As a function of pressure, we cannot see reaction \ref{r: X+HOC->HCO}, but if it does contribute, we should see a discrepancy in the total rate constant, which we estimate to be Langevin: $k_L = 8.0 \times 10^{-10}$ cm$^3$/s. This gives us a possible isomerization rate of 18\%.
+
+\subsubsection{100 K and 300 K Reaction Temperatures}
+
+The results we found from the 10 K reaction temperature is a large departure from the values found in literature. By either introducing \ce{H2O} via pulsed valve in the stem chamber, or through a leak valve, we can perform the same experiment but with a higher collision temperatures. With two independent leak valves (Figure \ref{fig: apparatus}), we can introduce both \ce{H2O} at room temperature, as well as \ce{^15N2} simultaneously to yield a collision temperature of $\sim 100$ K. We perform the procedure done with the \ce{O2} titration described in Section \ref{sec: internal relaxation} with \ce{Ne} seeded with \ce{H2O} instead. The ratio of \ce{Ne}/\ce{H2O} is maintained $>10$ to ensure that the beam properties are dominated by \ce{Ne}, such that the velocity is defined by equation \ref{eq: v_infty} solved for the values of \ce{Ne}. Collision temperatures between \ce{C+} and supersonic \ce{Ne} at $T_0=300$ K, is conveniently $\approx 300$ K. The results of both measurements are shown in Figure \ref{fig: C+H2O high temp}.
+
+\begin{figure}[H]
+	\centering
+		\makebox[\textwidth][c]{
+		\begin{tabular}{cc}
+			\includegraphics[width=0.5\textwidth]{images/C_H2O_N2_leak_valve_small.png} &
+			\includegraphics[width=0.5\textwidth]{images/C_H2O_N2_general_valve_small.png}
+		\end{tabular}
+	}
+	\caption{Averages of 10 TOF traces of \ce{Be+} and \ce{C+} exposed to \ce{H2O} and \ce{^15N2} from a leak valve for 10 s. a) \ce{H2O} is introduced via leak valve for collision temperatures of 100 K, where the branching ratio (\ce{^15N2H+}:\ce{[HCO]+}) is found to be ($57\pm2$:$43\pm2$). b) \ce{H2O} is introduced via pulsed valve for collision temperatures of 300 K, where the branching ratio (\ce{^15N2H+}:\ce{[HCO]+}) is found to be ($54\pm1$:$46\pm1$).}
+	\label{fig: C+H2O high temp}
+\end{figure}
+
+The observed branching ratios are found to be ($57\pm2$:$43\pm2$) with a 100 K collision temperature, and ($54\pm1$:$46\pm1$) with a 300 K collision temperature. These values are in fairly good agreement with the values found for the 10 K collision temperature, yet quite a deviation from the values found by Freeman et al.\cite{Freeman1987}
+
+\section{Conclusion}
+
+Our experimental results yield directly measured branching ratios $(58\pm5)$:$(42\pm5)$ and $(58\pm1)$:$(42\pm1)$ via titration with \ce{CO2} and \ce{^15N2}, respectively, at collision temperatures of 10 K, in good agreement with one another. Similarly, we determined the branching ratio at collision temperatures of 100 K ($57\pm2$:$43\pm2$) and 300 K ($54\pm1$:$46\pm1$) using a leak valve and pulsed valve, respectively for \ce{H2O} introduction. As the results from the \ce{^15N2} titration were without unknown peaks, we take that to be the proper experimental result. Hua Guo provided theoretical support in performing QCT calculations on the \ce{C+ + H2O} reaction dynamics at collision temperatures around 10 K. They find an initial branching ratio of 97:3, with 19\% of their \ce{HCO+} above the self-isomerization barrier, this brings their ratio down to 74:26. Hua also provided us with calculations on the possible percentage of isomerization due to reaction \ref{r: X+HOC->HCO} where \ce{X = ^15N2} to be 17\%, consistent with our experimental results. Adjusting our experimentally determined ratio by the possible isomerization, we yield a ratio result of $(70\pm1):(30\pm1)$, this is much closer to the QCT results. These results are in contrast to the previous experimental value of 86:14\cite{Love1987}, but in better agreement with phase space calculations claiming a branching ratio of 67:33 in the literature.\cite{DeFrees1984}
+
+
+
+
+
 %CO with beam
 %
 %k1: 7.39e-02, 5.88e-03
@@ -272,9 +289,3 @@ To estimate a limit on the isomerization, we consider the titration reactions \r
 %k2 = 2.29e-08
 %k1 theory = 7.74e-09
 %k2 theory = 5.15e-09
-
-\section{Conclusion}
-
-Our experimental results yield directly measured branching ratios $(58\pm5):(42\pm5)$ and $(58\pm1):(42\pm1)$ via titration with \ce{CO2} and \ce{^15N2}, in good agreement with one another. As the results from the \ce{^15N2} titration were without unknown peaks, we take that to be the proper experimental result. Hua Guo provided theoretical support in performing QCT calculations on the \ce{C+ + H2O} reaction dynamics at collision temperatures around 10 K. They find an initial branching ratio of 97:3, with 19\% of their \ce{HCO+} above the self-isomerization barrier, this brings their ratio down to 74:26. Hua also provided us with calculations on the possible percentage of isomerization due to reaction \ref{r: X+HOC->HCO} where \ce{X -> ^15N2} to be 17\%, consistent with our experimental results. Adjusting our experimentally determined ratio by the possible isomerization, we yield a ratio result of $(70\pm1):(30\pm1)$, this is much closer to the QCT results.
-
-These results are in contrast to the room temperature result of 86:14\cite{Love1987}, but in better agreement with phase space calculations claiming a branching ratio of 67:33 in the literature.\cite{DeFrees1984}
